@@ -63,3 +63,5 @@ pids/
 jspm_packages/
 
 .serena
+
+wp-content/plugins/my-custom-blocks/node_modules/
