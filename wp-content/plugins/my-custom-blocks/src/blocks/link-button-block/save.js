@@ -23,9 +23,9 @@ export default function save({ attributes }) {
     alignItems: "center",
     justifyContent: "space-between",
     gap: "10px", // gap-2.5 (2.5 * 0.25rem = 0.625rem = 10px)
-    backgroundColor: backgroundColor || "#22c55e",
+    backgroundColor: backgroundColor || "#0B8B4B",
     color: textColor || "#ffffff",
-    border: `1px solid ${borderColor || "#22c55e"}`,
+    border: `1px solid ${borderColor || "#0B8B4B"}`,
     textDecoration: "none",
     transition: "all 0.3s ease",
     boxSizing: "border-box",
@@ -64,7 +64,7 @@ export default function save({ attributes }) {
       }
     }
     .link-button-hover:hover {
-      color: ${hoverTextColor || "#22c55e"} !important;
+      color: ${hoverTextColor || "#0B8B4B"} !important;
       background-color: ${hoverBackgroundColor || "#ffffff"} !important;
     }
   `;
@@ -77,7 +77,15 @@ export default function save({ attributes }) {
     <div {...blockProps}>
       <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
       <div className="container-responsive" style={containerStyle}>
-        <a className="link-button-responsive link-button-hover" href={buttonUrl || "/"} style={buttonStyle} {...(openInNewTab && { target: "_blank", rel: "noopener noreferrer" })}>
+        <a
+          className="link-button-responsive link-button-hover"
+          href={buttonUrl || "/"}
+          style={buttonStyle}
+          {...(openInNewTab && {
+            target: "_blank",
+            rel: "noopener noreferrer",
+          })}
+        >
           <p className="text-responsive" style={textStyle}>
             {buttonText || "リンクテキスト"}
           </p>

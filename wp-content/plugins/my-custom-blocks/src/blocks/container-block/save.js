@@ -1,31 +1,43 @@
-import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-export default function save({ attributes }) {
-  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline, maxWidth } = attributes;
+export default function save( { attributes } ) {
+	const {
+		backgroundColor,
+		borderRadius,
+		marginTop,
+		marginBottom,
+		paddingTop,
+		paddingBottom,
+		paddingInline,
+		maxWidth,
+	} = attributes;
 
-  const blockProps = useBlockProps.save({
-    className: "container-block-wrapper",
-    style: {
-      width: "100%",
-      height: "auto",
-      backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#ffffff",
-      borderRadius: borderRadius || "20px",
-      marginTop: marginTop || "50px",
-      marginBottom: marginBottom || "0px",
-      marginLeft: "auto",
-      marginRight: "auto",
-      paddingTop: paddingTop || "48px",
-      paddingBottom: paddingBottom || "100px",
-      paddingLeft: paddingInline || "0px",
-      paddingRight: paddingInline || "0px",
-      boxSizing: "border-box",
-      // フロントエンドでは境界線なし
-    },
-  });
+	const blockProps = useBlockProps.save( {
+		className: 'container-block-wrapper',
+		style: {
+			width: '100%',
+			height: 'auto',
+			backgroundColor:
+				backgroundColor === 'transparent'
+					? 'transparent'
+					: backgroundColor || '#ffffff',
+			borderRadius: borderRadius || '20px',
+			marginTop: marginTop || '50px',
+			marginBottom: marginBottom || '0px',
+			marginLeft: 'auto',
+			marginRight: 'auto',
+			paddingTop: paddingTop || '48px',
+			paddingBottom: paddingBottom || '100px',
+			paddingLeft: paddingInline || '0px',
+			paddingRight: paddingInline || '0px',
+			boxSizing: 'border-box',
+			// フロントエンドでは境界線なし
+		},
+	} );
 
-  return (
-    <div {...blockProps}>
-      <InnerBlocks.Content />
-    </div>
-  );
+	return (
+		<div { ...blockProps }>
+			<InnerBlocks.Content />
+		</div>
+	);
 }

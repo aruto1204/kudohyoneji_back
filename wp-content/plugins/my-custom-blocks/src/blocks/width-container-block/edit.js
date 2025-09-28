@@ -13,7 +13,7 @@ export default function Edit({ attributes, setAttributes }) {
   const blockStyle = {
     width: "100%",
     maxWidth: maxWidth || "1200px",
-    backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#ffffff",
+    backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#EDF9F3",
     borderRadius: borderRadius || "0px",
     marginTop: marginTop || "0px",
     marginBottom: marginBottom || "0px",
@@ -24,7 +24,7 @@ export default function Edit({ attributes, setAttributes }) {
     paddingLeft: paddingInline || "20px",
     paddingRight: paddingInline || "20px",
     boxSizing: "border-box",
-    border: "2px dashed #007cba",
+    border: "1px dashed #ccc",
     minHeight: "80px",
     position: "relative",
   };
@@ -59,13 +59,18 @@ export default function Edit({ attributes, setAttributes }) {
             <label>{__("背景色", "my-custom-blocks")}</label>
             <ColorPalette
               value={backgroundColor}
-              onChange={(color) => setAttributes({ backgroundColor: color || "#ffffff" })}
+              onChange={(color) =>
+                setAttributes({
+                  backgroundColor: color || "#EDF9F3",
+                })
+              }
               colors={[
-                { name: "透明", color: "transparent" },
                 { name: "白", color: "#ffffff" },
-                { name: "グレー", color: "#f5f5f5" },
-                { name: "ライトブルー", color: "#e3f2fd" },
-                { name: "ライトグリーン", color: "#e8f5e8" },
+                { name: "グレー", color: "#F7F7F7" },
+                { name: "黒", color: "#2C2C2C" },
+                { name: "グリーン", color: "#0B8B4B" },
+                { name: "ライトグリーン", color: "#EDF9F3" },
+                { name: "透明", color: "transparent" },
               ]}
             />
           </div>

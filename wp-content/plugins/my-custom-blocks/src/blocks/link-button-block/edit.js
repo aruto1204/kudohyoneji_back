@@ -24,9 +24,9 @@ export default function Edit({ attributes, setAttributes }) {
     alignItems: "center",
     justifyContent: "space-between",
     gap: "10px", // gap-2.5
-    backgroundColor: backgroundColor || "#22c55e",
+    backgroundColor: backgroundColor || "#0B8B4B",
     color: textColor || "#ffffff",
-    border: `1px solid ${borderColor || "#22c55e"}`,
+    border: `1px solid ${borderColor || "#0B8B4B"}`,
     textDecoration: "none",
     transition: "all 0.3s ease",
     cursor: "pointer",
@@ -62,12 +62,16 @@ export default function Edit({ attributes, setAttributes }) {
             <label>{__("背景色", "my-custom-blocks")}</label>
             <ColorPalette
               value={backgroundColor}
-              onChange={(color) => setAttributes({ backgroundColor: color || "#22c55e" })}
+              onChange={(color) =>
+                setAttributes({
+                  backgroundColor: color || "#0B8B4B",
+                })
+              }
               colors={[
-                { name: "グリーン", color: "#22c55e" },
-                { name: "ブルー", color: "#3b82f6" },
-                { name: "レッド", color: "#ef4444" },
-                { name: "グレー", color: "#6b7280" },
+                { name: "白", color: "#ffffff" },
+                { name: "グレー", color: "#F7F7F7" },
+                { name: "黒", color: "#2C2C2C" },
+                { name: "グリーン", color: "#0B8B4B" },
               ]}
             />
           </div>
@@ -76,11 +80,16 @@ export default function Edit({ attributes, setAttributes }) {
             <label>{__("テキスト色", "my-custom-blocks")}</label>
             <ColorPalette
               value={textColor}
-              onChange={(color) => setAttributes({ textColor: color || "#ffffff" })}
+              onChange={(color) =>
+                setAttributes({
+                  textColor: color || "#ffffff",
+                })
+              }
               colors={[
                 { name: "白", color: "#ffffff" },
-                { name: "黒", color: "#000000" },
-                { name: "グレー", color: "#6b7280" },
+                { name: "グレー", color: "#F7F7F7" },
+                { name: "黒", color: "#2C2C2C" },
+                { name: "グリーン", color: "#0B8B4B" },
               ]}
             />
           </div>
@@ -89,12 +98,16 @@ export default function Edit({ attributes, setAttributes }) {
             <label>{__("ボーダー色", "my-custom-blocks")}</label>
             <ColorPalette
               value={borderColor}
-              onChange={(color) => setAttributes({ borderColor: color || "#22c55e" })}
+              onChange={(color) =>
+                setAttributes({
+                  borderColor: color || "#0B8B4B",
+                })
+              }
               colors={[
-                { name: "グリーン", color: "#22c55e" },
-                { name: "ブルー", color: "#3b82f6" },
-                { name: "レッド", color: "#ef4444" },
-                { name: "グレー", color: "#6b7280" },
+                { name: "白", color: "#ffffff" },
+                { name: "グレー", color: "#F7F7F7" },
+                { name: "黒", color: "#2C2C2C" },
+                { name: "グリーン", color: "#0B8B4B" },
               ]}
             />
           </div>
@@ -103,12 +116,16 @@ export default function Edit({ attributes, setAttributes }) {
             <label>{__("ホバー時テキスト色", "my-custom-blocks")}</label>
             <ColorPalette
               value={hoverTextColor}
-              onChange={(color) => setAttributes({ hoverTextColor: color || "#22c55e" })}
+              onChange={(color) =>
+                setAttributes({
+                  hoverTextColor: color || "#0B8B4B",
+                })
+              }
               colors={[
-                { name: "グリーン", color: "#22c55e" },
-                { name: "ブルー", color: "#3b82f6" },
-                { name: "レッド", color: "#ef4444" },
-                { name: "グレー", color: "#6b7280" },
+                { name: "白", color: "#ffffff" },
+                { name: "グレー", color: "#F7F7F7" },
+                { name: "黒", color: "#2C2C2C" },
+                { name: "グリーン", color: "#0B8B4B" },
               ]}
             />
           </div>
@@ -117,10 +134,16 @@ export default function Edit({ attributes, setAttributes }) {
             <label>{__("ホバー時背景色", "my-custom-blocks")}</label>
             <ColorPalette
               value={hoverBackgroundColor}
-              onChange={(color) => setAttributes({ hoverBackgroundColor: color || "#ffffff" })}
+              onChange={(color) =>
+                setAttributes({
+                  hoverBackgroundColor: color || "#ffffff",
+                })
+              }
               colors={[
                 { name: "白", color: "#ffffff" },
-                { name: "グレー", color: "#f5f5f5" },
+                { name: "グレー", color: "#F7F7F7" },
+                { name: "黒", color: "#2C2C2C" },
+                { name: "グリーン", color: "#0B8B4B" },
                 { name: "透明", color: "transparent" },
               ]}
             />

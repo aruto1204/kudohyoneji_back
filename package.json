@@ -1,4 +1,14 @@
 {
+  "name": "kudohyoneji-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "blocks:build": "cd wp-content/plugins/my-custom-blocks && npm run build",
+    "blocks:start": "cd wp-content/plugins/my-custom-blocks && npm run start",
+    "blocks:dev": "cd wp-content/plugins/my-custom-blocks && npm run dev",
+    "blocks:format": "cd wp-content/plugins/my-custom-blocks && npm run format",
+    "blocks:lint:css": "cd wp-content/plugins/my-custom-blocks && npm run lint:css",
+    "blocks:lint:js": "cd wp-content/plugins/my-custom-blocks && npm run lint:js"
+  },
   "dependencies": {
     "@wordpress/env": "^10.31.0"
   }

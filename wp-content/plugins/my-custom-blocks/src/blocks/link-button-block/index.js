@@ -25,7 +25,7 @@ registerBlockType("my-custom-blocks/link-button-block", {
     },
     backgroundColor: {
       type: "string",
-      default: "#22c55e", // green-500
+      default: "#0B8B4B", // green-500
     },
     textColor: {
       type: "string",
@@ -33,11 +33,11 @@ registerBlockType("my-custom-blocks/link-button-block", {
     },
     borderColor: {
       type: "string",
-      default: "#22c55e", // green-500
+      default: "#0B8B4B", // green-500
     },
     hoverTextColor: {
       type: "string",
-      default: "#22c55e", // green-500
+      default: "#0B8B4B", // green-500
     },
     hoverBackgroundColor: {
       type: "string",
