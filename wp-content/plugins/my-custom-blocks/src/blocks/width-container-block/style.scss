@@ -1,0 +1,139 @@
+// /**
+//  * 幅調整コンテナブロックのスタイル
+//  * フロントエンドとエディタの両方で適用される
+//  */
+
+// // 基本スタイル（フロントエンド用）
+// .width-container-block-wrapper {
+//   width: 100%;
+//   height: auto;
+//   max-width: var(--max-width, 1200px);
+//   margin-top: var(--margin-top, 0px);
+//   margin-bottom: var(--margin-bottom, 0px);
+//   padding-top: var(--padding-top, 20px);
+//   padding-bottom: var(--padding-bottom, 20px);
+//   padding-inline: var(--padding-inline, 20px);
+//   background-color: var(--bg-color, #ffffff);
+//   border-radius: var(--border-radius, 0px);
+//   box-sizing: border-box;
+
+//   // 背景が透明の場合の処理
+//   &[style*="transparent"] {
+//     background-color: transparent;
+//   }
+// }
+
+// // エディタ専用スタイル（詳細度を上げる）
+// .block-editor-block-list__block.wp-block.width-container-block-wrapper.wp-block-my-custom-blocks-width-container-block {
+//   width: 100%;
+//   height: auto;
+//   max-width: var(--max-width, 1200px);
+//   margin-top: var(--margin-top, 0px);
+//   margin-bottom: var(--margin-bottom, 0px);
+//   padding-top: var(--padding-top, 20px);
+//   padding-bottom: var(--padding-bottom, 20px);
+//   padding-inline: var(--padding-inline, 20px);
+//   background-color: var(--bg-color, #ffffff);
+//   border-radius: var(--border-radius, 0px);
+//   box-sizing: border-box;
+//   border: 2px dashed #007cba;
+//   min-height: 80px;
+//   position: relative;
+
+//   // 背景が透明の場合の処理
+//   &[style*="transparent"] {
+//     background-color: transparent;
+//   }
+
+//   &:hover {
+//     border-color: #005a87;
+//   }
+
+//   &.is-selected {
+//     border-color: #007cba;
+//     box-shadow: 0 0 0 1px #007cba;
+//   }
+// }
+
+// /* 内部ブロックのスタイル調整 */
+// .width-container-block-wrapper .wp-block {
+//   max-width: none;
+// }
+
+// /* InnerBlocksのスタイル調整 */
+// .width-container-block-wrapper .block-editor-inner-blocks {
+//   width: 100%;
+// }
+
+// .width-container-block-wrapper .block-editor-block-list__layout {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// // レスポンシブブレークポイント
+// @media (max-width: 768px) {
+//   .width-container-block-wrapper,
+//   .block-editor-block-list__block.wp-block.width-container-block-wrapper.wp-block-my-custom-blocks-width-container-block {
+//     // モバイルでは左右のパディングを調整
+//     padding-inline: 15px;
+
+//     // 最大幅がビューポートより大きい場合は100%に
+//     max-width: 100%;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .width-container-block-wrapper,
+//   .block-editor-block-list__block.wp-block.width-container-block-wrapper.wp-block-my-custom-blocks-width-container-block {
+//     padding-inline: 10px;
+//   }
+// }
+
+// /* エディタ専用のスタイル */
+// .wp-block-my-custom-blocks-width-container-block {
+//   .width-container-block-wrapper {
+//     position: relative;
+
+//     &::before {
+//       content: "幅調整コンテナ（最大幅: " var(--max-width, "1200px") "）";
+//       position: absolute;
+//       top: -20px;
+//       left: 0;
+//       font-size: 12px;
+//       color: #666;
+//       background: #fff;
+//       padding: 2px 8px;
+//       border-radius: 3px;
+//       border: 1px solid #ddd;
+//       z-index: 1;
+//       white-space: nowrap;
+//     }
+//   }
+// }
+
+// /* フロントエンド専用のスタイル */
+// .wp-site-blocks .width-container-block-wrapper {
+//   /* フロントエンドでのみ適用される追加スタイル */
+//   display: block;
+
+//   // 子要素の幅を継承
+//   * {
+//     max-width: 100%;
+//   }
+
+//   // 画像の調整
+//   img {
+//     height: auto;
+//   }
+// }
+
+// // 全幅・幅広対応
+// .alignwide .width-container-block-wrapper {
+//   max-width: min(var(--max-width), 1200px);
+// }
+
+// .alignfull .width-container-block-wrapper {
+//   max-width: min(var(--max-width), 100vw);
+//   margin-left: auto;
+//   margin-right: auto;
+// }

@@ -4,8 +4,10 @@ function add_link_files() {
   wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/assets/css/index.css');
 
   wp_enqueue_script_module( 'script', get_theme_file_uri('/assets/js/script.js'), array(), '1.0.0', true );
+
 }
 add_action( 'wp_enqueue_scripts', 'add_link_files' );
+
 
 add_theme_support( 'title-tag' );
 
@@ -61,8 +63,27 @@ function custom_pagination() {
     echo '</nav>';
 }
 
+// テーマサポートとエディタースタイルを追加
+function setup_theme_support() {
+  // ブロックエディター用スタイルを追加（ファイル存在チェック付き）
+  $editor_style_path = get_template_directory() . '/css/editor-style.css';
+  if ( file_exists( $editor_style_path ) ) {
+    add_editor_style( 'css/editor-style.css' );
+  }
 
+  // エディタースタイルの追加設定
+  add_theme_support( 'editor-styles' );
 
+  // ブロックエディターのフルサイト編集をサポート
+  add_theme_support( 'block-templates' );
+
+  // レスポンシブ埋め込みをサポート
+  add_theme_support( 'responsive-embeds' );
+
+  // ブロックエディターの幅広・全幅をサポート
+  add_theme_support( 'align-wide' );
+}
+add_action( 'after_setup_theme', 'setup_theme_support' );
 
 // 絵文字を無効化
 function disable_emoji() {
@@ -73,5 +94,5 @@ function disable_emoji() {
   remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
   remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
   remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-  }
-  add_action( 'init', 'disable_emoji' );
+}
+add_action( 'init', 'disable_emoji' );

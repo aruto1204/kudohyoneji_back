@@ -5,14 +5,5 @@
     "wp-content/plugins/my-custom-blocks": "./wp-content/plugins/my-custom-blocks"
   },
   "port": 12342,
-  "testsPort": 23452,
-  "env": {
-    "development": {
-      "coreSource": {
-        "type": "git",
-        "url": "https://github.com/WordPress/WordPress.git",
-        "ref": "trunk"
-      }
-    }
-  }
+  "testsPort": 23452
 }

@@ -1,0 +1,79 @@
+/**
+ * Page Title Block Styles
+ */
+
+// Poppinsフォントのインポート
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+// 変数定義
+$main-color: #2c2c2c;
+$sub-color: #0b8b4b;
+$font-family-sub: "Poppins", sans-serif;
+
+$font-size-main-desktop: 40px;
+$font-size-main-tablet: 30px;
+$font-size-main-mobile: 24px;
+$font-size-sub: 16px;
+
+$letter-spacing-default: 0.05em;
+$margin-top-sub: 10px;
+
+// ブレークポイント
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+// 共通スタイルのmixin
+@mixin page-title-styles {
+  .page-title-main {
+    color: $main-color;
+    font-family: inherit; // 既存のフォントファミリーを継承
+    font-size: $font-size-main-desktop;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: $letter-spacing-default;
+    text-align: center;
+  }
+
+  .page-title-sub {
+    color: $sub-color;
+    font-family: $font-family-sub;
+    font-size: $font-size-sub;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: $letter-spacing-default;
+    text-align: center;
+    margin-top: $margin-top-sub;
+  }
+}
+
+// レスポンシブスタイルのmixin
+@mixin page-title-responsive {
+  @media (max-width: $breakpoint-tablet) {
+    .page-title-main {
+      font-size: $font-size-main-tablet;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    .page-title-main {
+      font-size: $font-size-main-mobile;
+      letter-spacing: 0;
+    }
+
+    .page-title-sub {
+      letter-spacing: 0;
+    }
+  }
+}
+
+// フロントエンド用スタイル
+.page-title-block {
+  @include page-title-styles;
+  @include page-title-responsive;
+}
+
+// エディター内でのスタイル調整
+.wp-block-my-custom-blocks-page-title {
+  @include page-title-styles;
+  @include page-title-responsive;
+}

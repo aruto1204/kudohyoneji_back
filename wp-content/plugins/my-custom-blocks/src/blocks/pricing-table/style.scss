@@ -1,0 +1,185 @@
+.wp-block-my-custom-blocks-pricing-table {
+  padding: 20px;
+  margin: 20px 0;
+
+  .pricing-grid {
+    display: grid;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  .pricing-plan {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    &.popular {
+      border: 3px solid #007cba;
+      transform: scale(1.05);
+
+      &:hover {
+        transform: scale(1.05) translateY(-5px);
+      }
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #007cba;
+      color: #ffffff;
+      padding: 5px 15px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .plan-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333333;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+
+    .plan-price {
+      margin-bottom: 20px;
+
+      .price {
+        font-size: 36px;
+        font-weight: bold;
+        color: #333333;
+
+        @media (max-width: 768px) {
+          font-size: 28px;
+        }
+      }
+
+      .period {
+        font-size: 16px;
+        color: #666666;
+        opacity: 0.8;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+
+      li {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        color: #333333;
+        font-size: 14px;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &::before {
+          content: "✓";
+          color: #28a745;
+          font-weight: bold;
+          margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .plan-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #6c757d;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #5a6268;
+        color: #ffffff;
+      }
+
+      &.popular-button {
+        background-color: #007cba;
+
+        &:hover {
+          background-color: #005a87;
+        }
+      }
+
+      @media (max-width: 768px) {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  // エディター専用スタイル
+  &.pricing-table-editor {
+    border: 2px dashed #ccc;
+
+    &:hover {
+      border-color: #007cba;
+    }
+
+    .pricing-plan {
+      cursor: pointer;
+    }
+  }
+
+  // レスポンシブ対応
+  @media (max-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+
+    .pricing-grid {
+      gap: 15px;
+    }
+
+    .pricing-plan {
+      padding: 20px 15px;
+
+      &.popular {
+        transform: none;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+}
