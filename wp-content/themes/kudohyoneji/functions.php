@@ -19,10 +19,13 @@ function meta_description() {
     return get_bloginfo('description');
 }
 
+// アイキャッチ画像のサイズを無制限にする
+add_filter( 'big_image_size_threshold', '__return_false' );
+
 // デフォルトのスタイルとjQueryを削除
 function my_delete_plugin() {
   wp_dequeue_script('jquery');
-  wp_dequeue_style('wp-block-library');
+  // wp_dequeue_style('wp-block-library'); // ブロックエディタのスタイルを削除
 }
 add_action('wp_enqueue_scripts', 'my_delete_plugin');
 
@@ -70,6 +73,7 @@ function setup_theme_support() {
   if ( file_exists( $editor_style_path ) ) {
     add_editor_style( 'css/editor-style.css' );
   }
+
 
   // エディタースタイルの追加設定
   add_theme_support( 'editor-styles' );

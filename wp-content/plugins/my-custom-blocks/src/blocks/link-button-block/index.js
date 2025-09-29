@@ -47,10 +47,6 @@ registerBlockType("my-custom-blocks/link-button-block", {
       type: "string",
       default: "48px", // mt-12
     },
-    marginTopMd: {
-      type: "string",
-      default: "93px", // md:mt-23.25
-    },
     openInNewTab: {
       type: "boolean",
       default: true,

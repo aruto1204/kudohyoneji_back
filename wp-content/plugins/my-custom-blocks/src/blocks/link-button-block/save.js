@@ -1,7 +1,7 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginTopMd, openInNewTab } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, openInNewTab } = attributes;
 
   // コンテナのスタイル
   const containerStyle = {
@@ -50,17 +50,9 @@ export default function save({ attributes }) {
   // レスポンシブ対応のためのメディアクエリスタイル
   const responsiveStyle = `
     @media (min-width: 640px) {
-      .link-button-responsive {
-
-      }
       .text-responsive {
         font-size: 18px !important; /* sm:text-lg */
         line-height: 28px !important;
-      }
-    }
-    @media (min-width: 768px) {
-      .container-responsive {
-        margin-top: ${marginTopMd || "93px"} !important; /* md:mt-23.25 */
       }
     }
     .link-button-hover:hover {
@@ -76,7 +68,7 @@ export default function save({ attributes }) {
   return (
     <div {...blockProps}>
       <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
-      <div className="container-responsive" style={containerStyle}>
+      <div style={containerStyle}>
         <a
           className="link-button-responsive link-button-hover"
           href={buttonUrl || "/"}

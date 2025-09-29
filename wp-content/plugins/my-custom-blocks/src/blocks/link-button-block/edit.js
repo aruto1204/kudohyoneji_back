@@ -3,7 +3,7 @@ import { InspectorControls, useBlockProps, ColorPalette } from "@wordpress/block
 import { PanelBody, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 export default function Edit({ attributes, setAttributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginTopMd, openInNewTab } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, openInNewTab } = attributes;
 
   // エディタ用のスタイル
   const blockStyle = {
@@ -152,19 +152,9 @@ export default function Edit({ attributes, setAttributes }) {
 
         <PanelBody title={__("スペーシング設定", "my-custom-blocks")}>
           <UnitControl
-            label={__("上マージン（モバイル）", "my-custom-blocks")}
+            label={__("上マージン", "my-custom-blocks")}
             value={marginTop}
             onChange={(value) => setAttributes({ marginTop: value })}
-            units={[
-              { value: "px", label: "px" },
-              { value: "rem", label: "rem" },
-            ]}
-          />
-
-          <UnitControl
-            label={__("上マージン（デスクトップ）", "my-custom-blocks")}
-            value={marginTopMd}
-            onChange={(value) => setAttributes({ marginTopMd: value })}
             units={[
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
