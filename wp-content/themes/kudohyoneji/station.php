@@ -1,0 +1,11 @@
+<?php
+/*
+Template Name: サービスステーション
+*/
+ get_header(); ?>
+<main class="min-h-screen pt-20 md:pt-28">  <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Service <br class="block sm:hidden">station</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">サービスステーション</p> </div> </div> <!-- Breadcrumbs --><section class="bg-gray-300 px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business' ) ); ?>">事業案内</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business/station' ) ); ?>">サービスステーション</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap"><?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full bg-gray-300 pt-9 pb-12 md:pb-22.25"> <div class="w-full px-5">
+  <article class="max-w-290 w-full h-auto mx-auto">
+    <?php the_content(); ?>
+  </article>
+  </div> </section>  </main>
+<?php get_footer(); ?>
