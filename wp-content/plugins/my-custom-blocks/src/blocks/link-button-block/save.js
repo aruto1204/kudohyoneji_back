@@ -1,17 +1,21 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding } = attributes;
 
   // コンテナのスタイル
   const containerStyle = {
-    maxWidth: "374px", // max-w-104 (104 * 0.25rem = 26rem = 416px)
+    maxWidth: padding ? "416px" : "376px", // max-w-104 (104 * 0.25rem = 26rem = 416px)
     width: "100%",
     height: "66px", // h-16.5 (16.5 * 0.25rem = 4.125rem = 66px)
     marginTop: marginTop || "48px",
     marginBottom: marginBottom || "0px",
     marginLeft: "auto",
     marginRight: "auto",
+    ...(padding && {
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    }),
   };
 
   // ボタンのスタイル

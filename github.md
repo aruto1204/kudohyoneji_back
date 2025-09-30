@@ -1,111 +1,372 @@
-└── wp-content
-└── plugins
-└── my-custom-blocks
-├── assets
-└── images
-│ ├── has_apollostation_keeper.webp
-│ ├── has_auto_flat_new_car.webp
-│ ├── has_auto_flat_used_car.webp
-│ ├── has_denki_tokuwari.webp
-│ ├── has_drive_one.webp
-│ └── has_oil_change.webp
-├── block.json
-├── docs
-├── basic-design.md
-├── task-list.md
-└── wordpress-block-dev-guide.md
-├── my-custom-blocks.php
+├── .gitignore
+├── .wp-env.json
+├── README.md
 ├── package-lock.json
 ├── package.json
-└── src
-├── blocks
-├── container-block
-│ ├── edit.js
+├── pligins.md
+└── wp-content
+├── plugins
+└── my-custom-blocks
+│ ├── assets
+│ └── images
+│ │ ├── has_apollostation_keeper.webp
+│ │ ├── has_auto_flat_new_car.webp
+│ │ ├── has_auto_flat_used_car.webp
+│ │ ├── has_denki_tokuwari.webp
+│ │ ├── has_drive_one.webp
+│ │ └── has_oil_change.webp
+│ ├── block.json
+│ ├── docs
+│ ├── basic-design.md
+│ ├── task-list.md
+│ └── wordpress-block-dev-guide.md
+│ ├── my-custom-blocks.php
+│ ├── package-lock.json
+│ ├── package.json
+│ └── src
+│ ├── blocks
+│ ├── container-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── featured-image-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── google-map-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
 │ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── featured-image-block
-│ ├── edit.js
+│ ├── link-button-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── page-title-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── section-title-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── services-list-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── store-info-list-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ └── width-container-block
+│ │ ├── edit.js
+│ │ ├── index.js
+│ │ ├── save.js
+│ │ └── style.scss
+│ ├── components
+│ └── CustomPanel.js
+│ ├── hooks
+│ └── usePostData.js
 │ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── google-map-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── index.js
-├── link-button-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── page-title-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── section-title-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── services-list-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── store-info-list-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-└── width-container-block
-│ ├── edit.js
-│ ├── index.js
-│ ├── save.js
-│ └── style.scss
-├── components
-└── CustomPanel.js
-├── hooks
-└── usePostData.js
-├── index.js
-└── utils
-└── helpers.js
+│ └── utils
+│ └── helpers.js
+└── themes
+└── kudohyoneji
+├── archive.php
+├── assets
+├── css
+│ └── index.css
+├── images
+│ ├── 00_common
+│ │ ├── fv.webp
+│ │ ├── fv_sp.webp
+│ │ ├── icon.svg
+│ │ ├── logo.webp
+│ │ └── logo@2.webp
+│ ├── 01_top
+│ │ ├── about.webp
+│ │ ├── about@2.webp
+│ │ ├── about_bg01.webp
+│ │ ├── about_bg01@2.webp
+│ │ ├── about_bg02.webp
+│ │ ├── about_bg02@2.webp
+│ │ ├── about_bg03.webp
+│ │ ├── about_bg03@2.webp
+│ │ ├── about_bg04.webp
+│ │ ├── about_bg04@2.webp
+│ │ ├── about_bg05.webp
+│ │ ├── about_bg05@2.webp
+│ │ ├── business01.webp
+│ │ ├── business01@2.webp
+│ │ ├── business02.webp
+│ │ ├── business02@2.webp
+│ │ ├── business03.webp
+│ │ ├── business03@2.webp
+│ │ ├── business04.webp
+│ │ ├── business04@2.webp
+│ │ ├── business05.webp
+│ │ ├── business05@2.webp
+│ │ ├── business06.webp
+│ │ ├── business06@2.webp
+│ │ ├── living.webp
+│ │ ├── living@2.webp
+│ │ ├── petroleum.webp
+│ │ ├── petroleum@2.webp
+│ │ ├── pickup01.webp
+│ │ ├── pickup02.webp
+│ │ ├── pickup03.webp
+│ │ ├── sales.webp
+│ │ ├── sales@2.webp
+│ │ ├── top_fv.webp
+│ │ └── top_fv_sp.webp
+│ ├── 02_company
+│ │ ├── greeting.webp
+│ │ ├── organization.webp
+│ │ └── philosophy.webp
+│ ├── 03_recruit
+│ │ ├── benefits.webp
+│ │ ├── benefits_bg.webp
+│ │ ├── intro01.webp
+│ │ ├── intro02.webp
+│ │ ├── schedule01.webp
+│ │ └── schedule02.webp
+│ ├── 05_pickup
+│ │ ├── pickup01.webp
+│ │ ├── pickup02.webp
+│ │ ├── pickup03.webp
+│ │ └── sample.webp
+│ ├── 06_business
+│ │ └── business.webp
+│ ├── 07_station
+│ │ ├── has_apollostation_keeper.webp
+│ │ ├── has_auto_flat_new_car.webp
+│ │ ├── has_auto_flat_used_car.webp
+│ │ ├── has_denki_tokuwari.webp
+│ │ ├── has_drive_one.webp
+│ │ ├── has_oil_change.webp
+│ │ └── thumbnail01.webp
+│ ├── 08_petroleum
+│ │ ├── autolease01.webp
+│ │ ├── ikeuchi_shakanai01.webp
+│ │ ├── ikeuchi_shakanai02.webp
+│ │ ├── ikeuchi_shakanai03.webp
+│ │ ├── ikeuchi_shakanai04.webp
+│ │ ├── ikeuchi_shakanai05.webp
+│ │ ├── ikeuchi_shakanai06.webp
+│ │ ├── ikeuchi_shakanai07.webp
+│ │ ├── ikeuchi_shakanai08.webp
+│ │ ├── wholesale01.webp
+│ │ ├── wholesale02.webp
+│ │ └── wholesale03.webp
+│ ├── 09_living
+│ │ ├── equipment01.webp
+│ │ ├── equipment02.webp
+│ │ ├── equipment03.webp
+│ │ ├── equipment04.webp
+│ │ ├── equipment05.webp
+│ │ ├── equipment06.webp
+│ │ ├── filling01.webp
+│ │ ├── filling02.webp
+│ │ ├── maintenance01.webp
+│ │ ├── maintenance02.webp
+│ │ ├── maintenance03.webp
+│ │ ├── prevention01.webp
+│ │ └── prevention02.webp
+│ └── 10_sales
+│ │ ├── sales01.webp
+│ │ ├── sales02.webp
+│ │ └── sales03.webp
+├── js
+│ ├── admin-bar-fix.js
+│ └── script.js
+└── pdf
+│ └── LPGasPriceList.pdf
+├── category-news.php
+├── category-pickup.php
+├── css
+└── editor-style.css
+├── favicon.svg
+├── footer.php
+├── front-page.php
+├── functions.php
+├── header.php
+├── index.php
+├── living.php
+├── page-business.php
+├── page-company.php
+├── page-contact.php
+├── page-privacy.php
+├── page-recruit.php
+├── page-sitemap.php
+├── page-station.php
+├── petroleum.php
+├── sales.php
+├── single.php
+├── station.php
+├── style.css
+└── template
+├── news.php
+├── newslist.php
+├── pickup.php
+└── pickuplist.php
+
+## /.gitignore:
+
+1 | # Node.js dependencies
+2 | node*modules/
+3 | npm-debug.log*
+4 | yarn-debug.log*
+5 | yarn-error.log*
+6 |
+7 | # Package manager lock files (keep package-lock.json, ignore yarn.lock if not used)
+8 | yarn.lock
+9 |
+10 | # Build outputs
+11 | dist/
+12 | build/
+13 | .output/
+14 |
+15 | # Environment variables
+16 | .env
+17 | .env.local
+18 | .env.development.local
+19 | .env.test.local
+20 | .env.production.local
+21 |
+22 | # IDE and Editor files
+23 | .vscode/
+24 | .idea/
+25 | *.swp
+26 | *.swo
+27 | *~
+28 |
+29 | # OS generated files
+30 | .DS_Store
+31 | .DS_Store?
+32 | .*_
+33 | .Spotlight-V100
+34 | .Trashes
+35 | ehthumbs.db
+36 | Thumbs.db
+37 |
+38 | # Logs
+39 | logs/
+40 | _.log
+41 |
+42 | # Temporary files
+43 | tmp/
+44 | temp/
+45 |
+46 | # Coverage reports
+47 | coverage/
+48 | .nyc_output/
+49 |
+50 | # Runtime data
+51 | pids/
+52 | _.pid
+53 | _.seed
+54 | \*.pid.lock
+55 |
+56 | # Cache directories
+57 | .cache/
+58 | .parcel-cache/
+59 | .next/
+60 | .nuxt/
+61 |
+62 | # Dependency directories for other package managers
+63 | jspm_packages/
+64 |
+65 | .serena
+66 |
+67 | wp-content/plugins/my-custom-blocks/node_modules/
+68 |
+
+---
+
+## /.wp-env.json:
+
+1 | {
+2 | "themes": ["./wp-content/themes/kudohyoneji"],
+3 | "plugins": ["./wp-content/plugins/my-custom-blocks", "https://downloads.wordpress.org/plugin/create-block-theme.zip", "https://downloads.wordpress.org/plugin/wordpress-importer.zip", "https://downloads.wordpress.org/plugin/safe-svg.zip"],
+4 | "mappings": {
+5 | "wp-content/plugins/my-custom-blocks": "./wp-content/plugins/my-custom-blocks"
+6 | },
+7 | "port": 12342,
+8 | "testsPort": 23452
+9 | }
+10 |
+
+---
+
+## /README.md:
+
+1 | # kudohyoneji_back
+2 |
+
+---
+
+## /package.json:
+
+1 | {
+2 | "name": "kudohyoneji-backend",
+3 | "version": "1.0.0",
+4 | "scripts": {
+5 | "blocks:build": "cd wp-content/plugins/my-custom-blocks && npm run build",
+6 | "blocks:start": "cd wp-content/plugins/my-custom-blocks && npm run start",
+7 | "blocks:dev": "cd wp-content/plugins/my-custom-blocks && npm run dev",
+8 | "blocks:format": "cd wp-content/plugins/my-custom-blocks && npm run format",
+9 | "blocks:lint:css": "cd wp-content/plugins/my-custom-blocks && npm run lint:css",
+10 | "blocks:lint:js": "cd wp-content/plugins/my-custom-blocks && npm run lint:js"
+11 | },
+12 | "dependencies": {
+13 | "@wordpress/env": "^10.31.0"
+14 | }
+15 | }
+16 |
+
+---
 
 ## /wp-content/plugins/my-custom-blocks/assets/images/has_apollostation_keeper.webp:
 
-https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plugins/my-custom-blocks/assets/images/has_apollostation_keeper.webp
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/plugins/my-custom-blocks/assets/images/has_apollostation_keeper.webp
 
 ---
 
 ## /wp-content/plugins/my-custom-blocks/assets/images/has_auto_flat_new_car.webp:
 
-https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plugins/my-custom-blocks/assets/images/has_auto_flat_new_car.webp
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/plugins/my-custom-blocks/assets/images/has_auto_flat_new_car.webp
 
 ---
 
 ## /wp-content/plugins/my-custom-blocks/assets/images/has_auto_flat_used_car.webp:
 
-https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plugins/my-custom-blocks/assets/images/has_auto_flat_used_car.webp
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/plugins/my-custom-blocks/assets/images/has_auto_flat_used_car.webp
 
 ---
 
 ## /wp-content/plugins/my-custom-blocks/assets/images/has_denki_tokuwari.webp:
 
-https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plugins/my-custom-blocks/assets/images/has_denki_tokuwari.webp
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/plugins/my-custom-blocks/assets/images/has_denki_tokuwari.webp
 
 ---
 
 ## /wp-content/plugins/my-custom-blocks/assets/images/has_drive_one.webp:
 
-https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plugins/my-custom-blocks/assets/images/has_drive_one.webp
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/plugins/my-custom-blocks/assets/images/has_drive_one.webp
 
 ---
 
 ## /wp-content/plugins/my-custom-blocks/assets/images/has_oil_change.webp:
 
-https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plugins/my-custom-blocks/assets/images/has_oil_change.webp
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/plugins/my-custom-blocks/assets/images/has_oil_change.webp
 
 ---
 
@@ -823,556 +1084,6 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 336 | **バージョン**: 1.0.0  
 337 | **担当者**: 開発チーム
 338 |
-
----
-
-## /wp-content/plugins/my-custom-blocks/docs/wordpress-block-dev-guide.md:
-
-1 | # WordPress カスタムブロック開発環境構築ガイド
-2 |
-3 | ## 🚀 現在の状況
-4 | - ✅ `@wordpress/env` 環境構築済み
-5 | - ✅ `package.json` 設定完了
-6 | - ✅ 必要な WordPress 依存関係インストール済み
-7 | - 📝 次のステップ：ファイル構成とブロック開発開始
-8 |
-9 | ---
-10 |
-11 | ## 📁 推奨ディレクトリ構造
-12 |
-13 | ` 14 | wp-content/plugins/my-custom-blocks/
- 15 | ├── package.json                    # ✅ 設定済み
- 16 | ├── my-custom-blocks.php           # 📝 次に作成
- 17 | ├── block.json                     # 📝 次に作成
- 18 | ├── webpack.config.js              # 📝 オプション
- 19 | ├── src/                          # 📝 次に作成
- 20 | │   ├── index.js                  # メインエントリーポイント
- 21 | │   ├── blocks/                   # 各ブロック
- 22 | │   │   ├── sample-block/
- 23 | │   │   │   ├── index.js
- 24 | │   │   │   ├── edit.js
- 25 | │   │   │   ├── save.js
- 26 | │   │   │   └── style.scss
- 27 | │   │   └── index.js              # ブロックまとめ
- 28 | │   ├── components/               # 共通コンポーネント
- 29 | │   │   └── CustomPanel.js
- 30 | │   ├── hooks/                    # カスタムフック
- 31 | │   │   └── usePostData.js
- 32 | │   └── utils/                    # ユーティリティ
- 33 | │       └── helpers.js
- 34 | └── build/                        # 自動生成
- 35 |     ├── index.js
- 36 |     ├── index.css
- 37 |     └── ...
- 38 |`
-39 |
-40 | ---
-41 |
-42 | ## ⚡ 必要ファイルの作成
-43 |
-44 | ### 1. メイン PHP ファイル (`my-custom-blocks.php`)
-45 |
-46 | `php
- 47 | <?php
- 48 | /**
- 49 |  * Plugin Name: My Custom Blocks
- 50 |  * Plugin URI: https://example.com
- 51 |  * Description: カスタムブロックコレクション
- 52 |  * Version: 1.0.0
- 53 |  * Author: Your Name
- 54 |  * License: GPL v2 or later
- 55 |  * Text Domain: my-custom-blocks
- 56 |  */
- 57 | 
- 58 | // 直接アクセスを防止
- 59 | if (!defined('ABSPATH')) {
- 60 |     exit;
- 61 | }
- 62 | 
- 63 | // 定数定義
- 64 | define('MY_CUSTOM_BLOCKS_VERSION', '1.0.0');
- 65 | define('MY_CUSTOM_BLOCKS_PATH', plugin_dir_path(__FILE__));
- 66 | define('MY_CUSTOM_BLOCKS_URL', plugin_dir_url(__FILE__));
- 67 | 
- 68 | /**
- 69 |  * ブロックタイプの初期化
- 70 |  */
- 71 | function my_custom_blocks_init() {
- 72 |     // block.jsonからブロックを登録
- 73 |     register_block_type(MY_CUSTOM_BLOCKS_PATH . 'build');
- 74 | }
- 75 | add_action('init', 'my_custom_blocks_init');
- 76 | 
- 77 | /**
- 78 |  * エディタ用アセット読み込み
- 79 |  */
- 80 | function my_custom_blocks_editor_assets() {
- 81 |     $asset_file = include(MY_CUSTOM_BLOCKS_PATH . 'build/index.asset.php');
- 82 | 
- 83 |     wp_enqueue_script(
- 84 |         'my-custom-blocks-editor',
- 85 |         MY_CUSTOM_BLOCKS_URL . 'build/index.js',
- 86 |         $asset_file['dependencies'],
- 87 |         $asset_file['version']
- 88 |     );
- 89 | 
- 90 |     wp_enqueue_style(
- 91 |         'my-custom-blocks-editor',
- 92 |         MY_CUSTOM_BLOCKS_URL . 'build/index.css',
- 93 |         array('wp-edit-blocks'),
- 94 |         $asset_file['version']
- 95 |     );
- 96 | 
- 97 |     // 翻訳ファイル設定
- 98 |     wp_set_script_translations(
- 99 |         'my-custom-blocks-editor',
-100 |         'my-custom-blocks'
-101 |     );
-102 | }
-103 | add_action('enqueue_block_editor_assets', 'my_custom_blocks_editor_assets');
-104 | 
-105 | /**
-106 |  * フロントエンド用アセット読み込み
-107 |  */
-108 | function my_custom_blocks_frontend_assets() {
-109 |     $asset_file = include(MY_CUSTOM_BLOCKS_PATH . 'build/index.asset.php');
-110 | 
-111 |     wp_enqueue_style(
-112 |         'my-custom-blocks-style',
-113 |         MY_CUSTOM_BLOCKS_URL . 'build/style-index.css',
-114 |         array(),
-115 |         $asset_file['version']
-116 |     );
-117 | }
-118 | add_action('wp_enqueue_scripts', 'my_custom_blocks_frontend_assets');
-119 | `
-120 |
-121 | ### 2. ブロック設定ファイル (`block.json`)
-122 |
-123 | `json
-124 | {
-125 |   "$schema": "https://schemas.wp.org/trunk/block.json",
-126 |   "apiVersion": 3,
-127 |   "name": "my-custom-blocks/sample-block",
-128 |   "version": "1.0.0",
-129 |   "title": "Sample Block",
-130 |   "category": "widgets",
-131 |   "icon": "star-filled",
-132 |   "description": "サンプルカスタムブロック",
-133 |   "keywords": ["sample", "custom", "example"],
-134 |   "textdomain": "my-custom-blocks",
-135 |   "editorScript": "file:./index.js",
-136 |   "editorStyle": "file:./index.css",
-137 |   "style": "file:./style-index.css",
-138 |   "supports": {
-139 |     "html": false,
-140 |     "color": {
-141 |       "background": true,
-142 |       "text": true,
-143 |       "gradients": true
-144 |     },
-145 |     "spacing": {
-146 |       "padding": true,
-147 |       "margin": true
-148 |     },
-149 |     "typography": {
-150 |       "fontSize": true,
-151 |       "lineHeight": true
-152 |     }
-153 |   },
-154 |   "attributes": {
-155 |     "content": {
-156 |       "type": "string",
-157 |       "default": ""
-158 |     },
-159 |     "alignment": {
-160 |       "type": "string",
-161 |       "default": "left"
-162 |     },
-163 |     "showTitle": {
-164 |       "type": "boolean",
-165 |       "default": true
-166 |     }
-167 |   },
-168 |   "example": {
-169 |     "attributes": {
-170 |       "content": "サンプルテキスト",
-171 |       "alignment": "center"
-172 |     }
-173 |   }
-174 | }
-175 | `
-176 |
-177 | ### 3. メインエントリーファイル (`src/index.js`)
-178 |
-179 | `javascript
-180 | /**
-181 |  * WordPress dependencies
-182 |  */
-183 | import { registerBlockType } from '@wordpress/blocks';
-184 | 
-185 | /**
-186 |  * Internal dependencies
-187 |  */
-188 | import './blocks';
-189 | 
-190 | // 追加の初期化処理があればここに記述
-191 | console.log('My Custom Blocks loaded!');
-192 | `
-193 |
-194 | ### 4. ブロック登録ファイル (`src/blocks/index.js`)
-195 |
-196 | `javascript
-197 | /**
-198 |  * ブロック登録
-199 |  * 新しいブロックを作成したらここにimportを追加
-200 |  */
-201 | import './sample-block';
-202 | 
-203 | // 今後追加予定のブロック
-204 | // import './hero-block';
-205 | // import './testimonial-block';
-206 | // import './pricing-table';
-207 | `
-208 |
-209 | ### 5. サンプルブロック (`src/blocks/sample-block/index.js`)
-210 |
-211 | `javascript
-212 | import { registerBlockType } from '@wordpress/blocks';
-213 | import { __ } from '@wordpress/i18n';
-214 | 
-215 | import Edit from './edit';
-216 | import save from './save';
-217 | import metadata from '../../../block.json';
-218 | 
-219 | registerBlockType(metadata.name, {
-220 |     ...metadata,
-221 |     edit: Edit,
-222 |     save,
-223 | });
-224 | `
-225 |
-226 | ### 6. ブロック編集画面 (`src/blocks/sample-block/edit.js`)
-227 |
-228 | `` javascript
-229 | import { __ } from '@wordpress/i18n';
-230 | import {
-231 |     useBlockProps,
-232 |     RichText,
-233 |     AlignmentControl,
-234 |     BlockControls,
-235 |     InspectorControls,
-236 |     ColorPalette
-237 | } from '@wordpress/block-editor';
-238 | import {
-239 |     PanelBody,
-240 |     ToggleControl,
-241 |     SelectControl
-242 | } from '@wordpress/components';
-243 | 
-244 | export default function Edit({ attributes, setAttributes }) {
-245 |     const { content, alignment, showTitle } = attributes;
-246 |     
-247 |     const blockProps = useBlockProps({
-248 |         className: `has-text-align-${alignment}`
-249 |     });
-250 | 
-251 |     return (
-252 |         <>
-253 |             <BlockControls>
-254 |                 <AlignmentControl
-255 |                     value={alignment}
-256 |                     onChange={(newAlignment) => setAttributes({ 
-257 |                         alignment: newAlignment || 'left' 
-258 |                     })}
-259 |                 />
-260 |             </BlockControls>
-261 |             
-262 |             <InspectorControls>
-263 |                 <PanelBody title={__('表示設定', 'my-custom-blocks')}>
-264 |                     <ToggleControl
-265 |                         label={__('タイトルを表示', 'my-custom-blocks')}
-266 |                         checked={showTitle}
-267 |                         onChange={(value) => setAttributes({ showTitle: value })}
-268 |                     />
-269 |                     
-270 |                     <SelectControl
-271 |                         label={__('配置', 'my-custom-blocks')}
-272 |                         value={alignment}
-273 |                         options={[
-274 |                             { label: __('左寄せ', 'my-custom-blocks'), value: 'left' },
-275 |                             { label: __('中央', 'my-custom-blocks'), value: 'center' },
-276 |                             { label: __('右寄せ', 'my-custom-blocks'), value: 'right' }
-277 |                         ]}
-278 |                         onChange={(newAlignment) => setAttributes({ alignment: newAlignment })}
-279 |                     />
-280 |                 </PanelBody>
-281 |             </InspectorControls>
-282 | 
-283 |             <div {...blockProps}>
-284 |                 {showTitle && (
-285 |                     <h3>{__('サンプルブロック', 'my-custom-blocks')}</h3>
-286 |                 )}
-287 |                 
-288 |                 <RichText
-289 |                     tagName="p"
-290 |                     value={content}
-291 |                     onChange={(newContent) => setAttributes({ content: newContent })}
-292 |                     placeholder={__('テキストを入力してください...', 'my-custom-blocks')}
-293 |                 />
-294 |             </div>
-295 |         </>
-296 |     );
-297 | }
-298 |  ``
-299 |
-300 | ### 7. ブロック保存内容 (`src/blocks/sample-block/save.js`)
-301 |
-302 | `` javascript
-303 | import { useBlockProps, RichText } from '@wordpress/block-editor';
-304 | 
-305 | export default function save({ attributes }) {
-306 |     const { content, alignment, showTitle } = attributes;
-307 |     
-308 |     const blockProps = useBlockProps.save({
-309 |         className: `has-text-align-${alignment}`
-310 |     });
-311 | 
-312 |     return (
-313 |         <div {...blockProps}>
-314 |             {showTitle && (
-315 |                 <h3>サンプルブロック</h3>
-316 |             )}
-317 |             
-318 |             <RichText.Content
-319 |                 tagName="p"
-320 |                 value={content}
-321 |             />
-322 |         </div>
-323 |     );
-324 | }
-325 |  ``
-326 |
-327 | ### 8. スタイル (`src/blocks/sample-block/style.scss`)
-328 |
-329 | `scss
-330 | .wp-block-my-custom-blocks-sample-block {
-331 |     padding: 20px;
-332 |     border: 1px solid #ddd;
-333 |     border-radius: 8px;
-334 |     margin: 20px 0;
-335 | 
-336 |     h3 {
-337 |         margin-top: 0;
-338 |         color: #333;
-339 |         font-size: 1.2em;
-340 |     }
-341 | 
-342 |     p {
-343 |         margin-bottom: 0;
-344 |         line-height: 1.6;
-345 |     }
-346 | 
-347 |     &.has-text-align-center {
-348 |         text-align: center;
-349 |     }
-350 | 
-351 |     &.has-text-align-right {
-352 |         text-align: right;
-353 |     }
-354 | 
-355 |     // エディター専用スタイル
-356 |     .block-editor & {
-357 |         border: 2px dashed #ccc;
-358 |         
-359 |         &:hover {
-360 |             border-color: #007cba;
-361 |         }
-362 |     }
-363 | }
-364 | `
-365 |
-366 | ---
-367 |
-368 | ## 🛠 開発用ユーティリティファイル
-369 |
-370 | ### カスタムフック (`src/hooks/usePostData.js`)
-371 |
-372 | `javascript
-373 | import { useSelect } from '@wordpress/data';
-374 | 
-375 | /**
-376 |  * 投稿データを取得するカスタムフック
-377 |  */
-378 | export function usePostData(postType = 'post', queryArgs = {}) {
-379 |     return useSelect((select) => {
-380 |         const { getEntityRecords } = select('core');
-381 |         
-382 |         return getEntityRecords('postType', postType, {
-383 |             per_page: 10,
-384 |             status: 'publish',
-385 |             ...queryArgs
-386 |         });
-387 |     }, [postType, queryArgs]);
-388 | }
-389 | 
-390 | /**
-391 |  * 現在の投稿メタデータを操作するフック
-392 |  */
-393 | export function usePostMeta() {
-394 |     return useSelect((select) => {
-395 |         const { getCurrentPost } = select('core/editor');
-396 |         return getCurrentPost()?.meta || {};
-397 |     });
-398 | }
-399 | `
-400 |
-401 | ### 共通コンポーネント (`src/components/CustomPanel.js`)
-402 |
-403 | `javascript
-404 | import { PanelBody, PanelRow } from '@wordpress/components';
-405 | import { __ } from '@wordpress/i18n';
-406 | 
-407 | export default function CustomPanel({ title, children, initialOpen = false }) {
-408 |     return (
-409 |         <PanelBody title={title} initialOpen={initialOpen}>
-410 |             <PanelRow>
-411 |                 {children}
-412 |             </PanelRow>
-413 |         </PanelBody>
-414 |     );
-415 | }
-416 | `
-417 |
-418 | ### ユーティリティ関数 (`src/utils/helpers.js`)
-419 |
-420 | `javascript
-421 | /**
-422 |  * クラス名を結合するヘルパー
-423 |  */
-424 | export function classNames(...classes) {
-425 |     return classes.filter(Boolean).join(' ');
-426 | }
-427 | 
-428 | /**
-429 |  * 属性の安全な更新
-430 |  */
-431 | export function updateAttribute(setAttributes, key, value) {
-432 |     setAttributes({ [key]: value });
-433 | }
-434 | 
-435 | /**
-436 |  * メディア情報を取得
-437 |  */
-438 | export function getMediaDetails(mediaId) {
-439 |     if (!mediaId) return null;
-440 |     
-441 |     return wp.media.attachment(mediaId).get();
-442 | }
-443 | `
-444 |
-445 | ---
-446 |
-447 | ## 🎯 開発ワークフロー
-448 |
-449 | ### 1. 開発開始
-450 |
-451 | `bash
-452 | # WordPress環境起動
-453 | wp-env start
-454 | 
-455 | # 別ターミナルで開発モード開始
-456 | cd wp-content/plugins/my-custom-blocks
-457 | npm run start
-458 | `
-459 |
-460 | ### 2. ブラウザアクセス
-461 |
-462 | - 管理画面: `http://localhost:8888/wp-admin`
-463 | - フロントエンド: `http://localhost:8888`
-464 | - デフォルトログイン: `admin` / `password`
-465 |
-466 | ### 3. 新しいブロック追加手順
-467 |
-468 | 1. `src/blocks/新ブロック名/` ディレクトリ作成
-469 | 2. `index.js`, `edit.js`, `save.js`, `style.scss` 作成
-470 | 3. `src/blocks/index.js` に import 追加
-471 | 4. `block.json` を必要に応じて更新
-472 |
-473 | ### 4. デバッグとテスト
-474 |
-475 | `bash
-476 | # ビルドエラーチェック
-477 | npm run build
-478 | 
-479 | # コード品質チェック
-480 | npm run lint:js
-481 | npm run lint:css
-482 | 
-483 | # コードフォーマット
-484 | npm run format
-485 | `
-486 |
-487 | ---
-488 |
-489 | ## 📋 開発チェックリスト
-490 |
-491 | ### 初期セットアップ
-492 | - [ ] 上記ファイル構造を作成
-493 | - [ ] `my-custom-blocks.php` 作成
-494 | - [ ] `block.json` 設定
-495 | - [ ] `src/` ディレクトリ構成
-496 | - [ ] サンプルブロック実装
-497 |
-498 | ### 開発中
-499 | - [ ] `npm run start` でホットリロード確認
-500 | - [ ] ブラウザでブロックエディター動作確認
-501 | - [ ] React Developer Tools でデバッグ
-502 | - [ ] コンソールエラーがないか確認
-503 |
-504 | ### リリース前
-505 | - [ ] `npm run build` で本番ビルド
-506 | - [ ] 各デバイスでの表示確認
-507 | - [ ] アクセシビリティチェック
-508 | - [ ] パフォーマンステスト
-509 |
-510 | ---
-511 |
-512 | ## 🚨 よくあるトラブルと対処法
-513 |
-514 | ### ブロックが表示されない
-515 | 1. `my-custom-blocks.php` でプラグインが有効化されているか確認
-516 | 2. `npm run start` が正常に動作しているか確認
-517 | 3. ブラウザのコンソールでエラーをチェック
-518 |
-519 | ### ホットリロードが効かない
-520 | 1. `--webpack-copy-php` オプション確認
-521 | 2. ブラウザキャッシュクリア
-522 | 3. `wp-env restart` で環境再起動
-523 |
-524 | ### スタイルが反映されない
-525 | 1. `build/index.css` が生成されているか確認
-526 | 2. `wp_enqueue_style` が正しく設定されているか確認
-527 | 3. CSS セレクタの優先度を調整
-528 |
-529 | ---
-530 |
-531 | ## 🔧 便利な開発ツール
-532 |
-533 | ### VSCode 拡張機能
-534 | - ES7+ React/Redux/React-Native snippets
-535 | - WordPress Snippets
-536 | - PHP Intelephense
-537 | - Prettier - Code formatter
-538 | - Auto Rename Tag
-539 |
-540 | ### ブラウザ拡張
-541 | - React Developer Tools
-542 | - WordPress Debug Objects
-543 |
-544 | ---
-545 |
-546 | この環境で React の知識を活かして効率的に WordPress カスタムブロック開発を進められます！
 
 ---
 
@@ -4816,5 +4527,1022 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 33 | return wp.media.attachment( mediaId ).get();
 34 | }
 35 |
+
+---
+
+## /wp-content/themes/kudohyoneji/archive.php:
+
+1 | <?php get_header(); ?>
+2 | <?php
+3 | get_template_part('template/newslist');
+4 |
+5 | ?>
+6 |
+7 | <?php get_footer(); ?>
+8 |
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/00_common/fv.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/00_common/fv.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/00_common/fv_sp.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/00_common/fv_sp.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/00_common/icon.svg:
+
+1 | <svg xmlns="http://www.w3.org/2000/svg" width="53.282" height="53.282" viewBox="0 0 53.282 53.282">
+2 | <path id="パス_17707" data-name="パス 17707" d="M263.573,396.546c-1.463,5.933-5.105,10.186-7.261,10.186-2.742,0-7.906-6.869-7.906-15.342s5.164-15.342,7.906-15.342c2.2,0,5.957,4.431,7.355,10.561h7.751a27.164,27.164,0,0,0-53.282,0h7.691c1.4-6.129,5.153-10.561,7.355-10.561,2.742,0,7.906,6.87,7.906,15.342s-5.164,15.342-7.906,15.342c-2.156,0-5.8-4.254-7.261-10.186H218.2a27.175,27.175,0,0,0,53.146,0Z" transform="translate(-218.135 -364.75)" fill="#df0515"/>
+3 | </svg>
+4 |
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/00_common/logo.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/00_common/logo.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/00_common/logo@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/00_common/logo@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg01@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg01@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg02@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg02@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg03@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg03@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg04.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg04.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg04@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg04@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg05.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg05.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/about_bg05@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/about_bg05@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business01@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business01@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business02@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business02@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business03@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business03@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business04.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business04.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business04@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business04@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business05.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business05.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business05@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business05@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business06.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business06.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/business06@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/business06@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/living.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/living.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/living@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/living@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/petroleum.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/petroleum.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/petroleum@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/petroleum@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/pickup01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/pickup01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/pickup02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/pickup02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/pickup03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/pickup03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/sales.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/sales.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/sales@2.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/sales@2.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/top_fv.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/top_fv.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/01_top/top_fv_sp.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/01_top/top_fv_sp.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/02_company/greeting.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/02_company/greeting.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/02_company/organization.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/02_company/organization.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/02_company/philosophy.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/02_company/philosophy.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/03_recruit/benefits.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/03_recruit/benefits.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/03_recruit/benefits_bg.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/03_recruit/benefits_bg.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/03_recruit/intro01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/03_recruit/intro01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/03_recruit/intro02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/03_recruit/intro02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/03_recruit/schedule01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/03_recruit/schedule01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/03_recruit/schedule02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/03_recruit/schedule02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/05_pickup/pickup01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/05_pickup/pickup01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/05_pickup/pickup02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/05_pickup/pickup02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/05_pickup/pickup03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/05_pickup/pickup03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/05_pickup/sample.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/05_pickup/sample.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/06_business/business.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/06_business/business.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/has_apollostation_keeper.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/has_apollostation_keeper.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/has_auto_flat_new_car.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/has_auto_flat_new_car.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/has_auto_flat_used_car.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/has_auto_flat_used_car.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/has_denki_tokuwari.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/has_denki_tokuwari.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/has_drive_one.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/has_drive_one.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/has_oil_change.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/has_oil_change.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/07_station/thumbnail01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/07_station/thumbnail01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/autolease01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/autolease01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai04.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai04.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai05.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai05.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai06.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai06.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai07.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai07.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai08.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/ikeuchi_shakanai08.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/wholesale01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/wholesale01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/wholesale02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/wholesale02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/08_petroleum/wholesale03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/08_petroleum/wholesale03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/equipment01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/equipment01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/equipment02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/equipment02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/equipment03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/equipment03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/equipment04.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/equipment04.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/equipment05.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/equipment05.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/equipment06.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/equipment06.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/filling01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/filling01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/filling02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/filling02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/maintenance01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/maintenance01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/maintenance02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/maintenance02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/maintenance03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/maintenance03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/prevention01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/prevention01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/09_living/prevention02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/09_living/prevention02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/10_sales/sales01.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/10_sales/sales01.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/10_sales/sales02.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/10_sales/sales02.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/images/10_sales/sales03.webp:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/images/10_sales/sales03.webp
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/js/admin-bar-fix.js:
+
+1 | /\*_
+2 | _ WordPress 管理バーのパフォーマンス問題を修正
+3 | _ 非パッシブなタッチイベントリスナーをパッシブに変更
+4 | _/
+5 |
+6 | (function () {
+7 | "use strict";
+8 |
+9 | // DOM が読み込まれた後に実行
+10 | document.addEventListener("DOMContentLoaded", function () {
+11 | // 管理バーが存在するかチェック
+12 | const adminBar = document.getElementById("wpadminbar");
+13 | if (!adminBar) {
+14 | return;
+15 | }
+16 |
+17 | // 既存のタッチイベントリスナーを削除して、パッシブなリスナーに置き換える
+18 | function fixTouchEvents() {
+19 | // 管理バー内のすべての要素を取得
+20 | const adminBarElements = adminBar.querySelectorAll("\*");
+21 |
+22 | // 各要素に対してタッチイベントを修正
+23 | adminBarElements.forEach(function (element) {
+24 | // 既存のイベントリスナーをクローンして置き換え
+25 | const newElement = element.cloneNode(true);
+26 | if (element.parentNode) {
+27 | element.parentNode.replaceChild(newElement, element);
+28 | }
+29 | });
+30 |
+31 | // 管理バーのメニュー機能を再実装（パッシブイベントで）
+32 | setupAdminBarMenus();
+33 | }
+34 |
+35 | // 管理バーのメニュー機能をパッシブイベントで再実装
+36 | function setupAdminBarMenus() {
+37 | const menuItems = adminBar.querySelectorAll(".menupop");
+38 |
+39 | menuItems.forEach(function (menuItem) {
+40 | const menuLink = menuItem.querySelector("> a, > .ab-item");
+41 |
+42 | if (menuLink) {
+43 | // タッチイベントをパッシブで追加
+44 | menuLink.addEventListener(
+45 | "touchstart",
+46 | function (e) {
+47 | // タッチ開始時の処理
+48 | menuItem.classList.add("hover");
+49 | },
+50 | { passive: true }
+51 | );
+52 |
+53 | menuLink.addEventListener(
+54 | "touchend",
+55 | function (e) {
+56 | // タッチ終了時の処理
+57 | setTimeout(function () {
+58 | menuItem.classList.remove("hover");
+59 | }, 300);
+60 | },
+61 | { passive: true }
+62 | );
+63 |
+64 | // マウスイベントも追加
+65 | menuLink.addEventListener("mouseenter", function () {
+66 | menuItem.classList.add("hover");
+67 | });
+68 |
+69 | menuLink.addEventListener("mouseleave", function () {
+70 | menuItem.classList.remove("hover");
+71 | });
+72 | }
+73 | });
+74 | }
+75 |
+76 | // 管理バーが完全に読み込まれるまで少し待つ
+77 | setTimeout(fixTouchEvents, 100);
+78 | });
+79 |
+80 | // ページ読み込み完了後にも実行（念のため）
+81 | window.addEventListener("load", function () {
+82 | setTimeout(function () {
+83 | const adminBar = document.getElementById("wpadminbar");
+84 | if (adminBar && !adminBar.hasAttribute("data-touch-fixed")) {
+85 | adminBar.setAttribute("data-touch-fixed", "true");
+86 |
+87 | // コンソールに修正完了メッセージを出力（開発時のみ）
+88 | if (window.console && console.log) {
+89 | console.log("WordPress 管理バーのタッチイベントを最適化しました");
+90 | }
+91 | }
+92 | }, 200);
+93 | });
+94 | })();
+95 |
+
+---
+
+## /wp-content/themes/kudohyoneji/assets/pdf/LPGasPriceList.pdf:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/assets/pdf/LPGasPriceList.pdf
+
+---
+
+## /wp-content/themes/kudohyoneji/category-news.php:
+
+1 | <?php get_header(); ?>
+2 |
+3 | <?php get_template_part('template/newslist'); ?>
+4 |
+5 | <?php get_footer(); ?>
+6 |
+
+---
+
+## /wp-content/themes/kudohyoneji/category-pickup.php:
+
+1 | <?php get_header(); ?>
+2 |
+3 | <?php get_template_part('template/pickuplist');?>
+4 |
+5 | <?php get_footer(); ?>
+6 |
+
+---
+
+## /wp-content/themes/kudohyoneji/css/editor-style.css:
+
+1 | /_ ブロックエディタの背景色を変更 _/
+2 | .editor-styles-wrapper {
+3 | background-color: #f7f7f7;
+4 | }
+5 |
+
+---
+
+## /wp-content/themes/kudohyoneji/favicon.svg:
+
+1 | <svg xmlns="http://www.w3.org/2000/svg" width="53.282" height="53.282" viewBox="0 0 53.282 53.282">
+2 | <path id="パス_17707" data-name="パス 17707" d="M263.573,396.546c-1.463,5.933-5.105,10.186-7.261,10.186-2.742,0-7.906-6.869-7.906-15.342s5.164-15.342,7.906-15.342c2.2,0,5.957,4.431,7.355,10.561h7.751a27.164,27.164,0,0,0-53.282,0h7.691c1.4-6.129,5.153-10.561,7.355-10.561,2.742,0,7.906,6.87,7.906,15.342s-5.164,15.342-7.906,15.342c-2.156,0-5.8-4.254-7.261-10.186H218.2a27.175,27.175,0,0,0,53.146,0Z" transform="translate(-218.135 -364.75)" fill="#df0515"/>
+3 | </svg>
+4 |
+
+---
+
+## /wp-content/themes/kudohyoneji/footer.php:
+
+1 | <!-- footer --><footer class="w-full"> <div class="w-full h-auto pt-10 md:pt-16.5 pb-10 md:pb-20.5 bg-gray-300 relative"> <div class="w-full px-5"> <div class="max-w-262 w-full h-auto mx-auto"> <div class="w-fit h-fit mx-auto"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center gap-4 md:gap-6 md:hover:opacity-80" aria-label="工藤米治商店 ホームページへ"> <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 53.282 53.282" class="block text-rose-600 w-10 sm:w-12 md:w-15.5 h-auto aspect-square"> <path id="_パス_17707" data-name="パス_17707" d="M45.438,31.796c-1.463,5.933-5.105,10.186-7.261,10.186-2.742,0-7.906-6.869-7.906-15.342s5.164-15.342,7.906-15.342c2.2,0,5.957,4.431,7.355,10.561h7.751C50.353,7.146,36.051-2.407,21.337.523,10.566,2.667,2.146,11.088.001,21.859h7.691c1.4-6.129,5.153-10.561,7.355-10.561,2.742,0,7.906,6.87,7.906,15.342s-5.164,15.342-7.906,15.342c-2.156,0-5.8-4.254-7.261-10.186H.065c3.142,14.676,17.585,24.026,32.261,20.885,10.467-2.241,18.644-10.417,20.885-20.885h-7.773Z" class="fill-current"></path> </svg> <p class="flex gap-2 md:gap-3.5 flex-row items-center font-bold"> <span class="block text-base sm:text-xl md:text-2xl tracking-wider leading-none whitespace-nowrap">株式会社</span> <span class="block text-xl sm:text-2xl md:text-3xl tracking-wider leading-none whitespace-nowrap">工藤米治商店</span> </p> </a> </div> <div class="w-full h-auto mt-8 md:mt-13.5 pt-8 md:pt-10.5 border-t-1 border-gray-650"> <div class="max-w-130 lg:max-w-full flex flex-col lg:flex-row justify-between gap-x-5 gap-y-10 px-3.5 mx-auto"> <div class="grid grid-cols-2 lg:flex justify-between lg:max-w-110 w-full gap-5"> <!-- Petroleum Division --> <div class="w-fit"> <h2 class="text-lg font-bold leading-normal sm:tracking-wider whitespace-nowrap">石油事業部</h2> <ul class="w-full space-y-1.5 mt-0.75"> <li class="w-full pl-4 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 before:h-full"> <a href="<?php echo esc_url( home_url( '/business/station' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">サービスステーション</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_higashi' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">大館東 SS</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_nishi' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">大館西 SS</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_minami' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">セルフ大館南 SS</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_hachiko' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">大館ハチ公 SS</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/station/kosaka' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">小坂 SS</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/station/hanaoka' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">花岡 SS</a> </li><li class="w-full pl-4 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 before:h-full"> <p class="text-base font-medium leading-normal sm:tracking-wider">石油課</p> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/wholesale' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">外販</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/ikeuchi_shakanai_center' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">池内・釈迦内配送センター</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/auto_lease' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">オートリース</a> </li> </ul> </div> <div class="w-fit  flex flex-col justify-between"> <!-- Living Division --> <div class="w-full"> <h2 class="text-lg font-bold leading-normal sm:tracking-wider whitespace-nowrap">リビング事業部</h2> <ul class="w-full space-y-1.5 mt-0.75"> <li class="w-full pl-4 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 before:h-full"> <p class="text-base font-medium leading-normal sm:tracking-wider">ガス課</p> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/sales_maintenance/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">ガス販売／保守</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/filling_station/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">充填所</a> </li><li class="w-full pl-4 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 before:h-full"> <p class="text-base font-medium leading-normal sm:tracking-wider">住設課</p> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/housing_equipment/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">住宅設備</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/disaster_prevention/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">防災関連</a> </li> </ul> </div> <!-- Sales department --> <div class="w-full"> <h2 class="text-lg font-bold leading-normal sm:tracking-wider whitespace-nowrap">営業部</h2> <ul class="w-full space-y-1.5 mt-0.75"> <li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/sales_department/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">営業部</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/processed_products/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">化工品</a> </li><li class="w-full pl-4"> <a href="<?php echo esc_url( home_url( '/business/industrial_materials/' ) ); ?>" class="text-base font-medium leading-normal sm:tracking-wider md:hover:text-green-500">工業用資材</a> </li> </ul> </div> </div> </div> <div class="grid grid-cols-2 lg:flex justify-between lg:max-w-88 w-full gap-5"> <!-- company --> <ul class="w-fit"> <li class="w-full mb-0.75"><a href="<?php echo esc_url( home_url( '/company' ) ); ?>" class="text-lg font-bold leading-normal tracking-wider md:hover:text-green-500">会社概要</a></li> <li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#philosophy' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">経営理念</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#company' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">会社概要</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#map' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">アクセス</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#organization' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">組織図</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#history' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">沿革</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#financial' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">取引金融機関</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#partners' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">主要取引先</a></li><li class="w-full mb-1.5"><a href="<?php echo esc_url( home_url( '/company#participating' ) ); ?>" class="text-base font-medium leading-normal tracking-wider hover:text-green-500">加入団体</a></li> </ul> <!-- navItems --> <ul class="w-fit space-y-4"> <li class="w-full"><a href="<?php echo esc_url( home_url( '/recruit' ) ); ?>" class="text-lg font-bold leading-normal tracking-wider md:hover:text-green-500">採用情報</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/category/pickup' ) ); ?>" class="text-lg font-bold leading-normal tracking-wider md:hover:text-green-500">PickUp!</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/category/news' ) ); ?>" class="text-lg font-bold leading-normal tracking-wider md:hover:text-green-500">お知らせ</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="text-lg font-bold leading-normal tracking-wider md:hover:text-green-500">お問い合わせ</a></li> </ul> </div> </div> </div> </div> </div> <!-- scroll to top button --> <button id="scrollToTopBtn" class="flex items-center justify-center w-16 md:w-20 h-auto aspect-square text-white bg-brown-500 absolute bottom-6 right-7 cursor-pointer hover:bg-green-500 transition-colors duration-300" aria-label="ページトップへ戻る"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-6.25 h-5.5 -rotate-90"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </button> </div> <!-- copyright --> <div class="w-full py-8 md:pt-11 md:pb-10.5 bg-green-500"> <div class="w-full px-5"> <div class="max-w-257 w-full h-full flex flex-col md:flex-row items-center justify-between gap-4 mx-auto"> <div class="flex items-center gap-3.5"> <a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>" class="text-sm text-white font-medium leading-[1.42] md:hover:opacity-80">サイトマップ</a> <span class="text-white text-sm font-medium leading-[1.42] hidden sm:block">|</span> <a href="<?php echo esc_url( home_url( '/privacy' ) ); ?>" class="text-sm text-white font-medium leading-[1.42] md:hover:opacity-80">プライバシーポリシー</a> </div> <p class="text-sm text-white font-medium leading-loose text-center md:text-left">Copyright (C) KUDO YONEJI SHOTEN. All Rights Reserved.</p> </div> </div> </div> </footer> <script type="module">function n(){window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",function(){const o=document.getElementById("scrollToTopBtn");o&&o.addEventListener("click",n)});</script> <?php wp_footer() ?></body></html>
+2 |
+
+---
+
+## /wp-content/themes/kudohyoneji/functions.php:
+
+1 | <?php
+2 |
+3 | function add_link_files() {
+4 | wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/assets/css/index.css');
+5 |
+6 | wp_enqueue_script_module( 'script', get_theme_file_uri('/assets/js/script.js'), array(), '1.0.0', true );
+7 |
+8 | }
+9 | add_action( 'wp_enqueue_scripts', 'add_link_files' );
+10 |
+11 |
+12 | add_theme_support( 'title-tag' );
+13 |
+14 | // アイキャッチ画像サポートを追加
+15 | add_theme_support( 'post-thumbnails' );
+16 |
+17 | //ディスクリプション追加
+18 | function meta_description() {
+19 | return get_bloginfo('description');
+20 | }
+21 |
+22 | // アイキャッチ画像のサイズを無制限にする
+23 | add_filter( 'big_image_size_threshold', '**return_false' );
+24 |
+25 | // デフォルトのスタイルと jQuery を削除
+26 | function my_delete_plugin() {
+27 | wp_dequeue_script('jquery');
+28 | // wp_dequeue_style('wp-block-library'); // ブロックエディタのスタイルを削除
+29 | }
+30 | add_action('wp_enqueue_scripts', 'my_delete_plugin');
+31 |
+32 | // カスタムメニューの登録
+33 | function register_my_menus() {
+34 | register_nav_menus(
+35 | array(
+36 | 'header-menu' => **('ヘッダーメニュー'),
+37 | 'mobile-menu' => **('モバイルメニュー'),
+38 | 'footer-menu' => **('フッターメニュー'),
+39 | )
+40 | );
+41 | }
+42 | add_action('init', 'register_my_menus');
+43 |
+44 | // ページネーション
+45 | function custom_pagination() {
+46 | global $wp_query;
+ 47 | 
+ 48 |     if ($wp_query->max_num_pages <= 1) return;
+49 |
+50 | echo '<nav class="nav-links">';
+51 |
+52 | // 前のページリンク
+53 | if (get_previous_posts_link()) {
+54 | echo '<div class="prev page-numbers">';
+55 | previous_posts_link('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> <p>前に戻る</p> ');
+56 | echo '</div>';
+57 | }
+58 |
+59 | // 次のページリンク
+60 | if (get_next_posts_link()) {
+61 | echo '<div class="next page-numbers">';
+62 | next_posts_link('<p>もっと見る</p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg>');
+63 | echo '</div>';
+64 | }
+65 |
+66 | echo '</nav>';
+67 | }
+68 |
+69 | // テーマサポートとエディタースタイルを追加
+70 | function setup_theme_support() {
+71 | // ブロックエディター用スタイルを追加（ファイル存在チェック付き）
+72 | $editor_style_path = get_template_directory() . '/css/editor-style.css';
+73 | if ( file_exists( $editor_style_path ) ) {
+74 | add_editor_style( 'css/editor-style.css' );
+75 | }
+76 |
+77 |
+78 | // エディタースタイルの追加設定
+79 | add_theme_support( 'editor-styles' );
+80 |
+81 | // ブロックエディターのフルサイト編集をサポート
+82 | add_theme_support( 'block-templates' );
+83 |
+84 | // レスポンシブ埋め込みをサポート
+85 | add_theme_support( 'responsive-embeds' );
+86 |
+87 | // ブロックエディターの幅広・全幅をサポート
+88 | add_theme_support( 'align-wide' );
+89 | }
+90 | add_action( 'after_setup_theme', 'setup_theme_support' );
+91 |
+92 | // 絵文字を無効化
+93 | function disable_emoji() {
+94 | remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+95 | remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+96 | remove_action( 'wp_print_styles', 'print_emoji_styles' );
+97 | remove_action( 'admin_print_styles', 'print_emoji_styles' );
+98 | remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+99 | remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+100 | remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+101 | }
+102 | add_action( 'init', 'disable_emoji' );
+103 |
+
+---
+
+## /wp-content/themes/kudohyoneji/index.php:
+
+https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/d3a3a5794678b249e02fde081c9aed6578c52c91/wp-content/themes/kudohyoneji/index.php
+
+---
+
+## /wp-content/themes/kudohyoneji/living.php:
+
+1 | <?php
+2 | /_
+3 | Template Name: ガス課/住設課
+4 | _/
+5 | get_header(); ?>
+6 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Living <br class="block sm:hidden">Division</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">リビング事業部</p> </div> </div> <!-- Breadcrumbs --><section class="bg-gray-300 px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business' ) ); ?>">事業案内</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">リビング事業部　<?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full bg-gray-300 pt-6 md:pt-9 pb-18 md:pb-35"> <div class="w-full px-5">
+7 | <article class="max-w-290 w-full h-auto mx-auto">
+8 | <?php the_content(); ?>
+9 | </article>
+10 | </div> </section> </main>
+11 | <?php get_footer(); ?>
+12 |
+
+---
+
+## /wp-content/themes/kudohyoneji/page-contact.php:
+
+1 | <?php get_header(); ?>
+2 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Contact</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">お問い合わせ</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">お問い合わせ</span> </li> </ul> </nav> </section> <!-- contact --><section class="w-full"> <div class="w-full bg-gray-300 px-5 pt-8 md:pt-15 pb-8 md:pb-13.75"> <p class="text-base md:text-[26px] font-medium leading-[1.88] tracking-wider text-center">お問い合わせは、こちらで受付しております。<br>お急ぎの場合はお電話でお願い致します。<br>TEL.0186-49-3311（平日 9:00 ～ 17:00）<br>FAX.0186-49-3316</p> </div> <div class="w-full"> <div class="w-full px-5"> <div class="max-w-186 w-full mx-auto mt-12 md:mt-21 mb-20 md:mb-38.25"> <!-- お問い合わせフォーム --> <?php the_content(); ?><p class="text-base text-green-500 font-medium leading-[1.875] mt-8 md:mt-12.25">メールの不具合等で受信できない場合がありますので、<br>押し返しのご連絡がない場合は、お手数ですがお電話くださいませ。</p> </div> </div> </div> </section> </main>
+3 | <?php get_footer(); ?>
+4 |
+
+---
+
+## /wp-content/themes/kudohyoneji/page-privacy.php:
+
+1 | <?php get_header(); ?>
+2 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Privacy <br class="block sm:hidden">policy</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">プライバシーポリシー</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">プライバシーポリシー</span> </li> </ul> </nav> </section> <section class="w-full bg-white "> <div class="w-full px-5"> <div class="max-w-269.5 w-full mx-auto mt-8 md:mt-15 pb-20 md:pb-43"> <p class="text-base md:text-lg font-medium leading-[2.11] tracking-wider">本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。<br><br>第 1 条（個人情報）<br>「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。<br><br>第 2 条（個人情報の収集方法）<br>当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。<br><br>第 3 条（個人情報を収集・利用する目的）<br>当社が個人情報を収集・利用する目的は，以下のとおりです。<br>1. 当社サービスの提供・運営のため<br>2. ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）<br>3. ユーザーが利用中のサービスの新機能，更新情報，キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため<br>4. メンテナンス，重要なお知らせなど必要に応じたご連絡のため<br>5. 利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため<br>6. ユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため<br>7. 有料サービスにおいて，ユーザーに利用料金を請求するため <br>8. 上記の利用目的に付随する目的<br><br>第 4 条（利用目的の変更）<br>1.当社は，利用目的が変更前と関連性を有すると合理的に認められる場合に限り，個人情報の利用目的を変更するものとします。<br>2.利用目的の変更を行った場合には，変更後の目的について，当社所定の方法により，ユーザーに通知し，または本ウェブサイト上に公表するものとします。<br><br>第 5 条（個人情報の第三者提供）<br>1. 当社は，次に掲げる場合を除いて，あらかじめユーザーの同意を得ることなく，第三者に個人情報を提供することはありません。ただし，個人情報保護法その他の法令で認められる場合を除きます。<br>1. 人の生命，身体または財産の保護のために必要がある場合であって，本人の同意を得ることが困難であるとき<br>2. 公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき<br>3. 国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき<br>4. 予め次の事項を告知あるいは公表し，かつ当社が個人情報保護委員会に届出をしたとき<br>1. 利用目的に第三者への提供を含むこと<br>2. 第三者に提供されるデータの項目<br>3. 第三者への提供の手段または方法<br>4. 本人の求めに応じて個人情報の第三者への提供を停止すること<br>5. 本人の求めを受け付ける方法<br>2. 前項の定めにかかわらず，次に掲げる場合には，当該情報の提供先は第三者に該当しないものとします。<br>1. 当社が利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合<br>2. 合併その他の事由による事業の承継に伴って個人情報が提供される場合<br>3. 個人情報を特定の者との間で共同して利用する場合であって，その旨並びに共同して利用される個人情報の項目，共同して利用する者の範囲，利用する者の利用目的および当該個人情報の管理について責任を有する者の氏名または名称について，あらかじめ本人に通知し，または本人が容易に知り得る状態に置いた場合<br><br>第 6 条（個人情報の開示）<br>1. 当社は，本人から個人情報の開示を求められたときは，本人に対し，遅滞なくこれを開示します。ただし，開示することにより次のいずれかに該当する場合は，その全部または一部を開示しないこともあり，開示しない決定をした場合には，その旨を遅滞なく通知します。なお，個人情報の開示に際しては，1 件あたり 1，000 円の手数料を申し受けます。<br>1. 本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合<br>2. 当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合<br>3. その他法令に違反することとなる場合<br>2. 前項の定めにかかわらず，履歴情報および特性情報などの個人情報以外の情報については，原則として開示いたしません。<br><br>第 7 条（個人情報の訂正および削除）<br>1. ユーザーは，当社の保有する自己の個人情報が誤った情報である場合には，当社が定める手続きにより，当社に対して個人情報の訂正，追加または削除（以下，「訂正等」といいます。）を請求することができます。<br>2. 当社は，ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の訂正等を行うものとします。<br>3. 当社は，前項の規定に基づき訂正等を行った場合，または訂正等を行わない旨の決定をしたときは遅滞なく，これをユーザーに通知します。<br><br> 第 8 条（個人情報の利用停止等）<br>1. 当社は，本人から，個人情報が，利用目的の範囲を超えて取り扱われているという理由，または不正の手段により取得されたものであるという理由により，その利用の停止または消去（以下，「利用停止等」といいます。）を求められた場合には，遅滞なく必要な調査を行います。<br>2. 前項の調査結果に基づき，その請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の利用停止等を行います。<br>3. 当社は，前項の規定に基づき利用停止等を行った場合，または利用停止等を行わない旨の決定をしたときは，遅滞なく，これをユーザーに通知します。<br>4. 前 2 項にかかわらず，利用停止等に多額の費用を有する場合その他利用停止等を行うことが困難な場合であって，ユーザーの権利利益を保護するために必要なこれに代わるべき措置をとれる場合は，この代替策を講じるものとします。<br><br>第 9 条（プライバシーポリシーの変更）<br>1. 本ポリシーの内容は，法令その他本ポリシーに別段の定めのある事項を除いて，ユーザーに通知することなく，変更することができるものとします。<br>2. 当社が別途定める場合を除いて，変更後のプライバシーポリシーは，本ウェブサイトに掲載したときから効力を生じるものとします。<br><br>第 10 条（お問い合わせ窓口）<br>本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。</p> <p class="text-lg md:text-[22px] font-semibold leading-[1.81] tracking-wider mt-10 md:mt-15">株式会社工藤米治商店<br>秋田県大館市常盤木町 8 番 9 号<br>TEL.0186-49-3311</p> </div> </div> </section> </main>
+3 | <?php get_footer(); ?>
+
+---
+
+## /wp-content/themes/kudohyoneji/page-sitemap.php:
+
+1 | <?php get_header(); ?>
+2 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Sitemap</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">サイトマップ</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">サイトマップ</span> </li> </ul> </nav> </section> <!-- sitemap --><section class="w-full mt-16 md:mt-27.75 mb-20 md:mb-40.5"> <div class="w-full px-5"> <div class="max-w-123 md:max-w-290 w-full mx-auto"> <div class="w-full flex justify-between flex-wrap md:flex-nowrap gap-x-5 gap-y-10 mx-auto"> <div class="flex justify-between md:max-w-143 w-full md:w-[49.4%] gap-5"> <!-- Petroleum Division --> <div class="max-w-78.5 w-full"> <h2 class="text-base md:text-xl font-bold leading-normal sm:tracking-wider whitespace-nowrap">石油事業部</h2> <ul class="w-full space-y-1.5 md:space-y-3.75 mt-1.5 md:mt-3.75"> <li class="w-full pl-4 md:pl-5.25 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 md:before:text-xl before:h-full"> <a href="<?php echo esc_url( home_url( '/business/station' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">サービスステーション</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_higashi' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">大館東 SS</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_nishi' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">大館西 SS</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_minami' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">セルフ大館南 SS</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/station/oodate_hachiko' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">大館ハチ公 SS</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/station/kosaka' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">小坂 SS</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/station/hanaoka' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">花岡 SS</a> </li><li class="w-full pl-4 md:pl-5.25 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 md:before:text-xl before:h-full"> <p class="text-base md:text-xl font-medium leading-normal sm:tracking-wider">石油課</p> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/wholesale' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">外販</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/ikeuchi_shakanai_center' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">池内・釈迦内配送センター</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/auto_lease' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">オートリース</a> </li> </ul> </div> <div class="max-w-45 w-full flex flex-col justify-between"> <!-- Living Division --> <div class="w-full"> <h2 class="text-base md:text-xl font-bold leading-normal sm:tracking-wider whitespace-nowrap">リビング事業部</h2> <ul class="w-full space-y-1.5 md:space-y-3.75 mt-1.5 md:mt-3.75"> <li class="w-full pl-4 md:pl-5.25 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 md:before:text-xl before:h-full"> <p class="text-base md:text-xl font-medium leading-normal sm:tracking-wider">ガス課</p> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/sales_maintenance/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">ガス販売／保守</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/filling_station/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">充填所</a> </li><li class="w-full pl-4 md:pl-5.25 relative before:content-['・'] before:absolute before:left-0 before:top-0 before:bottom-0 md:before:text-xl before:h-full"> <p class="text-base md:text-xl font-medium leading-normal sm:tracking-wider">住設課</p> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/housing_equipment/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">住宅設備</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/disaster_prevention/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">防災関連</a> </li> </ul> </div> <!-- Sales department --> <div class="w-full"> <h2 class="text-base md:text-xl font-bold leading-normal sm:tracking-wider whitespace-nowrap">営業部</h2> <ul class="w-full space-y-1.5 md:space-y-3.75 mt-1.5 md:mt-3.75"> <li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/sales_department/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">営業部</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/processed_products/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">化工品</a> </li><li class="w-full pl-4 md:pl-5.25"> <a href="<?php echo esc_url( home_url( '/business/industrial_materials/' ) ); ?>" class="text-base md:text-xl font-medium leading-normal sm:tracking-wider md:hover:text-green-500">工業用資材</a> </li> </ul> </div> </div> </div> <div class="flex justify-between md:max-w-118.5 w-full md:w-[40.8%] gap-5"> <!-- company --> <ul class="max-w-45 w-full space-y-1.5 md:space-y-3.75"> <li class="w-full"><a href="<?php echo esc_url( home_url( '/company' ) ); ?>" class="text-base md:text-xl font-bold leading-normal tracking-wider md:hover:text-green-500">会社概要</a></li> <li class="w-full"><a href="<?php echo esc_url( home_url( '/company#philosophy' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">経営理念</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#company' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">会社概要</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#map' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">アクセス</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#organization' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">組織図</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#history' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">沿革</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#financial' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">取引金融機関</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#partners' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">主要取引先</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/company#participating' ) ); ?>" class="text-base md:text-xl font-medium leading-normal tracking-wider hover:text-green-500">加入団体</a></li> </ul> <!-- navItems --> <ul class="max-w-45 w-full space-y-1.5 md:space-y-3.75"> <li class="w-full"><a href="<?php echo esc_url( home_url( '/recruit' ) ); ?>" class="text-base md:text-xl font-bold leading-normal tracking-wider md:hover:text-green-500">採用情報</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/category/pickup' ) ); ?>" class="text-base md:text-xl font-bold leading-normal tracking-wider md:hover:text-green-500">PickUp!</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/category/news' ) ); ?>" class="text-base md:text-xl font-bold leading-normal tracking-wider md:hover:text-green-500">お知らせ</a></li><li class="w-full"><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="text-base md:text-xl font-bold leading-normal tracking-wider md:hover:text-green-500">お問い合わせ</a></li> </ul> </div> </div> </div> </div> </section> </main>
+3 | <?php get_footer(); ?>
+4 |
+
+---
+
+## /wp-content/themes/kudohyoneji/page-station.php:
+
+1 | <?php get_header(); ?>
+2 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Service <br class="block sm:hidden">station</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">サービスステーション</p> </div> </div> <!-- Breadcrumbs --><section class="bg-gray-300 px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business' ) ); ?>">事業案内</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">サービスステーション</span> </li> </ul> </nav> </section> <!-- station --><section class="bg-gray-300 pt-9 pb-20 md:pb-37.75"> <div class="w-full px-5"> <div class="max-w-290 w-full mx-auto"> <div class="w-full"> <h2 class="text-2xl sm:text-3xl md:text-[40px] text-neutral-900 font-bold leading-none sm:tracking-wider text-center">サービスステーション</h2> <p class="text-base font-poppins text-green-500 font-medium leading-normal sm:tracking-wider text-center mt-2.5">Service station</p> </div> <ul class="max-w-80 sm:max-w-none w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-x-10.75 md:gap-y-13.25 mt-10 mx-auto"> <li class="w-full "> <a href="<?php echo esc_url( home_url( '/business/station/oodate_higashi' ) ); ?>" class="block w-full px-5 pt-5 md:pt-8 pb-4.5 bg-white rounded-[20px] shadow-[6px_6px_6px_rgba(0,0,0,0.16)] md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl sm:text-2xl md:text-3xl text-neutral-900 font-bold leading-normal tracking-wider text-center">大館東 SS</h3> <div class="max-w-76.75 w-full h-auto mt-5 md:mt-7 mx-auto aspect-[307/154] overflow-hidden"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/07_station/thumbnail01.webp" alt="イメージ" width="307" height="154" class="w-full h-auto" loading="lazy"> </div> <div class="max-w-74.75 w-full flex items-center justify-between mt-3 md:mt-4.5 mx-auto"> <p class="block text-base md:text-xl text-green-500 font-bold leading-normal tracking-wider">大館東 SS 詳細</p> <div class="w-8 md:w-10.5 h-auto aspect-square text-green-500 flex items-center justify-center border-1 border-green-500 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-3.5 md:w-4 h-auto aspect-[16/18]"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </div> </div> </a> </li><li class="w-full "> <a href="<?php echo esc_url( home_url( '/business/station/oodate_nishi' ) ); ?>" class="block w-full px-5 pt-5 md:pt-8 pb-4.5 bg-white rounded-[20px] shadow-[6px_6px_6px_rgba(0,0,0,0.16)] md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl sm:text-2xl md:text-3xl text-neutral-900 font-bold leading-normal tracking-wider text-center">大館西 SS</h3> <div class="max-w-76.75 w-full h-auto mt-5 md:mt-7 mx-auto aspect-[307/154] overflow-hidden"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/07_station/thumbnail01.webp" alt="イメージ" width="307" height="154" class="w-full h-auto" loading="lazy"> </div> <div class="max-w-74.75 w-full flex items-center justify-between mt-3 md:mt-4.5 mx-auto"> <p class="block text-base md:text-xl text-green-500 font-bold leading-normal tracking-wider">大館西 SS 詳細</p> <div class="w-8 md:w-10.5 h-auto aspect-square text-green-500 flex items-center justify-center border-1 border-green-500 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-3.5 md:w-4 h-auto aspect-[16/18]"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </div> </div> </a> </li><li class="w-full "> <a href="<?php echo esc_url( home_url( '/business/station/oodate_minami' ) ); ?>" class="block w-full px-5 pt-5 md:pt-8 pb-4.5 bg-white rounded-[20px] shadow-[6px_6px_6px_rgba(0,0,0,0.16)] md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl sm:text-2xl md:text-3xl text-neutral-900 font-bold leading-normal tracking-wider text-center">セルフ大館南 SS</h3> <div class="max-w-76.75 w-full h-auto mt-5 md:mt-7 mx-auto aspect-[307/154] overflow-hidden"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/07_station/thumbnail01.webp" alt="イメージ" width="307" height="154" class="w-full h-auto" loading="lazy"> </div> <div class="max-w-74.75 w-full flex items-center justify-between mt-3 md:mt-4.5 mx-auto"> <p class="block text-base md:text-xl text-green-500 font-bold leading-normal tracking-wider">セルフ大館南 SS 詳細</p> <div class="w-8 md:w-10.5 h-auto aspect-square text-green-500 flex items-center justify-center border-1 border-green-500 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-3.5 md:w-4 h-auto aspect-[16/18]"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </div> </div> </a> </li><li class="w-full "> <a href="<?php echo esc_url( home_url( '/business/station/oodate_hachiko' ) ); ?>" class="block w-full px-5 pt-5 md:pt-8 pb-4.5 bg-white rounded-[20px] shadow-[6px_6px_6px_rgba(0,0,0,0.16)] md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl sm:text-2xl md:text-3xl text-neutral-900 font-bold leading-normal tracking-wider text-center">大館ハチ公 SS</h3> <div class="max-w-76.75 w-full h-auto mt-5 md:mt-7 mx-auto aspect-[307/154] overflow-hidden"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/07_station/thumbnail01.webp" alt="イメージ" width="307" height="154" class="w-full h-auto" loading="lazy"> </div> <div class="max-w-74.75 w-full flex items-center justify-between mt-3 md:mt-4.5 mx-auto"> <p class="block text-base md:text-xl text-green-500 font-bold leading-normal tracking-wider">大館ハチ公 SS 詳細</p> <div class="w-8 md:w-10.5 h-auto aspect-square text-green-500 flex items-center justify-center border-1 border-green-500 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-3.5 md:w-4 h-auto aspect-[16/18]"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </div> </div> </a> </li><li class="w-full "> <a href="<?php echo esc_url( home_url( '/business/station/kosaka' ) ); ?>" class="block w-full px-5 pt-5 md:pt-8 pb-4.5 bg-white rounded-[20px] shadow-[6px_6px_6px_rgba(0,0,0,0.16)] md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl sm:text-2xl md:text-3xl text-neutral-900 font-bold leading-normal tracking-wider text-center">小坂 SS</h3> <div class="max-w-76.75 w-full h-auto mt-5 md:mt-7 mx-auto aspect-[307/154] overflow-hidden"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/07_station/thumbnail01.webp" alt="イメージ" width="307" height="154" class="w-full h-auto" loading="lazy"> </div> <div class="max-w-74.75 w-full flex items-center justify-between mt-3 md:mt-4.5 mx-auto"> <p class="block text-base md:text-xl text-green-500 font-bold leading-normal tracking-wider">小坂 SS 詳細</p> <div class="w-8 md:w-10.5 h-auto aspect-square text-green-500 flex items-center justify-center border-1 border-green-500 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-3.5 md:w-4 h-auto aspect-[16/18]"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </div> </div> </a> </li><li class="w-full "> <a href="<?php echo esc_url( home_url( '/business/station/hanaoka' ) ); ?>" class="block w-full px-5 pt-5 md:pt-8 pb-4.5 bg-white rounded-[20px] shadow-[6px_6px_6px_rgba(0,0,0,0.16)] md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl sm:text-2xl md:text-3xl text-neutral-900 font-bold leading-normal tracking-wider text-center">花岡 SS</h3> <div class="max-w-76.75 w-full h-auto mt-5 md:mt-7 mx-auto aspect-[307/154] overflow-hidden"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/07_station/thumbnail01.webp" alt="イメージ" width="307" height="154" class="w-full h-auto" loading="lazy"> </div> <div class="max-w-74.75 w-full flex items-center justify-between mt-3 md:mt-4.5 mx-auto"> <p class="block text-base md:text-xl text-green-500 font-bold leading-normal tracking-wider">花岡 SS 詳細</p> <div class="w-8 md:w-10.5 h-auto aspect-square text-green-500 flex items-center justify-center border-1 border-green-500 rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-3.5 md:w-4 h-auto aspect-[16/18]"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </div> </div> </a> </li> </ul> </div> </div> </section> </main>
+3 | <?php get_footer(); ?>
+
+---
+
+## /wp-content/themes/kudohyoneji/petroleum.php:
+
+1 | <?php
+2 | /_
+3 | Template Name: 石油事業部
+4 | _/
+5 | get_header(); ?>
+6 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Petroleum <br class="block sm:hidden">Division</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">石油事業部</p> </div> </div> <!-- Breadcrumbs --><section class="bg-gray-300 px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business' ) ); ?>">事業案内</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">石油事業部　<?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full bg-gray-300 pt-6 md:pt-9 pb-18 md:pb-35"> <div class="w-full px-5">
+7 | <article class="max-w-290 w-full h-auto mx-auto">
+8 | <?php the_content(); ?>
+9 | </article>
+10 | </div> </section> </main>
+11 | <?php get_footer(); ?>
+12 |
+
+---
+
+## /wp-content/themes/kudohyoneji/sales.php:
+
+1 | <?php
+2 | /_
+3 | Template Name: 営業部
+4 | _/
+5 | get_header(); ?>
+6 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Sales <br class="block sm:hidden">department</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">営業部</p> </div> </div> <!-- Breadcrumbs --><section class="bg-gray-300 px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business' ) ); ?>">事業案内</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap"><?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full bg-gray-300 pt-6 md:pt-9 pb-18 md:pb-35"> <div class="w-full px-5">
+7 | <article class="max-w-290 w-full h-auto mx-auto">
+8 | <?php the_content(); ?>
+9 | </article>
+10 | </div> </section> </main>
+11 | <?php get_footer(); ?>
+12 |
+
+---
+
+## /wp-content/themes/kudohyoneji/single.php:
+
+1 | <?php get_header(); ?>
+2 |
+3 | <?php if (in_category('news')): ?>
+4 | <?php get_template_part( 'template/news' ); ?>
+5 | <?php elseif (in_category('pickup')): ?>
+6 | <?php get_template_part( 'template/pickup' ); ?>
+7 | <?php else : ?>
+8 | エラー
+9 | <?php endif; ?>
+10 |
+11 | <?php get_footer(); ?>
+12 |
+
+---
+
+## /wp-content/themes/kudohyoneji/station.php:
+
+1 | <?php
+2 | /_
+3 | Template Name: サービスステーション
+4 | _/
+5 | get_header(); ?>
+6 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">Service <br class="block sm:hidden">station</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">サービスステーション</p> </div> </div> <!-- Breadcrumbs --><section class="bg-gray-300 px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business' ) ); ?>">事業案内</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/business/station' ) ); ?>">サービスステーション</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap"><?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full bg-gray-300 pt-9 pb-12 md:pb-22.25"> <div class="w-full px-5">
+7 | <article class="max-w-290 w-full h-auto mx-auto">
+8 | <?php the_content(); ?>
+9 | </article>
+10 | </div> </section> </main>
+11 | <?php get_footer(); ?>
+12 |
+
+---
+
+## /wp-content/themes/kudohyoneji/style.css:
+
+1 | /_
+2 | Theme Name: kudohyoneji
+3 | Version: 1.0
+4 | _/
+5 |
+
+---
+
+## /wp-content/themes/kudohyoneji/template/news.php:
+
+1 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">News</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">お知らせ</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/category/news' ) ); ?>">お知らせ</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap"><?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full pt-10 pb-20 md:pt-14.75 md:pb-43.75"> <div class="w-full px-5"> <article class="max-w-241 w-full mx-auto"> <h2 class="text-xl md:text-2xl font-bold leading-normal"><?php the_title(); ?></h2> <div class="flex items-center gap-2 text-gray-400 mt-1.5 md:mt-2.5"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4"><path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z" class="fill-current"></path></svg> <p class="text-sm leading-[1.42] "><?php the_time('Y.m.d'); ?></p> </div> <div class="w-full mt-1.5 md:mt-2.5"><?php the_content(); ?> </div> <div class="max-w-94 w-full h-16.5 ml-auto mt-10 md:mt-15 mx-auto"> <a class="w-full h-full pl-4 sm:pl-9.75 pr-4 sm:pr-5.5 flex items-center justify-between gap-2.5 bg-green-500 text-white border-1 border-green-500 md:hover:text-green-500 md:hover:bg-white  transition-all duration-300" href="<?php echo esc_url( home_url( '/category/news' ) ); ?>"> <p class="text-base sm:text-lg font-semibold leading-none tracking-[0.2em]">お知らせ一覧</p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4.5"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </a> </div> </article> </div> </section> </main>
+2 |
+
+---
+
+## /wp-content/themes/kudohyoneji/template/newslist.php:
+
+1 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">News</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">お知らせ</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">お知らせ</span> </li> </ul> </nav> </section> <!-- news list --><section class="w-full pt-10 pb-20 md:pt-14.75 md:pb-43.75"> <div class="w-full px-5"> <div class="max-w-241 w-full mx-auto"> <ul class="w-full space-y-2 md:space-y-3.75">
+2 | <?php
+3 | $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+ 4 |           // newsカテゴリーの投稿を10件取得
+ 5 |           $news_query = new WP_Query(array(
+ 6 |             'category_name' => 'news',
+ 7 |             'posts_per_page' => 10,
+ 8 |             'post_status' => 'publish',
+ 9 |             'paged' => $paged,
+10 |           ));
+11 | 
+12 |           if ($news_query->have_posts()) :
+13 | while ($news_query->have_posts()) : $news_query->the_post(); ?>
+14 | <li class="w-full border-b-1 border-gray-400 border-dotted"> <a href="<?php the_permalink(); ?>" class="block pb-2 md:pb-4  md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl md:text-2xl font-bold leading-normal"><?php the_title(); ?></h3> <div class="flex items-center gap-2 text-gray-400 mt-1.5 md:mt-2.5"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4"><path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z" class="fill-current"></path></svg> <p class="text-sm leading-[1.42] "><?php the_time('Y.m.d'); ?></p> </div> </a> </li>
+15 | <?php endwhile;
+16 | wp_reset_postdata();
+17 | endif; ?>
+18 | </ul>
+19 |
+20 | <?php custom_pagination(); ?>
+21 | </div> </div> </section> </main>
+22 |
+
+---
+
+## /wp-content/themes/kudohyoneji/template/pickup.php:
+
+1 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">PICK UP!</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">インフォメーション</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/category/pickup' ) ); ?>">インフォメーション</a> </li><li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap"><?php the_title(); ?></span> </li> </ul> </nav> </section> <section class="w-full pt-10 pb-20 md:pt-12 md:pb-43.75"> <div class="w-full px-5"> <article class="max-w-241 w-full mx-auto">
+2 | <?php the_post_thumbnail( 'large', array('class' => 'block w-full h-auto') ); ?>
+3 | <h2 class="text-xl md:text-2xl font-bold leading-normal mt-8"><?php the_title(); ?></h2> <div class="flex items-center gap-2 text-gray-400 mt-1.5 md:mt-2.5"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4"><path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z" class="fill-current"></path></svg> <p class="text-sm leading-[1.42] "><?php the_time('Y.m.d'); ?></p> </div><div class="w-full mt-1.5 md:mt-2.5"><?php the_content(); ?> </div><div class="max-w-94 w-full h-16.5 ml-auto mt-10 md:mt-19.5 mx-auto"> <a class="w-full h-full pl-4 sm:pl-9.75 pr-4 sm:pr-5.5 flex items-center justify-between gap-2.5 bg-green-500 text-white border-1 border-green-500 md:hover:text-green-500 md:hover:bg-white  transition-all duration-300" href="<?php echo esc_url( home_url( '/category/pickup' ) ); ?>"> <p class="text-base sm:text-lg font-semibold leading-none tracking-[0.2em]">PICKUP 一覧</p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4.5"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" class="fill-current"></path></svg> </a> </div> </article> </div> </section> </main>
+4 |
+
+---
+
+## /wp-content/themes/kudohyoneji/template/pickuplist.php:
+
+1 | <main class="min-h-screen pt-20 md:pt-28"> <!-- Fv --><div class="w-full h-67 relative overflow-hidden"> <picture class="block w-full h-full object-cover mx-auto"> <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv.webp " width="1440" height="820" media="(min-width: 768px)" type="image/webp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/00_common/fv_sp.webp" alt="ファーストビュー" width="1440" height="820" class="block w-full min-h-67 h-auto object-cover aspect-[767/268] md:aspect-[1440/820]"> </picture> <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5"> <h1 class="text-[34px] font-bold leading-[1.41] tracking-[0.3em] text-white text-center whitespace-nowrap">PICK UP!</h1> <p class="font-bold text-white leading-none tracking-wider text-center mt-2">インフォメーション</p> </div> </div> <!-- Breadcrumbs --><section class="bg-white px-5 hidden-scrollbar"> <nav class="w-full max-w-290 py-3.25 mx-auto"> <ul class="flex items-center gap-2.5"> <li class=""> <a class="block text-sm leading-[1.42] tracking-wider md:hover:text-green-500 transition-colors duration-300 whitespace-nowrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">TOP</a> </li> <li class="flex items-center gap-2.5 relative before:content-['>'] before:text-sm"> <span class="block text-sm leading-[1.42] tracking-wider whitespace-nowrap">インフォメーション</span> </li> </ul> </nav> </section> <!-- news list --><section class="w-full pt-10 pb-20 md:pt-14.75 md:pb-43.75"> <div class="w-full px-5"> <div class="max-w-241 w-full mx-auto"> <ul class="w-full space-y-2 md:space-y-3.75">
+2 | <?php
+3 | $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+ 4 |           // pickupカテゴリーの投稿を10件取得
+ 5 |           $news_query = new WP_Query(array(
+ 6 |             'category_name' => 'pickup',
+ 7 |             'posts_per_page' => 10,
+ 8 |             'post_status' => 'publish',
+ 9 |             'paged' => $paged,
+10 |           ));
+11 | 
+12 |           if ($news_query->have_posts()) :
+13 | while ($news_query->have_posts()) : $news_query->the_post(); ?>
+14 | <li class="w-full border-b-1 border-gray-400 border-dotted"> <a href="<?php the_permalink(); ?>" class="block pb-2 md:pb-4  md:hover:bg-green-300 transition-all duration-300"> <h3 class="text-xl md:text-2xl font-bold leading-normal"><?php the_title(); ?></h3> <div class="flex items-center gap-2 text-gray-400 mt-1.5 md:mt-2.5"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4"><path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z" class="fill-current"></path></svg> <p class="text-sm leading-[1.42] "><?php the_time('Y.m.d'); ?></p> </div> </a> </li>
+15 | <?php endwhile;
+16 | wp_reset_postdata();
+17 | endif; ?>
+18 | </ul>
+19 |
+20 | <?php custom_pagination(); ?>
+21 | </div> </div> </section> </main>
+22 |
 
 ---

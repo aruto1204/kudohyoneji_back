@@ -3,17 +3,22 @@ import { InspectorControls, useBlockProps, ColorPalette } from "@wordpress/block
 import { PanelBody, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 export default function Edit({ attributes, setAttributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding } = attributes;
 
   // エディタ用のスタイル
   const blockStyle = {
-    maxWidth: "376px",
+    maxWidth: padding ? "416px" : "376px",
     width: "100%",
     height: "66px",
     marginTop: marginTop || "48px",
     marginBottom: marginBottom || "0px",
     marginLeft: "auto",
     marginRight: "auto",
+    boxSizing: "border-box",
+    ...(padding && {
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    }),
   };
 
   const buttonStyle = {
@@ -51,11 +56,11 @@ export default function Edit({ attributes, setAttributes }) {
     <>
       <InspectorControls>
         <PanelBody title={__("ボタン設定", "my-custom-blocks")}>
-          <TextControl label={__("ボタンテキスト", "my-custom-blocks")} value={buttonText} onChange={(value) => setAttributes({ buttonText: value })} />
+          <TextControl label={__("ボタンテキスト", "my-custom-blocks")} value={buttonText} onChange={(value) => setAttributes({ buttonText: value })} __next40pxDefaultSize __nextHasNoMarginBottom />
 
-          <TextControl label={__("リンクURL", "my-custom-blocks")} value={buttonUrl} onChange={(value) => setAttributes({ buttonUrl: value })} help={__("リンク先のURLを入力してください", "my-custom-blocks")} />
+          <TextControl label={__("リンクURL", "my-custom-blocks")} value={buttonUrl} onChange={(value) => setAttributes({ buttonUrl: value })} help={__("リンク先のURLを入力してください", "my-custom-blocks")} __next40pxDefaultSize __nextHasNoMarginBottom />
 
-          <ToggleControl label={__("別タブで開く", "my-custom-blocks")} checked={openInNewTab} onChange={(value) => setAttributes({ openInNewTab: value })} help={__("リンクを新しいタブで開く場合はオンにしてください", "my-custom-blocks")} />
+          <ToggleControl label={__("別タブで開く", "my-custom-blocks")} checked={openInNewTab} onChange={(value) => setAttributes({ openInNewTab: value })} help={__("リンクを新しいタブで開く場合はオンにしてください", "my-custom-blocks")} __nextHasNoMarginBottom />
         </PanelBody>
 
         <PanelBody title={__("カラー設定", "my-custom-blocks")}>
@@ -160,6 +165,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
           <UnitControl
             label={__("下マージン", "my-custom-blocks")}
@@ -169,7 +175,9 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
+          <ToggleControl label={__("余白", "my-custom-blocks")} checked={padding} onChange={(value) => setAttributes({ padding: value })} help={__("左右に余白を追加します", "my-custom-blocks")} __nextHasNoMarginBottom />
         </PanelBody>
       </InspectorControls>
 
