@@ -37,7 +37,7 @@ const AVAILABLE_SERVICES = [
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-  const { title, selectedServices, marginTop } = attributes;
+  const { selectedServices, marginTop } = attributes;
 
   // サービスの選択状態を切り替え
   const toggleService = (serviceId) => {
@@ -101,10 +101,6 @@ export default function Edit({ attributes, setAttributes }) {
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("基本設定", "my-custom-blocks")}>
-          <TextControl label={__("タイトル", "my-custom-blocks")} value={title} onChange={(value) => setAttributes({ title: value })} placeholder="取扱サービス" />
-        </PanelBody>
-
         <PanelBody title={__("表示するサービスを選択", "my-custom-blocks")} initialOpen={true}>
           <div style={{ marginBottom: "10px", padding: "10px", backgroundColor: "#f0f0f0", borderRadius: "4px" }}>
             <p style={{ margin: 0, fontSize: "12px", color: "#666" }}>{__("表示したいサービスにチェックを入れてください", "my-custom-blocks")}</p>
@@ -130,7 +126,7 @@ export default function Edit({ attributes, setAttributes }) {
 
       <div {...blockProps}>
         <div style={containerStyle}>
-          <p style={titleStyle}>{title || "取扱サービス"}</p>
+          <p style={titleStyle}>取扱サービス</p>
 
           {displayedServices.length > 0 ? (
             <ul style={listStyle}>

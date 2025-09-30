@@ -14,10 +14,6 @@ registerBlockType("my-custom-blocks/services-list-block", {
     html: false,
   },
   attributes: {
-    title: {
-      type: "string",
-      default: "取扱サービス",
-    },
     selectedServices: {
       type: "array",
       default: [],

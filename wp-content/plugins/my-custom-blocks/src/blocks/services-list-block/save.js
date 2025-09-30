@@ -36,7 +36,7 @@ const AVAILABLE_SERVICES = [
 ];
 
 export default function save({ attributes }) {
-  const { title, selectedServices, marginTop } = attributes;
+  const { selectedServices, marginTop } = attributes;
 
   // 選択されているサービスのみをフィルタリング
   const displayedServices = AVAILABLE_SERVICES.filter((service) => selectedServices.includes(service.id));
@@ -53,7 +53,7 @@ export default function save({ attributes }) {
   return (
     <div {...blockProps}>
       <div className="services-container" style={{ maxWidth: "702px", marginTop: marginTop || "48px" }}>
-        <p className="services-title">{title || "取扱サービス"}</p>
+        <p className="services-title">取扱サービス</p>
         <ul className="services-list">
           {displayedServices.map((service) => (
             <li key={service.id} className="service-item">

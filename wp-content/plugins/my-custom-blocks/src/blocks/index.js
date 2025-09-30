@@ -12,3 +12,4 @@ import "./section-title-block";
 import "./featured-image-block";
 import "./store-info-list-block";
 import "./services-list-block";
+import "./google-map-block";
