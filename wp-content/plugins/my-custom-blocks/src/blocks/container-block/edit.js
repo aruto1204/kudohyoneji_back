@@ -2,7 +2,23 @@ import { __ } from "@wordpress/i18n";
 import { InspectorControls, InnerBlocks, useBlockProps, ColorPalette } from "@wordpress/block-editor";
 import { PanelBody, RangeControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
-const ALLOWED_BLOCKS = ["core/paragraph", "core/heading", "core/image", "core/list", "core/quote", "core/separator", "core/spacer", "core/columns", "core/group", "my-custom-blocks/hero-block", "my-custom-blocks/testimonial-block", "my-custom-blocks/pricing-table", "my-custom-blocks/width-container-block", "my-custom-blocks/link-button-block"];
+const ALLOWED_BLOCKS = [
+  "core/paragraph",
+  "core/heading",
+  "core/image",
+  "core/list",
+  "core/quote",
+  "core/separator",
+  "core/spacer",
+  "core/columns",
+  "core/group",
+  "my-custom-blocks/hero-block",
+  "my-custom-blocks/testimonial-block",
+  "my-custom-blocks/pricing-table",
+  "my-custom-blocks/width-container-block",
+  "my-custom-blocks/link-button-block",
+  "my-custom-blocks/featured-image-block",
+];
 
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
 

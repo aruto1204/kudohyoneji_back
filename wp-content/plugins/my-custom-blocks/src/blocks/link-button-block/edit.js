@@ -3,14 +3,15 @@ import { InspectorControls, useBlockProps, ColorPalette } from "@wordpress/block
 import { PanelBody, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 export default function Edit({ attributes, setAttributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, openInNewTab } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab } = attributes;
 
   // エディタ用のスタイル
   const blockStyle = {
-    maxWidth: "376px", // max-w-104 (104 * 0.25rem = 26rem = 416px)
+    maxWidth: "376px",
     width: "100%",
-    height: "66px", // h-16.5 (16.5 * 0.25rem = 4.125rem = 66px)
+    height: "66px",
     marginTop: marginTop || "48px",
+    marginBottom: marginBottom || "0px",
     marginLeft: "auto",
     marginRight: "auto",
   };
@@ -155,6 +156,15 @@ export default function Edit({ attributes, setAttributes }) {
             label={__("上マージン", "my-custom-blocks")}
             value={marginTop}
             onChange={(value) => setAttributes({ marginTop: value })}
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+            ]}
+          />
+          <UnitControl
+            label={__("下マージン", "my-custom-blocks")}
+            value={marginBottom}
+            onChange={(value) => setAttributes({ marginBottom: value })}
             units={[
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },

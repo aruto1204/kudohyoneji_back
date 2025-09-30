@@ -1,7 +1,7 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, openInNewTab } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab } = attributes;
 
   // コンテナのスタイル
   const containerStyle = {
@@ -9,6 +9,7 @@ export default function save({ attributes }) {
     width: "100%",
     height: "66px", // h-16.5 (16.5 * 0.25rem = 4.125rem = 66px)
     marginTop: marginTop || "48px",
+    marginBottom: marginBottom || "0px",
     marginLeft: "auto",
     marginRight: "auto",
   };

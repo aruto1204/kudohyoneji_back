@@ -9,3 +9,4 @@ import "./page-title-block";
 import "./width-container-block";
 import "./link-button-block";
 import "./section-title-block";
+import "./featured-image-block";
