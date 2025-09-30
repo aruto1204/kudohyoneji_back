@@ -55,10 +55,6 @@ registerBlockType("my-custom-blocks/link-button-block", {
       type: "boolean",
       default: true,
     },
-    padding: {
-      type: "boolean",
-      default: false,
-    },
   },
   edit: Edit,
   save,

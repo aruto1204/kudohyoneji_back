@@ -23,22 +23,7 @@ const ALLOWED_BLOCKS = [
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
 
 export default function Edit({ attributes, setAttributes }) {
-  const { maxWidth, backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline, centerContent, padding } = attributes;
-
-  // コンテナのスタイル
-  const containerStyle = {
-    maxWidth: padding ? maxWidth + "40px" : "1200px",
-    width: "100%",
-    marginTop: marginTop || "0px",
-    marginBottom: marginBottom || "0px",
-    marginLeft: centerContent ? "auto" : "0",
-    marginRight: centerContent ? "auto" : "0",
-    boxSizing: "border-box",
-    ...(padding && {
-      paddingLeft: "20px",
-      paddingRight: "20px",
-    }),
-  };
+  const { maxWidth, backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline, centerContent } = attributes;
 
   // 直接インラインスタイルを設定
   const blockStyle = {
@@ -46,6 +31,10 @@ export default function Edit({ attributes, setAttributes }) {
     maxWidth: maxWidth || "1200px",
     backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#EDF9F3",
     borderRadius: borderRadius || "0px",
+    marginTop: marginTop || "0px",
+    marginBottom: marginBottom || "0px",
+    marginLeft: centerContent ? "auto" : "0",
+    marginRight: centerContent ? "auto" : "0",
     paddingTop: paddingTop || "20px",
     paddingBottom: paddingBottom || "20px",
     paddingLeft: paddingInline || "20px",
@@ -173,14 +162,11 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
             __next40pxDefaultSize
           />
-
-          <ToggleControl label={__("余白", "my-custom-blocks")} checked={padding} onChange={(value) => setAttributes({ padding: value })} help={__("左右に余白を追加します", "my-custom-blocks")} __nextHasNoMarginBottom />
         </PanelBody>
       </InspectorControls>
-      <div style={containerStyle}>
-        <div {...blockProps}>
-          <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
-        </div>
+
+      <div {...blockProps}>
+        <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
       </div>
     </>
   );
