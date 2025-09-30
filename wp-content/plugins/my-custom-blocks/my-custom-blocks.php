@@ -66,6 +66,15 @@ function my_custom_blocks_editor_assets() {
         'my-custom-blocks-editor',
         'my-custom-blocks'
     );
+
+      // プラグインURLをJavaScriptに渡す
+      wp_localize_script(
+        'my-custom-blocks-editor',
+        'myCustomBlocksData',
+        array(
+            'pluginUrl' => MY_CUSTOM_BLOCKS_URL,
+        )
+    );
 }
 add_action('enqueue_block_editor_assets', 'my_custom_blocks_editor_assets');
 

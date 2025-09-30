@@ -10,3 +10,5 @@ import "./width-container-block";
 import "./link-button-block";
 import "./section-title-block";
 import "./featured-image-block";
+import "./store-info-list-block";
+import "./services-list-block";

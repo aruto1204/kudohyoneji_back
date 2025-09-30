@@ -1,0 +1,68 @@
+import { useBlockProps } from "@wordpress/block-editor";
+const PLUGIN_URL = window.myCustomBlocksPluginUrl || "/wp-content/plugins/my-custom-blocks";
+
+// 利用可能なサービスのマスターリスト（edit.jsと同じ）
+const AVAILABLE_SERVICES = [
+  {
+    id: "drive_one",
+    label: "出光公式アプリ",
+    image: `${PLUGIN_URL}/assets/images/has_drive_one.webp`,
+  },
+  {
+    id: "oil_change",
+    label: "オイル交換",
+    image: `${PLUGIN_URL}/assets/images/has_oil_change.webp`,
+  },
+  {
+    id: "apollostation_keeper",
+    label: "カーコーディング",
+    image: `${PLUGIN_URL}/assets/images/has_apollostation_keeper.webp`,
+  },
+  {
+    id: "auto_flat_new_car",
+    label: "新車カーリース",
+    image: `${PLUGIN_URL}/assets/images/has_auto_flat_new_car.webp`,
+  },
+  {
+    id: "auto_flat_used_car",
+    label: "中古車カーリース",
+    image: `${PLUGIN_URL}/assets/images/has_auto_flat_used_car.webp`,
+  },
+  {
+    id: "denki_tokuwari",
+    label: "idemitsuでんき特割",
+    image: `${PLUGIN_URL}/assets/images/has_denki_tokuwari.webp`,
+  },
+];
+
+export default function save({ attributes }) {
+  const { title, selectedServices, marginTop } = attributes;
+
+  // 選択されているサービスのみをフィルタリング
+  const displayedServices = AVAILABLE_SERVICES.filter((service) => selectedServices.includes(service.id));
+
+  // サービスが選択されていない場合は何も表示しない
+  if (displayedServices.length === 0) {
+    return null;
+  }
+
+  const blockProps = useBlockProps.save({
+    className: "services-list-block-wrapper",
+  });
+
+  return (
+    <div {...blockProps}>
+      <div className="services-container" style={{ maxWidth: "702px", marginTop: marginTop || "48px" }}>
+        <p className="services-title">{title || "取扱サービス"}</p>
+        <ul className="services-list">
+          {displayedServices.map((service) => (
+            <li key={service.id} className="service-item">
+              <img src={service.image} alt="アイコン" width="70" height="70" className="service-icon" loading="lazy" />
+              <p className="service-label">{service.label}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
