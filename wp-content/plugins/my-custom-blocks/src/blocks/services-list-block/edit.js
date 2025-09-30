@@ -1,7 +1,8 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { PanelBody, TextControl, CheckboxControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
-const PLUGIN_URL = window.myCustomBlocksPluginUrl || "/wp-content/plugins/my-custom-blocks";
+const PLUGIN_URL = window.myCustomBlocksData.pluginUrl || "/wp-content/plugins/my-custom-blocks";
+
 // 利用可能なサービスのマスターリスト
 const AVAILABLE_SERVICES = [
   {

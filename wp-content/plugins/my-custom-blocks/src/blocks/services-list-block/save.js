@@ -1,5 +1,5 @@
 import { useBlockProps } from "@wordpress/block-editor";
-const PLUGIN_URL = window.myCustomBlocksPluginUrl || "/wp-content/plugins/my-custom-blocks";
+const PLUGIN_URL = window.myCustomBlocksData.pluginUrl || "/wp-content/plugins/my-custom-blocks";
 
 // 利用可能なサービスのマスターリスト（edit.jsと同じ）
 const AVAILABLE_SERVICES = [
