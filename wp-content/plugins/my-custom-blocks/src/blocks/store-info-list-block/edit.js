@@ -68,13 +68,13 @@ export default function Edit({ attributes, setAttributes }) {
     <>
       <InspectorControls>
         <PanelBody title={__("固定項目設定", "my-custom-blocks")}>
-          <TextControl label={__("店名", "my-custom-blocks")} value={storeName} onChange={(value) => setAttributes({ storeName: value })} placeholder="例: 大館西SS" />
+          <TextControl label={__("店名", "my-custom-blocks")} value={storeName} onChange={(value) => setAttributes({ storeName: value })} placeholder="例: 大館西SS" __next40pxDefaultSize __nextHasNoMarginBottom />
 
-          <TextareaControl label={__("住所", "my-custom-blocks")} value={address} onChange={(value) => setAttributes({ address: value })} placeholder="例: 秋田県大館市根下戸新町１-６０" rows={2} />
+          <TextareaControl label={__("住所", "my-custom-blocks")} value={address} onChange={(value) => setAttributes({ address: value })} placeholder="例: 秋田県大館市根下戸新町１-６０" rows={2} __next40pxDefaultSize __nextHasNoMarginBottom />
 
-          <TextControl label={__("電話", "my-custom-blocks")} value={phone} onChange={(value) => setAttributes({ phone: value })} placeholder="例: 0186-42-3149" />
+          <TextControl label={__("電話", "my-custom-blocks")} value={phone} onChange={(value) => setAttributes({ phone: value })} placeholder="例: 0186-42-3149" __next40pxDefaultSize __nextHasNoMarginBottom />
 
-          <TextareaControl label={__("営業時間", "my-custom-blocks")} value={businessHours} onChange={(value) => setAttributes({ businessHours: value })} placeholder="例: 平日・土　7時30分~17時00分" rows={3} help={__("改行する場合は Enter キーを押してください", "my-custom-blocks")} />
+          <TextareaControl label={__("営業時間", "my-custom-blocks")} value={businessHours} onChange={(value) => setAttributes({ businessHours: value })} placeholder="例: 平日・土　7時30分~17時00分" rows={3} help={__("改行する場合は Enter キーを押してください", "my-custom-blocks")} __nextHasNoMarginBottom />
         </PanelBody>
 
         <PanelBody title={__("オプション項目", "my-custom-blocks")} initialOpen={false}>
@@ -104,6 +104,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
       </InspectorControls>

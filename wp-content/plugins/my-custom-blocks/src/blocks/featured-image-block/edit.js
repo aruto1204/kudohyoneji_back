@@ -77,6 +77,12 @@ export default function Edit({ attributes, setAttributes }) {
 
   // アイキャッチを手動で再読み込み
   const handleReload = () => {
+    // console.log("handleReload");
+    // console.log(featuredImage);
+    // console.log(featuredImageId);
+    // console.log(imageSize);
+    // console.log(imageUrl);
+    // console.log(setAttributes);
     if (featuredImage) {
       let selectedImageUrl = "";
 
@@ -151,6 +157,8 @@ export default function Edit({ attributes, setAttributes }) {
               { label: __("フルサイズ", "my-custom-blocks"), value: "full" },
             ]}
             onChange={(value) => setAttributes({ imageSize: value })}
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
           />
 
           <div style={{ marginTop: "20px" }}>
@@ -169,6 +177,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
 
           <UnitControl
@@ -179,6 +188,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
       </InspectorControls>

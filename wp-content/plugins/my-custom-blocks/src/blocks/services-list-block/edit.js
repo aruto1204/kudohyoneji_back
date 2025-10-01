@@ -1,39 +1,39 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { PanelBody, TextControl, CheckboxControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
-const PLUGIN_URL = window.myCustomBlocksData.pluginUrl || "/wp-content/plugins/my-custom-blocks";
+const PLUGIN_URL = window.myCustomBlocksData.pluginUrl || "/wp-content/plugins/my-custom-blocks/";
 
 // 利用可能なサービスのマスターリスト
 const AVAILABLE_SERVICES = [
   {
     id: "drive_one",
     label: "出光公式アプリ",
-    image: `${PLUGIN_URL}/assets/images/has_drive_one.webp`,
+    image: `${PLUGIN_URL}assets/images/has_drive_one.webp`,
   },
   {
     id: "oil_change",
     label: "オイル交換",
-    image: `${PLUGIN_URL}/assets/images/has_oil_change.webp`,
+    image: `${PLUGIN_URL}assets/images/has_oil_change.webp`,
   },
   {
     id: "apollostation_keeper",
     label: "カーコーディング",
-    image: `${PLUGIN_URL}/assets/images/has_apollostation_keeper.webp`,
+    image: `${PLUGIN_URL}assets/images/has_apollostation_keeper.webp`,
   },
   {
     id: "auto_flat_new_car",
     label: "新車カーリース",
-    image: `${PLUGIN_URL}/assets/images/has_auto_flat_new_car.webp`,
+    image: `${PLUGIN_URL}assets/images/has_auto_flat_new_car.webp`,
   },
   {
     id: "auto_flat_used_car",
     label: "中古車カーリース",
-    image: `${PLUGIN_URL}/assets/images/has_auto_flat_used_car.webp`,
+    image: `${PLUGIN_URL}assets/images/has_auto_flat_used_car.webp`,
   },
   {
     id: "denki_tokuwari",
     label: "idemitsuでんき特割",
-    image: `${PLUGIN_URL}/assets/images/has_denki_tokuwari.webp`,
+    image: `${PLUGIN_URL}assets/images/has_denki_tokuwari.webp`,
   },
 ];
 
@@ -108,7 +108,7 @@ export default function Edit({ attributes, setAttributes }) {
           </div>
 
           {AVAILABLE_SERVICES.map((service) => (
-            <CheckboxControl key={service.id} label={service.label} checked={selectedServices.includes(service.id)} onChange={() => toggleService(service.id)} />
+            <CheckboxControl key={service.id} label={service.label} checked={selectedServices.includes(service.id)} onChange={() => toggleService(service.id)} __nextHasNoMarginBottom />
           ))}
         </PanelBody>
 
@@ -121,6 +121,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
       </InspectorControls>

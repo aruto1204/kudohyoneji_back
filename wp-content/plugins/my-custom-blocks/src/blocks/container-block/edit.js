@@ -86,6 +86,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "%", label: "%" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
 
@@ -98,6 +99,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
 
           <UnitControl
@@ -108,6 +110,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
 
           <UnitControl
@@ -118,6 +121,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
 
           <UnitControl
@@ -128,6 +132,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
 
           <UnitControl
@@ -138,6 +143,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
       </InspectorControls>

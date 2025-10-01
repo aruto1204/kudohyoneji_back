@@ -52,7 +52,15 @@ export default function Edit({ attributes, setAttributes }) {
     <>
       <InspectorControls>
         <PanelBody title={__("Google Map設定", "my-custom-blocks")} initialOpen={true}>
-          <TextareaControl label={__("Google Map埋め込みコードまたはURL", "my-custom-blocks")} value={mapUrl} onChange={(value) => setAttributes({ mapUrl: value })} placeholder="Google Mapの「共有」→「地図を埋め込む」からコードをコピーして貼り付けてください" rows={6} help={__("iframeタグ全体、またはsrcのURLのみを貼り付けてください", "my-custom-blocks")} />
+          <TextareaControl
+            label={__("Google Map埋め込みコードまたはURL", "my-custom-blocks")}
+            value={mapUrl}
+            onChange={(value) => setAttributes({ mapUrl: value })}
+            placeholder="Google Mapの「共有」→「地図を埋め込む」からコードをコピーして貼り付けてください"
+            rows={6}
+            help={__("iframeタグ全体、またはsrcのURLのみを貼り付けてください", "my-custom-blocks")}
+            __nextHasNoMarginBottom
+          />
         </PanelBody>
         <PanelBody title={__("レイアウト設定", "my-custom-blocks")}>
           <UnitControl
@@ -63,6 +71,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
       </InspectorControls>

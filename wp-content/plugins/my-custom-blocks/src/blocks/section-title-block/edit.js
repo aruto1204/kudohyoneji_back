@@ -54,7 +54,7 @@ export default function Edit({ attributes, setAttributes }) {
     <>
       <InspectorControls>
         <PanelBody title={__("セクションタイトル設定", "my-custom-blocks")}>
-          <TextControl label={__("タイトルテキスト", "my-custom-blocks")} value={titleText} onChange={(value) => setAttributes({ titleText: value })} />
+          <TextControl label={__("タイトルテキスト", "my-custom-blocks")} value={titleText} onChange={(value) => setAttributes({ titleText: value })} __next40pxDefaultSize __nextHasNoMarginBottom />
         </PanelBody>
 
         <PanelBody title={__("スペーシング設定", "my-custom-blocks")}>
@@ -66,6 +66,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
 
           <UnitControl
@@ -76,6 +77,7 @@ export default function Edit({ attributes, setAttributes }) {
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
             ]}
+            __next40pxDefaultSize
           />
         </PanelBody>
       </InspectorControls>
