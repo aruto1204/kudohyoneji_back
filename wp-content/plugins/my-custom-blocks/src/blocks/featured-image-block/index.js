@@ -1,6 +1,6 @@
 import { registerBlockType } from "@wordpress/blocks";
 import Edit from "./edit";
-import save from "./save";
+// saveをインポートしない
 import "./style.scss";
 
 registerBlockType("my-custom-blocks/featured-image-block", {
@@ -14,18 +14,7 @@ registerBlockType("my-custom-blocks/featured-image-block", {
     html: false,
   },
   attributes: {
-    imageUrl: {
-      type: "string",
-      default: "",
-    },
-    imageAlt: {
-      type: "string",
-      default: "",
-    },
-    imageId: {
-      type: "number",
-      default: 0,
-    },
+    // imageUrl, imageAlt, imageId は不要になる
     marginTop: {
       type: "string",
       default: "0px",
@@ -40,5 +29,5 @@ registerBlockType("my-custom-blocks/featured-image-block", {
     },
   },
   edit: Edit,
-  save,
+  save: () => null, // Dynamic Blockなのでnullを返す
 });

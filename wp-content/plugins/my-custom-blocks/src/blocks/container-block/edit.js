@@ -21,6 +21,7 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/store-info-list-block",
   "my-custom-blocks/services-list-block",
   "my-custom-blocks/google-map-block",
+  "my-custom-blocks/inner-container-block",
 ];
 
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];

@@ -98,3 +98,65 @@ function my_custom_blocks_frontend_assets() {
     );
 }
 add_action('wp_enqueue_scripts', 'my_custom_blocks_frontend_assets');
+
+/**
+ * Featured Image Block の動的レンダリング
+ */
+function render_featured_image_block( $attributes ) {
+    $post_id = get_the_ID();
+
+    // アイキャッチ画像がない場合は何も表示しない
+    if ( ! $post_id || ! has_post_thumbnail( $post_id ) ) {
+        return '';
+    }
+
+    // 属性から設定値を取得
+    $image_size = isset( $attributes['imageSize'] ) ? $attributes['imageSize'] : 'full';
+    $margin_top = isset( $attributes['marginTop'] ) ? $attributes['marginTop'] : '0px';
+    $margin_bottom = isset( $attributes['marginBottom'] ) ? $attributes['marginBottom'] : '0px';
+
+    // 画像を取得
+    $image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $image_size );
+
+    if ( ! $image_data ) {
+        return '';
+    }
+
+    $image_url = $image_data[0];
+    $image_alt = get_post_meta( get_post_thumbnail_id( $post_id ), '_wp_attachment_image_alt', true );
+
+    // HTMLを生成
+    $container_style = sprintf(
+        'max-width: 880px; width: 100%%; margin-top: %s; margin-bottom: %s; margin-left: auto; margin-right: auto; overflow: hidden;',
+        esc_attr( $margin_top ),
+        esc_attr( $margin_bottom )
+    );
+
+    $image_style = 'width: 100%; height: auto; object-fit: cover; display: block;';
+
+    $output = sprintf(
+        '<div class="featured-image-block-wrapper wp-block-my-custom-blocks-featured-image-block" style="%s">',
+        $container_style
+    );
+
+    $output .= sprintf(
+        '<img src="%s" alt="%s" style="%s" loading="lazy" />',
+        esc_url( $image_url ),
+        esc_attr( $image_alt ? $image_alt : 'アイキャッチ画像' ),
+        $image_style
+    );
+
+    $output .= '</div>';
+
+    return $output;
+}
+
+/**
+ * Featured Image Block を登録
+ */
+function register_featured_image_block() {
+    register_block_type( __DIR__ . '/build/blocks/featured-image-block', array(
+        'render_callback' => 'render_featured_image_block',
+    ) );
+}
+add_action( 'init', 'register_featured_image_block' );

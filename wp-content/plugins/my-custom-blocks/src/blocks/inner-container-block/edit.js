@@ -18,30 +18,47 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/container-block",
   "my-custom-blocks/link-button-block",
   "my-custom-blocks/width-container-block",
+  "my-custom-blocks/inner-container-block",
 ];
 
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
 
 export default function Edit({ attributes, setAttributes }) {
-  const { maxWidth, backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline, centerContent } = attributes;
+  const { maxWidth, backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline, centerContent, padding } = attributes;
 
   // 直接インラインスタイルを設定
-  const blockStyle = {
+  const containerStyle = {
     width: "100%",
-    maxWidth: maxWidth || "1200px",
-    backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#EDF9F3",
-    borderRadius: borderRadius || "0px",
+    ...(padding
+      ? {
+          maxWidth: maxWidth ? `${parseInt(maxWidth) + 40}px` : "1240px",
+        }
+      : {
+          maxWidth: maxWidth || "1200px",
+        }),
     marginTop: marginTop || "0px",
     marginBottom: marginBottom || "0px",
     marginLeft: centerContent ? "auto" : "0",
     marginRight: centerContent ? "auto" : "0",
-    paddingTop: paddingTop || "20px",
-    paddingBottom: paddingBottom || "20px",
-    paddingLeft: paddingInline || "20px",
-    paddingRight: paddingInline || "20px",
+    ...(padding && {
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    }),
     boxSizing: "border-box",
     border: "1px dashed #ccc",
     minHeight: "80px",
+  };
+
+  const blockStyle = {
+    width: "100%",
+    height: "100%",
+    borderRadius: borderRadius || "0px",
+    backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#EDF9F3",
+    paddingTop: paddingTop || "20px",
+    paddingBottom: paddingBottom || "20px",
+    paddingLeft: paddingInline || "0",
+    paddingRight: paddingInline || "0",
+    boxSizing: "border-box",
     position: "relative",
     display: "flex",
     justifyContent: "center",
@@ -49,8 +66,9 @@ export default function Edit({ attributes, setAttributes }) {
   };
 
   const blockProps = useBlockProps({
-    style: blockStyle,
-    className: "width-container-block-wrapper",
+    style: containerStyle,
+    // blockStyle: blockStyle,
+    className: "inner-container-block-wrapper",
   });
 
   return (
@@ -162,11 +180,14 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
             __next40pxDefaultSize
           />
+          <ToggleControl label={__("左右に余白", "my-custom-blocks")} checked={padding} onChange={(value) => setAttributes({ padding: value })} help={__("コンテナを左右に余白を追加します", "my-custom-blocks")} __nextHasNoMarginBottom />
         </PanelBody>
       </InspectorControls>
 
       <div {...blockProps}>
-        <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
+        <div style={blockStyle}>
+          <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
+        </div>
       </div>
     </>
   );

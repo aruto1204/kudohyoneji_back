@@ -1,14 +1,13 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, SelectControl, Button, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { PanelBody, SelectControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 import { useSelect } from "@wordpress/data";
-import { useEffect } from "@wordpress/element";
 
 export default function Edit({ attributes, setAttributes }) {
-  const { imageUrl, imageAlt, imageId, marginTop, marginBottom, imageSize } = attributes;
+  const { marginTop, marginBottom, imageSize } = attributes;
 
-  // アイキャッチ画像を取得
-  const { featuredImage, featuredImageId } = useSelect((select) => {
+  // アイキャッチ画像を取得（表示用のみ）
+  const { featuredImage } = useSelect((select) => {
     const { getCurrentPost } = select("core/editor");
     const { getMedia } = select("core");
     const post = getCurrentPost();
@@ -18,89 +17,25 @@ export default function Edit({ attributes, setAttributes }) {
 
     return {
       featuredImage: media,
-      featuredImageId: mediaId,
     };
   }, []);
 
-  // アイキャッチ画像が変更されたら属性を更新
-  useEffect(() => {
-    if (featuredImage && featuredImageId !== imageId) {
-      let selectedImageUrl = "";
-
-      // 選択されたサイズの画像URLを取得
-      if (featuredImage.media_details?.sizes) {
-        const sizes = featuredImage.media_details.sizes;
-
-        if (imageSize === "full") {
-          selectedImageUrl = featuredImage.source_url;
-        } else if (sizes[imageSize]) {
-          selectedImageUrl = sizes[imageSize].source_url;
-        } else {
-          selectedImageUrl = featuredImage.source_url;
-        }
+  // プレビュー用の画像URL
+  let imageUrl = "";
+  if (featuredImage) {
+    if (featuredImage.media_details?.sizes) {
+      const sizes = featuredImage.media_details.sizes;
+      if (imageSize === "full") {
+        imageUrl = featuredImage.source_url;
+      } else if (sizes[imageSize]) {
+        imageUrl = sizes[imageSize].source_url;
       } else {
-        selectedImageUrl = featuredImage.source_url;
+        imageUrl = featuredImage.source_url;
       }
-
-      setAttributes({
-        imageUrl: selectedImageUrl,
-        imageAlt: featuredImage.alt_text || "",
-        imageId: featuredImageId,
-      });
+    } else {
+      imageUrl = featuredImage.source_url;
     }
-  }, [featuredImage, featuredImageId, imageSize, imageId, setAttributes]);
-
-  // 画像サイズが変更されたら画像URLを更新
-  useEffect(() => {
-    if (featuredImage && imageId === featuredImageId) {
-      let selectedImageUrl = "";
-
-      if (featuredImage.media_details?.sizes) {
-        const sizes = featuredImage.media_details.sizes;
-
-        if (imageSize === "full") {
-          selectedImageUrl = featuredImage.source_url;
-        } else if (sizes[imageSize]) {
-          selectedImageUrl = sizes[imageSize].source_url;
-        } else {
-          selectedImageUrl = featuredImage.source_url;
-        }
-      } else {
-        selectedImageUrl = featuredImage.source_url;
-      }
-
-      if (selectedImageUrl !== imageUrl) {
-        setAttributes({ imageUrl: selectedImageUrl });
-      }
-    }
-  }, [imageSize, featuredImage, featuredImageId, imageId, imageUrl, setAttributes]);
-
-  // アイキャッチを手動で再読み込み
-  const handleReload = () => {
-    if (featuredImage) {
-      let selectedImageUrl = "";
-
-      if (featuredImage.media_details?.sizes) {
-        const sizes = featuredImage.media_details.sizes;
-
-        if (imageSize === "full") {
-          selectedImageUrl = featuredImage.source_url;
-        } else if (sizes[imageSize]) {
-          selectedImageUrl = sizes[imageSize].source_url;
-        } else {
-          selectedImageUrl = featuredImage.source_url;
-        }
-      } else {
-        selectedImageUrl = featuredImage.source_url;
-      }
-
-      setAttributes({
-        imageUrl: selectedImageUrl,
-        imageAlt: featuredImage.alt_text || "",
-        imageId: featuredImageId,
-      });
-    }
-  };
+  }
 
   const containerStyle = {
     width: "100%",
@@ -154,12 +89,6 @@ export default function Edit({ attributes, setAttributes }) {
             __next40pxDefaultSize
             __nextHasNoMarginBottom
           />
-
-          <div style={{ marginTop: "20px" }}>
-            <Button variant="secondary" onClick={handleReload}>
-              {__("アイキャッチを再読み込み", "my-custom-blocks")}
-            </Button>
-          </div>
         </PanelBody>
 
         <PanelBody title={__("スペーシング設定", "my-custom-blocks")}>
@@ -190,18 +119,13 @@ export default function Edit({ attributes, setAttributes }) {
       <div {...blockProps}>
         {imageUrl ? (
           <div style={containerStyle}>
-            <img src={imageUrl} alt={imageAlt || __("アイキャッチ画像", "my-custom-blocks")} style={imageStyle} />
+            <img src={imageUrl} alt={featuredImage?.alt_text || __("アイキャッチ画像", "my-custom-blocks")} style={imageStyle} />
           </div>
         ) : (
           <div style={placeholderStyle}>
             <div style={{ textAlign: "center" }}>
               <p style={{ margin: "0 0 10px 0", fontWeight: "600", fontSize: "18px" }}>{__("アイキャッチ画像未設定", "my-custom-blocks")}</p>
-              <p style={{ margin: "0 0 20px 0", fontSize: "14px", lineHeight: "1.6" }}>{__("右サイドバーの「投稿」→「アイキャッチ画像」から画像を設定してください", "my-custom-blocks")}</p>
-              {featuredImageId && (
-                <Button variant="primary" onClick={handleReload}>
-                  {__("画像を読み込む", "my-custom-blocks")}
-                </Button>
-              )}
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.6" }}>{__("右サイドバーの「投稿」→「アイキャッチ画像」から画像を設定してください", "my-custom-blocks")}</p>
             </div>
           </div>
         )}

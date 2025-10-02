@@ -5,10 +5,10 @@ import Edit from "./edit";
 import save from "./save";
 import "./style.scss";
 
-registerBlockType("my-custom-blocks/width-container-block", {
+registerBlockType("my-custom-blocks/inner-container-block", {
   apiVersion: 3,
-  title: "幅調整コンテナブロック",
-  description: "最大幅を調整できるコンテナ。内部に他のブロックを配置できます。",
+  title: "内側コンテナブロック",
+  description: "内側にコンテナを配置できるブロック。",
   category: "layout",
   icon: "align-center",
   supports: {
@@ -51,6 +51,10 @@ registerBlockType("my-custom-blocks/width-container-block", {
     centerContent: {
       type: "boolean",
       default: true,
+    },
+    padding: {
+      type: "boolean",
+      default: false,
     },
   },
   edit: Edit,
