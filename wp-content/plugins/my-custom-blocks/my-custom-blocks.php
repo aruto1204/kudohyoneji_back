@@ -2,9 +2,9 @@
 /**
  * Plugin Name: My Custom Blocks
  * Plugin URI: https://example.com
- * Description: カスタムブロックコレクション
+ * Description: 固定ページ、投稿ページのカスタムブロック
  * Version: 1.0.0
- * Author: Your Name
+ * Author: Hyper graphic inc.
  * License: GPL v2 or later
  * Text Domain: my-custom-blocks
  */
