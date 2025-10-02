@@ -1607,69 +1607,75 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 86 | { value: "px", label: "px" },
 87 | { value: "%", label: "%" },
 88 | ]}
-89 | />
-90 | </PanelBody>
-91 |
-92 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
-93 | <UnitControl
-94 | label={**("上マージン", "my-custom-blocks")}
-95 | value={marginTop}
-96 | onChange={(value) => setAttributes({ marginTop: value })}
-97 | units={[
-98 | { value: "px", label: "px" },
-99 | { value: "rem", label: "rem" },
-100 | ]}
-101 | />
-102 |
-103 | <UnitControl
-104 | label={**("下マージン", "my-custom-blocks")}
-105 | value={marginBottom}
-106 | onChange={(value) => setAttributes({ marginBottom: value })}
-107 | units={[
-108 | { value: "px", label: "px" },
-109 | { value: "rem", label: "rem" },
-110 | ]}
-111 | />
-112 |
-113 | <UnitControl
-114 | label={**("上パディング", "my-custom-blocks")}
-115 | value={paddingTop}
-116 | onChange={(value) => setAttributes({ paddingTop: value })}
-117 | units={[
-118 | { value: "px", label: "px" },
-119 | { value: "rem", label: "rem" },
-120 | ]}
-121 | />
-122 |
-123 | <UnitControl
-124 | label={**("下パディング", "my-custom-blocks")}
-125 | value={paddingBottom}
-126 | onChange={(value) => setAttributes({ paddingBottom: value })}
-127 | units={[
-128 | { value: "px", label: "px" },
-129 | { value: "rem", label: "rem" },
-130 | ]}
-131 | />
-132 |
-133 | <UnitControl
-134 | label={\_\_("左右パディング", "my-custom-blocks")}
-135 | value={paddingInline}
-136 | onChange={(value) => setAttributes({ paddingInline: value })}
-137 | units={[
-138 | { value: "px", label: "px" },
-139 | { value: "rem", label: "rem" },
-140 | ]}
-141 | />
-142 | </PanelBody>
-143 | </InspectorControls>
-144 |
-145 | <div {...blockProps}>
-146 | <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
-147 | </div>
-148 | </>
-149 | );
-150 | }
-151 |
+89 | **next40pxDefaultSize
+90 | />
+91 | </PanelBody>
+92 |
+93 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
+94 | <UnitControl
+95 | label={**("上マージン", "my-custom-blocks")}
+96 | value={marginTop}
+97 | onChange={(value) => setAttributes({ marginTop: value })}
+98 | units={[
+99 | { value: "px", label: "px" },
+100 | { value: "rem", label: "rem" },
+101 | ]}
+102 | **next40pxDefaultSize
+103 | />
+104 |
+105 | <UnitControl
+106 | label={**("下マージン", "my-custom-blocks")}
+107 | value={marginBottom}
+108 | onChange={(value) => setAttributes({ marginBottom: value })}
+109 | units={[
+110 | { value: "px", label: "px" },
+111 | { value: "rem", label: "rem" },
+112 | ]}
+113 | **next40pxDefaultSize
+114 | />
+115 |
+116 | <UnitControl
+117 | label={**("上パディング", "my-custom-blocks")}
+118 | value={paddingTop}
+119 | onChange={(value) => setAttributes({ paddingTop: value })}
+120 | units={[
+121 | { value: "px", label: "px" },
+122 | { value: "rem", label: "rem" },
+123 | ]}
+124 | **next40pxDefaultSize
+125 | />
+126 |
+127 | <UnitControl
+128 | label={**("下パディング", "my-custom-blocks")}
+129 | value={paddingBottom}
+130 | onChange={(value) => setAttributes({ paddingBottom: value })}
+131 | units={[
+132 | { value: "px", label: "px" },
+133 | { value: "rem", label: "rem" },
+134 | ]}
+135 | **next40pxDefaultSize
+136 | />
+137 |
+138 | <UnitControl
+139 | label={**("左右パディング", "my-custom-blocks")}
+140 | value={paddingInline}
+141 | onChange={(value) => setAttributes({ paddingInline: value })}
+142 | units={[
+143 | { value: "px", label: "px" },
+144 | { value: "rem", label: "rem" },
+145 | ]}
+146 | \_\_next40pxDefaultSize
+147 | />
+148 | </PanelBody>
+149 | </InspectorControls>
+150 |
+151 | <div {...blockProps}>
+152 | <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
+153 | </div>
+154 | </>
+155 | );
+156 | }
+157 |
 
 ---
 
@@ -1991,135 +1997,145 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 77 |
 78 | // アイキャッチを手動で再読み込み
 79 | const handleReload = () => {
-80 | if (featuredImage) {
-81 | let selectedImageUrl = "";
-82 |
-83 | if (featuredImage.media_details?.sizes) {
-84 | const sizes = featuredImage.media_details.sizes;
-85 |
-86 | if (imageSize === "full") {
-87 | selectedImageUrl = featuredImage.source_url;
-88 | } else if (sizes[imageSize]) {
-89 | selectedImageUrl = sizes[imageSize].source_url;
-90 | } else {
-91 | selectedImageUrl = featuredImage.source_url;
-92 | }
-93 | } else {
-94 | selectedImageUrl = featuredImage.source_url;
-95 | }
-96 |
-97 | setAttributes({
-98 | imageUrl: selectedImageUrl,
-99 | imageAlt: featuredImage.alt_text || "",
-100 | imageId: featuredImageId,
-101 | });
-102 | }
-103 | };
-104 |
-105 | const containerStyle = {
-106 | width: "100%",
-107 | marginTop: marginTop || "0px",
-108 | marginBottom: marginBottom || "0px",
-109 | marginLeft: "auto",
-110 | marginRight: "auto",
-111 | overflow: "hidden",
-112 | };
-113 |
-114 | const imageStyle = {
-115 | width: "100%",
-116 | height: "auto",
-117 | objectFit: "cover",
-118 | display: "block",
-119 | };
-120 |
-121 | const placeholderStyle = {
-122 | width: "100%",
-123 | minHeight: "300px",
-124 | backgroundColor: "#f0f0f0",
-125 | display: "flex",
-126 | alignItems: "center",
-127 | justifyContent: "center",
-128 | flexDirection: "column",
-129 | color: "#666",
-130 | fontSize: "16px",
-131 | border: "2px dashed #ccc",
-132 | borderRadius: "20px",
-133 | padding: "40px 20px",
-134 | };
-135 |
-136 | const blockProps = useBlockProps({
-137 | className: "featured-image-block-wrapper",
-138 | });
-139 |
-140 | return (
-141 | <>
-142 | <InspectorControls>
-143 | <PanelBody title={**("画像設定", "my-custom-blocks")}>
-144 | <SelectControl
-145 | label={**("画像サイズ", "my-custom-blocks")}
-146 | value={imageSize}
-147 | options={[
-148 | { label: __("サムネイル", "my-custom-blocks"), value: "thumbnail" },
-149 | { label: __("中", "my-custom-blocks"), value: "medium" },
-150 | { label: __("大", "my-custom-blocks"), value: "large" },
-151 | { label: __("フルサイズ", "my-custom-blocks"), value: "full" },
-152 | ]}
-153 | onChange={(value) => setAttributes({ imageSize: value })}
-154 | />
-155 |
-156 | <div style={{ marginTop: "20px" }}>
-157 | <Button variant="secondary" onClick={handleReload}>
-158 | {**("アイキャッチを再読み込み", "my-custom-blocks")}
-159 | </Button>
-160 | </div>
-161 | </PanelBody>
-162 |
-163 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
-164 | <UnitControl
-165 | label={**("上マージン", "my-custom-blocks")}
-166 | value={marginTop}
-167 | onChange={(value) => setAttributes({ marginTop: value })}
-168 | units={[
-169 | { value: "px", label: "px" },
-170 | { value: "rem", label: "rem" },
-171 | ]}
-172 | />
-173 |
-174 | <UnitControl
-175 | label={**("下マージン", "my-custom-blocks")}
-176 | value={marginBottom}
-177 | onChange={(value) => setAttributes({ marginBottom: value })}
-178 | units={[
-179 | { value: "px", label: "px" },
-180 | { value: "rem", label: "rem" },
-181 | ]}
-182 | />
-183 | </PanelBody>
-184 | </InspectorControls>
-185 |
-186 | <div {...blockProps}>
-187 | {imageUrl ? (
-188 | <div style={containerStyle}>
-189 | <img src={imageUrl} alt={imageAlt || **("アイキャッチ画像", "my-custom-blocks")} style={imageStyle} />
-190 | </div>
-191 | ) : (
-192 | <div style={placeholderStyle}>
-193 | <div style={{ textAlign: "center" }}>
-194 | <p style={{ margin: "0 0 10px 0", fontWeight: "600", fontSize: "18px" }}>{**("アイキャッチ画像未設定", "my-custom-blocks")}</p>
-195 | <p style={{ margin: "0 0 20px 0", fontSize: "14px", lineHeight: "1.6" }}>{**("右サイドバーの「投稿」→「アイキャッチ画像」から画像を設定してください", "my-custom-blocks")}</p>
-196 | {featuredImageId && (
-197 | <Button variant="primary" onClick={handleReload}>
-198 | {**("画像を読み込む", "my-custom-blocks")}
-199 | </Button>
-200 | )}
-201 | </div>
-202 | </div>
-203 | )}
-204 | </div>
-205 | </>
-206 | );
-207 | }
-208 |
+80 | // console.log("handleReload");
+81 | // console.log(featuredImage);
+82 | // console.log(featuredImageId);
+83 | // console.log(imageSize);
+84 | // console.log(imageUrl);
+85 | // console.log(setAttributes);
+86 | if (featuredImage) {
+87 | let selectedImageUrl = "";
+88 |
+89 | if (featuredImage.media_details?.sizes) {
+90 | const sizes = featuredImage.media_details.sizes;
+91 |
+92 | if (imageSize === "full") {
+93 | selectedImageUrl = featuredImage.source_url;
+94 | } else if (sizes[imageSize]) {
+95 | selectedImageUrl = sizes[imageSize].source_url;
+96 | } else {
+97 | selectedImageUrl = featuredImage.source_url;
+98 | }
+99 | } else {
+100 | selectedImageUrl = featuredImage.source_url;
+101 | }
+102 |
+103 | setAttributes({
+104 | imageUrl: selectedImageUrl,
+105 | imageAlt: featuredImage.alt_text || "",
+106 | imageId: featuredImageId,
+107 | });
+108 | }
+109 | };
+110 |
+111 | const containerStyle = {
+112 | width: "100%",
+113 | marginTop: marginTop || "0px",
+114 | marginBottom: marginBottom || "0px",
+115 | marginLeft: "auto",
+116 | marginRight: "auto",
+117 | overflow: "hidden",
+118 | };
+119 |
+120 | const imageStyle = {
+121 | width: "100%",
+122 | height: "auto",
+123 | objectFit: "cover",
+124 | display: "block",
+125 | };
+126 |
+127 | const placeholderStyle = {
+128 | width: "100%",
+129 | minHeight: "300px",
+130 | backgroundColor: "#f0f0f0",
+131 | display: "flex",
+132 | alignItems: "center",
+133 | justifyContent: "center",
+134 | flexDirection: "column",
+135 | color: "#666",
+136 | fontSize: "16px",
+137 | border: "2px dashed #ccc",
+138 | borderRadius: "20px",
+139 | padding: "40px 20px",
+140 | };
+141 |
+142 | const blockProps = useBlockProps({
+143 | className: "featured-image-block-wrapper",
+144 | });
+145 |
+146 | return (
+147 | <>
+148 | <InspectorControls>
+149 | <PanelBody title={**("画像設定", "my-custom-blocks")}>
+150 | <SelectControl
+151 | label={**("画像サイズ", "my-custom-blocks")}
+152 | value={imageSize}
+153 | options={[
+154 | { label: __("サムネイル", "my-custom-blocks"), value: "thumbnail" },
+155 | { label: __("中", "my-custom-blocks"), value: "medium" },
+156 | { label: __("大", "my-custom-blocks"), value: "large" },
+157 | { label: __("フルサイズ", "my-custom-blocks"), value: "full" },
+158 | ]}
+159 | onChange={(value) => setAttributes({ imageSize: value })}
+160 | **next40pxDefaultSize
+161 | **nextHasNoMarginBottom
+162 | />
+163 |
+164 | <div style={{ marginTop: "20px" }}>
+165 | <Button variant="secondary" onClick={handleReload}>
+166 | {**("アイキャッチを再読み込み", "my-custom-blocks")}
+167 | </Button>
+168 | </div>
+169 | </PanelBody>
+170 |
+171 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
+172 | <UnitControl
+173 | label={**("上マージン", "my-custom-blocks")}
+174 | value={marginTop}
+175 | onChange={(value) => setAttributes({ marginTop: value })}
+176 | units={[
+177 | { value: "px", label: "px" },
+178 | { value: "rem", label: "rem" },
+179 | ]}
+180 | **next40pxDefaultSize
+181 | />
+182 |
+183 | <UnitControl
+184 | label={**("下マージン", "my-custom-blocks")}
+185 | value={marginBottom}
+186 | onChange={(value) => setAttributes({ marginBottom: value })}
+187 | units={[
+188 | { value: "px", label: "px" },
+189 | { value: "rem", label: "rem" },
+190 | ]}
+191 | **next40pxDefaultSize
+192 | />
+193 | </PanelBody>
+194 | </InspectorControls>
+195 |
+196 | <div {...blockProps}>
+197 | {imageUrl ? (
+198 | <div style={containerStyle}>
+199 | <img src={imageUrl} alt={imageAlt || **("アイキャッチ画像", "my-custom-blocks")} style={imageStyle} />
+200 | </div>
+201 | ) : (
+202 | <div style={placeholderStyle}>
+203 | <div style={{ textAlign: "center" }}>
+204 | <p style={{ margin: "0 0 10px 0", fontWeight: "600", fontSize: "18px" }}>{**("アイキャッチ画像未設定", "my-custom-blocks")}</p>
+205 | <p style={{ margin: "0 0 20px 0", fontSize: "14px", lineHeight: "1.6" }}>{**("右サイドバーの「投稿」→「アイキャッチ画像」から画像を設定してください", "my-custom-blocks")}</p>
+206 | {featuredImageId && (
+207 | <Button variant="primary" onClick={handleReload}>
+208 | {**("画像を読み込む", "my-custom-blocks")}
+209 | </Button>
+210 | )}
+211 | </div>
+212 | </div>
+213 | )}
+214 | </div>
+215 | </>
+216 | );
+217 | }
+218 |
 
 ---
 
@@ -2331,39 +2347,48 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 52 | <>
 53 | <InspectorControls>
 54 | <PanelBody title={**("Google Map 設定", "my-custom-blocks")} initialOpen={true}>
-55 | <TextareaControl label={**("Google Map 埋め込みコードまたは URL", "my-custom-blocks")} value={mapUrl} onChange={(value) => setAttributes({ mapUrl: value })} placeholder="Google Map の「共有」→「地図を埋め込む」からコードをコピーして貼り付けてください" rows={6} help={**("iframe タグ全体、または src の URL のみを貼り付けてください", "my-custom-blocks")} />
-56 | </PanelBody>
-57 | <PanelBody title={**("レイアウト設定", "my-custom-blocks")}>
-58 | <UnitControl
-59 | label={**("上マージン", "my-custom-blocks")}
-60 | value={marginTop}
-61 | onChange={(value) => setAttributes({ marginTop: value })}
-62 | units={[
-63 | { value: "px", label: "px" },
-64 | { value: "rem", label: "rem" },
-65 | ]}
-66 | />
-67 | </PanelBody>
-68 | </InspectorControls>
-69 |
-70 | <div {...blockProps}>
-71 | <div style={containerStyle}>
-72 | {isValidMapUrl && mapSrc ? (
-73 | <iframe src={mapSrc} style={iframeStyle} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Google Map" />
-74 | ) : (
-75 | <div style={placeholderStyle}>
-76 | <div>
-77 | <p style={{ margin: "0 0 10px 0", fontWeight: "600", fontSize: "16px" }}>{**("Google Map 未設定", "my-custom-blocks")}</p>
-78 | <p style={{ margin: 0, fontSize: "14px", lineHeight: "1.6", color: "#999" }}>{\_\_("右サイドバーから Google Map の埋め込みコードを設定してください", "my-custom-blocks")}</p>
-79 | </div>
-80 | </div>
-81 | )}
-82 | </div>
-83 | </div>
-84 | </>
-85 | );
-86 | }
-87 |
+55 | <TextareaControl
+56 | label={**("Google Map 埋め込みコードまたは URL", "my-custom-blocks")}
+57 | value={mapUrl}
+58 | onChange={(value) => setAttributes({ mapUrl: value })}
+59 | placeholder="Google Map の「共有」→「地図を埋め込む」からコードをコピーして貼り付けてください"
+60 | rows={6}
+61 | help={**("iframe タグ全体、または src の URL のみを貼り付けてください", "my-custom-blocks")}
+62 | **nextHasNoMarginBottom
+63 | />
+64 | </PanelBody>
+65 | <PanelBody title={**("レイアウト設定", "my-custom-blocks")}>
+66 | <UnitControl
+67 | label={**("上マージン", "my-custom-blocks")}
+68 | value={marginTop}
+69 | onChange={(value) => setAttributes({ marginTop: value })}
+70 | units={[
+71 | { value: "px", label: "px" },
+72 | { value: "rem", label: "rem" },
+73 | ]}
+74 | **next40pxDefaultSize
+75 | />
+76 | </PanelBody>
+77 | </InspectorControls>
+78 |
+79 | <div {...blockProps}>
+80 | <div style={containerStyle}>
+81 | {isValidMapUrl && mapSrc ? (
+82 | <iframe src={mapSrc} style={iframeStyle} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Google Map" />
+83 | ) : (
+84 | <div style={placeholderStyle}>
+85 | <div>
+86 | <p style={{ margin: "0 0 10px 0", fontWeight: "600", fontSize: "16px" }}>{**("Google Map 未設定", "my-custom-blocks")}</p>
+87 | <p style={{ margin: 0, fontSize: "14px", lineHeight: "1.6", color: "#999" }}>{\_\_("右サイドバーから Google Map の埋め込みコードを設定してください", "my-custom-blocks")}</p>
+88 | </div>
+89 | </div>
+90 | )}
+91 | </div>
+92 | </div>
+93 | </>
+94 | );
+95 | }
+96 |
 
 ---
 
@@ -2566,188 +2591,196 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 3 | import { PanelBody, TextControl, ToggleControl, **experimentalUnitControl as UnitControl } from "@wordpress/components";
 4 |
 5 | export default function Edit({ attributes, setAttributes }) {
-6 | const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab } = attributes;
+6 | const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding } = attributes;
 7 |
 8 | // エディタ用のスタイル
 9 | const blockStyle = {
-10 | maxWidth: "376px",
+10 | maxWidth: padding ? "416px" : "376px",
 11 | width: "100%",
 12 | height: "66px",
 13 | marginTop: marginTop || "48px",
 14 | marginBottom: marginBottom || "0px",
 15 | marginLeft: "auto",
 16 | marginRight: "auto",
-17 | };
-18 |
-19 | const buttonStyle = {
-20 | width: "100%",
-21 | height: "100%",
-22 | paddingLeft: "16px", // pl-4
-23 | paddingRight: "16px", // pr-4
-24 | display: "flex",
-25 | alignItems: "center",
-26 | justifyContent: "space-between",
-27 | gap: "10px", // gap-2.5
-28 | backgroundColor: backgroundColor || "#0B8B4B",
-29 | color: textColor || "#ffffff",
-30 | border: `1px solid ${borderColor || "#0B8B4B"}`,
-31 | textDecoration: "none",
-32 | transition: "all 0.3s ease",
-33 | cursor: "pointer",
-34 | boxSizing: "border-box",
-35 | };
-36 |
-37 | const textStyle = {
-38 | fontSize: "16px", // text-base
-39 | fontWeight: "600", // font-semibold
-40 | lineHeight: "1",
-41 | letterSpacing: "0.2em", // tracking-[0.2em]
-42 | margin: 0,
-43 | };
-44 |
-45 | const blockProps = useBlockProps({
-46 | style: blockStyle,
-47 | className: "link-button-block-wrapper",
-48 | });
+17 | boxSizing: "border-box",
+18 | ...(padding && {
+19 | paddingLeft: "20px",
+20 | paddingRight: "20px",
+21 | }),
+22 | };
+23 |
+24 | const buttonStyle = {
+25 | width: "100%",
+26 | height: "100%",
+27 | paddingLeft: "16px", // pl-4
+28 | paddingRight: "16px", // pr-4
+29 | display: "flex",
+30 | alignItems: "center",
+31 | justifyContent: "space-between",
+32 | gap: "10px", // gap-2.5
+33 | backgroundColor: backgroundColor || "#0B8B4B",
+34 | color: textColor || "#ffffff",
+35 | border: `1px solid ${borderColor || "#0B8B4B"}`,
+36 | textDecoration: "none",
+37 | transition: "all 0.3s ease",
+38 | cursor: "pointer",
+39 | boxSizing: "border-box",
+40 | };
+41 |
+42 | const textStyle = {
+43 | fontSize: "16px", // text-base
+44 | fontWeight: "600", // font-semibold
+45 | lineHeight: "1",
+46 | letterSpacing: "0.2em", // tracking-[0.2em]
+47 | margin: 0,
+48 | };
 49 |
-50 | return (
-51 | <>
-52 | <InspectorControls>
-53 | <PanelBody title={**("ボタン設定", "my-custom-blocks")}>
-54 | <TextControl label={**("ボタンテキスト", "my-custom-blocks")} value={buttonText} onChange={(value) => setAttributes({ buttonText: value })} />
-55 |
-56 | <TextControl label={**("リンク URL", "my-custom-blocks")} value={buttonUrl} onChange={(value) => setAttributes({ buttonUrl: value })} help={**("リンク先の URL を入力してください", "my-custom-blocks")} />
-57 |
-58 | <ToggleControl label={**("別タブで開く", "my-custom-blocks")} checked={openInNewTab} onChange={(value) => setAttributes({ openInNewTab: value })} help={**("リンクを新しいタブで開く場合はオンにしてください", "my-custom-blocks")} />
-59 | </PanelBody>
+50 | const blockProps = useBlockProps({
+51 | style: blockStyle,
+52 | className: "link-button-block-wrapper",
+53 | });
+54 |
+55 | return (
+56 | <>
+57 | <InspectorControls>
+58 | <PanelBody title={**("ボタン設定", "my-custom-blocks")}>
+59 | <TextControl label={**("ボタンテキスト", "my-custom-blocks")} value={buttonText} onChange={(value) => setAttributes({ buttonText: value })} **next40pxDefaultSize **nextHasNoMarginBottom />
 60 |
-61 | <PanelBody title={**("カラー設定", "my-custom-blocks")}>
-62 | <div style={{ marginBottom: "20px" }}>
-63 | <label>{**("背景色", "my-custom-blocks")}</label>
-64 | <ColorPalette
-65 | value={backgroundColor}
-66 | onChange={(color) =>
-67 | setAttributes({
-68 | backgroundColor: color || "#0B8B4B",
-69 | })
-70 | }
-71 | colors={[
-72 | { name: "白", color: "#ffffff" },
-73 | { name: "グレー", color: "#F7F7F7" },
-74 | { name: "黒", color: "#2C2C2C" },
-75 | { name: "グリーン", color: "#0B8B4B" },
-76 | ]}
-77 | />
-78 | </div>
-79 |
-80 | <div style={{ marginBottom: "20px" }}>
-81 | <label>{**("テキスト色", "my-custom-blocks")}</label>
-82 | <ColorPalette
-83 | value={textColor}
-84 | onChange={(color) =>
-85 | setAttributes({
-86 | textColor: color || "#ffffff",
-87 | })
-88 | }
-89 | colors={[
-90 | { name: "白", color: "#ffffff" },
-91 | { name: "グレー", color: "#F7F7F7" },
-92 | { name: "黒", color: "#2C2C2C" },
-93 | { name: "グリーン", color: "#0B8B4B" },
-94 | ]}
-95 | />
-96 | </div>
-97 |
-98 | <div style={{ marginBottom: "20px" }}>
-99 | <label>{**("ボーダー色", "my-custom-blocks")}</label>
-100 | <ColorPalette
-101 | value={borderColor}
-102 | onChange={(color) =>
-103 | setAttributes({
-104 | borderColor: color || "#0B8B4B",
-105 | })
-106 | }
-107 | colors={[
-108 | { name: "白", color: "#ffffff" },
-109 | { name: "グレー", color: "#F7F7F7" },
-110 | { name: "黒", color: "#2C2C2C" },
-111 | { name: "グリーン", color: "#0B8B4B" },
-112 | ]}
-113 | />
-114 | </div>
-115 |
-116 | <div style={{ marginBottom: "20px" }}>
-117 | <label>{**("ホバー時テキスト色", "my-custom-blocks")}</label>
-118 | <ColorPalette
-119 | value={hoverTextColor}
-120 | onChange={(color) =>
-121 | setAttributes({
-122 | hoverTextColor: color || "#0B8B4B",
-123 | })
-124 | }
-125 | colors={[
-126 | { name: "白", color: "#ffffff" },
-127 | { name: "グレー", color: "#F7F7F7" },
-128 | { name: "黒", color: "#2C2C2C" },
-129 | { name: "グリーン", color: "#0B8B4B" },
-130 | ]}
-131 | />
-132 | </div>
-133 |
-134 | <div style={{ marginBottom: "20px" }}>
-135 | <label>{**("ホバー時背景色", "my-custom-blocks")}</label>
-136 | <ColorPalette
-137 | value={hoverBackgroundColor}
-138 | onChange={(color) =>
-139 | setAttributes({
-140 | hoverBackgroundColor: color || "#ffffff",
-141 | })
-142 | }
-143 | colors={[
-144 | { name: "白", color: "#ffffff" },
-145 | { name: "グレー", color: "#F7F7F7" },
-146 | { name: "黒", color: "#2C2C2C" },
-147 | { name: "グリーン", color: "#0B8B4B" },
-148 | { name: "透明", color: "transparent" },
-149 | ]}
-150 | />
-151 | </div>
-152 | </PanelBody>
-153 |
-154 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
-155 | <UnitControl
-156 | label={**("上マージン", "my-custom-blocks")}
-157 | value={marginTop}
-158 | onChange={(value) => setAttributes({ marginTop: value })}
-159 | units={[
-160 | { value: "px", label: "px" },
-161 | { value: "rem", label: "rem" },
-162 | ]}
-163 | />
-164 | <UnitControl
-165 | label={\_\_("下マージン", "my-custom-blocks")}
-166 | value={marginBottom}
-167 | onChange={(value) => setAttributes({ marginBottom: value })}
-168 | units={[
-169 | { value: "px", label: "px" },
-170 | { value: "rem", label: "rem" },
-171 | ]}
-172 | />
-173 | </PanelBody>
-174 | </InspectorControls>
-175 |
-176 | <div {...blockProps}>
-177 | <div style={buttonStyle}>
-178 | <p style={textStyle}>{buttonText || "リンクテキスト"}</p>
-179 | <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style={{ width: "16px", height: "18px" }}>
-180 | <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" fill="currentColor" />
-181 | </svg>
-182 | </div>
-183 | </div>
-184 | </>
-185 | );
-186 | }
-187 |
+61 | <TextControl label={**("リンク URL", "my-custom-blocks")} value={buttonUrl} onChange={(value) => setAttributes({ buttonUrl: value })} help={**("リンク先の URL を入力してください", "my-custom-blocks")} **next40pxDefaultSize **nextHasNoMarginBottom />
+62 |
+63 | <ToggleControl label={**("別タブで開く", "my-custom-blocks")} checked={openInNewTab} onChange={(value) => setAttributes({ openInNewTab: value })} help={**("リンクを新しいタブで開く場合はオンにしてください", "my-custom-blocks")} **nextHasNoMarginBottom />
+64 | </PanelBody>
+65 |
+66 | <PanelBody title={**("カラー設定", "my-custom-blocks")}>
+67 | <div style={{ marginBottom: "20px" }}>
+68 | <label>{**("背景色", "my-custom-blocks")}</label>
+69 | <ColorPalette
+70 | value={backgroundColor}
+71 | onChange={(color) =>
+72 | setAttributes({
+73 | backgroundColor: color || "#0B8B4B",
+74 | })
+75 | }
+76 | colors={[
+77 | { name: "白", color: "#ffffff" },
+78 | { name: "グレー", color: "#F7F7F7" },
+79 | { name: "黒", color: "#2C2C2C" },
+80 | { name: "グリーン", color: "#0B8B4B" },
+81 | ]}
+82 | />
+83 | </div>
+84 |
+85 | <div style={{ marginBottom: "20px" }}>
+86 | <label>{**("テキスト色", "my-custom-blocks")}</label>
+87 | <ColorPalette
+88 | value={textColor}
+89 | onChange={(color) =>
+90 | setAttributes({
+91 | textColor: color || "#ffffff",
+92 | })
+93 | }
+94 | colors={[
+95 | { name: "白", color: "#ffffff" },
+96 | { name: "グレー", color: "#F7F7F7" },
+97 | { name: "黒", color: "#2C2C2C" },
+98 | { name: "グリーン", color: "#0B8B4B" },
+99 | ]}
+100 | />
+101 | </div>
+102 |
+103 | <div style={{ marginBottom: "20px" }}>
+104 | <label>{**("ボーダー色", "my-custom-blocks")}</label>
+105 | <ColorPalette
+106 | value={borderColor}
+107 | onChange={(color) =>
+108 | setAttributes({
+109 | borderColor: color || "#0B8B4B",
+110 | })
+111 | }
+112 | colors={[
+113 | { name: "白", color: "#ffffff" },
+114 | { name: "グレー", color: "#F7F7F7" },
+115 | { name: "黒", color: "#2C2C2C" },
+116 | { name: "グリーン", color: "#0B8B4B" },
+117 | ]}
+118 | />
+119 | </div>
+120 |
+121 | <div style={{ marginBottom: "20px" }}>
+122 | <label>{**("ホバー時テキスト色", "my-custom-blocks")}</label>
+123 | <ColorPalette
+124 | value={hoverTextColor}
+125 | onChange={(color) =>
+126 | setAttributes({
+127 | hoverTextColor: color || "#0B8B4B",
+128 | })
+129 | }
+130 | colors={[
+131 | { name: "白", color: "#ffffff" },
+132 | { name: "グレー", color: "#F7F7F7" },
+133 | { name: "黒", color: "#2C2C2C" },
+134 | { name: "グリーン", color: "#0B8B4B" },
+135 | ]}
+136 | />
+137 | </div>
+138 |
+139 | <div style={{ marginBottom: "20px" }}>
+140 | <label>{**("ホバー時背景色", "my-custom-blocks")}</label>
+141 | <ColorPalette
+142 | value={hoverBackgroundColor}
+143 | onChange={(color) =>
+144 | setAttributes({
+145 | hoverBackgroundColor: color || "#ffffff",
+146 | })
+147 | }
+148 | colors={[
+149 | { name: "白", color: "#ffffff" },
+150 | { name: "グレー", color: "#F7F7F7" },
+151 | { name: "黒", color: "#2C2C2C" },
+152 | { name: "グリーン", color: "#0B8B4B" },
+153 | { name: "透明", color: "transparent" },
+154 | ]}
+155 | />
+156 | </div>
+157 | </PanelBody>
+158 |
+159 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
+160 | <UnitControl
+161 | label={**("上マージン", "my-custom-blocks")}
+162 | value={marginTop}
+163 | onChange={(value) => setAttributes({ marginTop: value })}
+164 | units={[
+165 | { value: "px", label: "px" },
+166 | { value: "rem", label: "rem" },
+167 | ]}
+168 | **next40pxDefaultSize
+169 | />
+170 | <UnitControl
+171 | label={**("下マージン", "my-custom-blocks")}
+172 | value={marginBottom}
+173 | onChange={(value) => setAttributes({ marginBottom: value })}
+174 | units={[
+175 | { value: "px", label: "px" },
+176 | { value: "rem", label: "rem" },
+177 | ]}
+178 | **next40pxDefaultSize
+179 | />
+180 | <ToggleControl label={**("余白", "my-custom-blocks")} checked={padding} onChange={(value) => setAttributes({ padding: value })} help={**("左右に余白を追加します", "my-custom-blocks")} \_\_nextHasNoMarginBottom />
+181 | </PanelBody>
+182 | </InspectorControls>
+183 |
+184 | <div {...blockProps}>
+185 | <div style={buttonStyle}>
+186 | <p style={textStyle}>{buttonText || "リンクテキスト"}</p>
+187 | <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style={{ width: "16px", height: "18px" }}>
+188 | <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" fill="currentColor" />
+189 | </svg>
+190 | </div>
+191 | </div>
+192 | </>
+193 | );
+194 | }
+195 |
 
 ---
 
@@ -2823,96 +2856,100 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 1 | import { useBlockProps } from "@wordpress/block-editor";
 2 |
 3 | export default function save({ attributes }) {
-4 | const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab } = attributes;
+4 | const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding } = attributes;
 5 |
 6 | // コンテナのスタイル
 7 | const containerStyle = {
-8 | maxWidth: "374px", // max-w-104 (104 _ 0.25rem = 26rem = 416px)
+8 | maxWidth: padding ? "416px" : "376px", // max-w-104 (104 _ 0.25rem = 26rem = 416px)
 9 | width: "100%",
 10 | height: "66px", // h-16.5 (16.5 _ 0.25rem = 4.125rem = 66px)
 11 | marginTop: marginTop || "48px",
 12 | marginBottom: marginBottom || "0px",
 13 | marginLeft: "auto",
 14 | marginRight: "auto",
-15 | };
-16 |
-17 | // ボタンのスタイル
-18 | const buttonStyle = {
-19 | width: "100%",
-20 | height: "100%",
-21 | paddingLeft: "16px", // pl-4 (4 _ 0.25rem = 1rem = 16px)
-22 | paddingRight: "16px", // pr-4 (4 _ 0.25rem = 1rem = 16px)
-23 | display: "flex",
-24 | alignItems: "center",
-25 | justifyContent: "space-between",
-26 | gap: "10px", // gap-2.5 (2.5 _ 0.25rem = 0.625rem = 10px)
-27 | backgroundColor: backgroundColor || "#0B8B4B",
-28 | color: textColor || "#ffffff",
-29 | border: `1px solid ${borderColor || "#0B8B4B"}`,
-30 | textDecoration: "none",
-31 | transition: "all 0.3s ease",
-32 | boxSizing: "border-box",
-33 | };
-34 |
-35 | // テキストのスタイル
-36 | const textStyle = {
-37 | fontSize: "16px", // text-base
-38 | fontWeight: "600", // font-semibold
-39 | lineHeight: "1", // leading-none
-40 | letterSpacing: "0.2em", // tracking-[0.2em]
-41 | margin: "0", // m-0
-42 | };
-43 |
-44 | // SVG のスタイル
-45 | const svgStyle = {
-46 | width: "16px", // w-4 (4 _ 0.25rem = 1rem = 16px)
-47 | height: "18px", // h-4.5 (4.5 _ 0.25rem = 1.125rem = 18px)
-48 | fill: "currentColor",
-49 | };
-50 |
-51 | // レスポンシブ対応のためのメディアクエリスタイル
-52 | const responsiveStyle = `
-53 | @media (min-width: 640px) {
-54 | .text-responsive {
-55 | font-size: 18px !important; /_ sm:text-lg \*/
-56 | line-height: 28px !important;
-57 | }
-58 | }
-59 | .link-button-hover:hover {
-60 | color: ${hoverTextColor || "#0B8B4B"} !important;
-61 | background-color: ${hoverBackgroundColor || "#ffffff"} !important;
+15 | ...(padding && {
+16 | paddingLeft: "20px",
+17 | paddingRight: "20px",
+18 | }),
+19 | };
+20 |
+21 | // ボタンのスタイル
+22 | const buttonStyle = {
+23 | width: "100%",
+24 | height: "100%",
+25 | paddingLeft: "16px", // pl-4 (4 _ 0.25rem = 1rem = 16px)
+26 | paddingRight: "16px", // pr-4 (4 _ 0.25rem = 1rem = 16px)
+27 | display: "flex",
+28 | alignItems: "center",
+29 | justifyContent: "space-between",
+30 | gap: "10px", // gap-2.5 (2.5 _ 0.25rem = 0.625rem = 10px)
+31 | backgroundColor: backgroundColor || "#0B8B4B",
+32 | color: textColor || "#ffffff",
+33 | border: `1px solid ${borderColor || "#0B8B4B"}`,
+34 | textDecoration: "none",
+35 | transition: "all 0.3s ease",
+36 | boxSizing: "border-box",
+37 | };
+38 |
+39 | // テキストのスタイル
+40 | const textStyle = {
+41 | fontSize: "16px", // text-base
+42 | fontWeight: "600", // font-semibold
+43 | lineHeight: "1", // leading-none
+44 | letterSpacing: "0.2em", // tracking-[0.2em]
+45 | margin: "0", // m-0
+46 | };
+47 |
+48 | // SVG のスタイル
+49 | const svgStyle = {
+50 | width: "16px", // w-4 (4 _ 0.25rem = 1rem = 16px)
+51 | height: "18px", // h-4.5 (4.5 _ 0.25rem = 1.125rem = 18px)
+52 | fill: "currentColor",
+53 | };
+54 |
+55 | // レスポンシブ対応のためのメディアクエリスタイル
+56 | const responsiveStyle = `
+57 | @media (min-width: 640px) {
+58 | .text-responsive {
+59 | font-size: 18px !important; /_ sm:text-lg \*/
+60 | line-height: 28px !important;
+61 | }
 62 | }
-63 | `;
-64 |
-65 | const blockProps = useBlockProps.save({
-66 | className: "link-button-block-wrapper",
-67 | });
+63 | .link-button-hover:hover {
+64 | color: ${hoverTextColor || "#0B8B4B"} !important;
+65 | background-color: ${hoverBackgroundColor || "#ffffff"} !important;
+66 | }
+67 | `;
 68 |
-69 | return (
-70 | <div {...blockProps}>
-71 | <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
-72 | <div style={containerStyle}>
-73 | <a
-74 | className="link-button-responsive link-button-hover"
-75 | href={buttonUrl || "/"}
-76 | style={buttonStyle}
-77 | {...(openInNewTab && {
-78 | target: "\_blank",
-79 | rel: "noopener noreferrer",
-80 | })}
-81 | >
-82 | <p className="text-responsive" style={textStyle}>
-83 | {buttonText || "リンクテキスト"}
-84 | </p>
-85 | <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style={svgStyle}>
-86 | <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
-87 | </svg>
-88 | </a>
-89 | </div>
-90 | </div>
-91 | );
-92 | }
-93 |
+69 | const blockProps = useBlockProps.save({
+70 | className: "link-button-block-wrapper",
+71 | });
+72 |
+73 | return (
+74 | <div {...blockProps}>
+75 | <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
+76 | <div style={containerStyle}>
+77 | <a
+78 | className="link-button-responsive link-button-hover"
+79 | href={buttonUrl || "/"}
+80 | style={buttonStyle}
+81 | {...(openInNewTab && {
+82 | target: "\_blank",
+83 | rel: "noopener noreferrer",
+84 | })}
+85 | >
+86 | <p className="text-responsive" style={textStyle}>
+87 | {buttonText || "リンクテキスト"}
+88 | </p>
+89 | <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style={svgStyle}>
+90 | <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
+91 | </svg>
+92 | </a>
+93 | </div>
+94 | </div>
+95 | );
+96 | }
+97 |
 
 ---
 
@@ -2961,19 +2998,19 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 41 | .link-button-block-wrapper {
 42 | position: relative;
 43 |
-44 | &::before {
-45 | content: "リンクボタンブロック";
-46 | position: absolute;
-47 | top: -20px;
-48 | left: 0;
-49 | font-size: 12px;
-50 | color: #666;
-51 | background: #fff;
-52 | padding: 2px 8px;
-53 | border-radius: 3px;
-54 | border: 1px solid #ddd;
-55 | z-index: 1;
-56 | }
+44 | // &::before {
+45 | // content: "リンクボタンブロック";
+46 | // position: absolute;
+47 | // top: -20px;
+48 | // left: 0;
+49 | // font-size: 12px;
+50 | // color: #666;
+51 | // background: #fff;
+52 | // padding: 2px 8px;
+53 | // border-radius: 3px;
+54 | // border: 1px solid #ddd;
+55 | // z-index: 1;
+56 | // }
 57 | }
 58 | }
 59 |
@@ -3350,7 +3387,7 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 54 | <>
 55 | <InspectorControls>
 56 | <PanelBody title={**("セクションタイトル設定", "my-custom-blocks")}>
-57 | <TextControl label={**("タイトルテキスト", "my-custom-blocks")} value={titleText} onChange={(value) => setAttributes({ titleText: value })} />
+57 | <TextControl label={**("タイトルテキスト", "my-custom-blocks")} value={titleText} onChange={(value) => setAttributes({ titleText: value })} **next40pxDefaultSize **nextHasNoMarginBottom />
 58 | </PanelBody>
 59 |
 60 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
@@ -3362,32 +3399,34 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 66 | { value: "px", label: "px" },
 67 | { value: "rem", label: "rem" },
 68 | ]}
-69 | />
-70 |
-71 | <UnitControl
-72 | label={**("下マージン", "my-custom-blocks")}
-73 | value={marginBottom}
-74 | onChange={(value) => setAttributes({ marginBottom: value })}
-75 | units={[
-76 | { value: "px", label: "px" },
-77 | { value: "rem", label: "rem" },
-78 | ]}
-79 | />
-80 | </PanelBody>
-81 | </InspectorControls>
-82 |
-83 | <div {...blockProps}>
-84 | <style dangerouslySetInnerHTML={{ **html: responsiveStyle }} />
-85 | <div style={containerStyle}>
-86 | <h3 className="section-title-responsive" style={titleStyle}>
-87 | {titleText || "セクションタイトル"}
-88 | </h3>
-89 | </div>
-90 | </div>
-91 | </>
-92 | );
-93 | }
-94 |
+69 | **next40pxDefaultSize
+70 | />
+71 |
+72 | <UnitControl
+73 | label={**("下マージン", "my-custom-blocks")}
+74 | value={marginBottom}
+75 | onChange={(value) => setAttributes({ marginBottom: value })}
+76 | units={[
+77 | { value: "px", label: "px" },
+78 | { value: "rem", label: "rem" },
+79 | ]}
+80 | **next40pxDefaultSize
+81 | />
+82 | </PanelBody>
+83 | </InspectorControls>
+84 |
+85 | <div {...blockProps}>
+86 | <style dangerouslySetInnerHTML={{ **html: responsiveStyle }} />
+87 | <div style={containerStyle}>
+88 | <h3 className="section-title-responsive" style={titleStyle}>
+89 | {titleText || "セクションタイトル"}
+90 | </h3>
+91 | </div>
+92 | </div>
+93 | </>
+94 | );
+95 | }
+96 |
 
 ---
 
@@ -3546,162 +3585,164 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 1 | import { ** } from "@wordpress/i18n";
 2 | import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 3 | import { PanelBody, TextControl, CheckboxControl, **experimentalUnitControl as UnitControl } from "@wordpress/components";
-4 | const PLUGIN_URL = window.myCustomBlocksPluginUrl || "/wp-content/plugins/my-custom-blocks";
-5 | // 利用可能なサービスのマスターリスト
-6 | const AVAILABLE_SERVICES = [
-7 | {
-8 | id: "drive_one",
-9 | label: "出光公式アプリ",
-10 | image: `${PLUGIN_URL}/assets/images/has_drive_one.webp`,
-11 | },
-12 | {
-13 | id: "oil_change",
-14 | label: "オイル交換",
-15 | image: `${PLUGIN_URL}/assets/images/has_oil_change.webp`,
-16 | },
-17 | {
-18 | id: "apollostation_keeper",
-19 | label: "カーコーディング",
-20 | image: `${PLUGIN_URL}/assets/images/has_apollostation_keeper.webp`,
-21 | },
-22 | {
-23 | id: "auto_flat_new_car",
-24 | label: "新車カーリース",
-25 | image: `${PLUGIN_URL}/assets/images/has_auto_flat_new_car.webp`,
-26 | },
-27 | {
-28 | id: "auto_flat_used_car",
-29 | label: "中古車カーリース",
-30 | image: `${PLUGIN_URL}/assets/images/has_auto_flat_used_car.webp`,
-31 | },
-32 | {
-33 | id: "denki_tokuwari",
-34 | label: "idemitsu でんき特割",
-35 | image: `${PLUGIN_URL}/assets/images/has_denki_tokuwari.webp`,
-36 | },
-37 | ];
-38 |
-39 | export default function Edit({ attributes, setAttributes }) {
-40 | const { selectedServices, marginTop } = attributes;
-41 |
-42 | // サービスの選択状態を切り替え
-43 | const toggleService = (serviceId) => {
-44 | const newSelectedServices = selectedServices.includes(serviceId) ? selectedServices.filter((id) => id !== serviceId) : [...selectedServices, serviceId];
-45 | setAttributes({ selectedServices: newSelectedServices });
-46 | };
-47 |
-48 | // 選択されているサービスのみをフィルタリング
-49 | const displayedServices = AVAILABLE_SERVICES.filter((service) => selectedServices.includes(service.id));
-50 |
-51 | const containerStyle = {
-52 | maxWidth: "702px",
-53 | width: "100%",
-54 | marginLeft: "auto",
-55 | marginRight: "auto",
-56 | marginTop: marginTop || "48px",
-57 | };
-58 |
-59 | const titleStyle = {
-60 | fontSize: "20px",
-61 | fontWeight: "700",
-62 | lineHeight: "1.5",
-63 | marginBottom: "20px",
-64 | };
-65 |
-66 | const listStyle = {
-67 | maxWidth: "660px", // 165 \* 4 = 660px
-68 | width: "100%",
-69 | display: "grid",
-70 | gridTemplateColumns: "repeat(1, 1fr)",
-71 | gap: "16px",
-72 | marginTop: "20px",
-73 | listStyle: "none",
-74 | padding: 0,
-75 | };
-76 |
-77 | const itemStyle = {
-78 | display: "flex",
-79 | alignItems: "center",
-80 | gap: "12px",
-81 | };
-82 |
-83 | const imageStyle = {
-84 | maxWidth: "40px",
-85 | width: "100%",
-86 | height: "auto",
-87 | aspectRatio: "1",
-88 | };
-89 |
-90 | const textStyle = {
-91 | fontWeight: "500",
-92 | fontSize: "16px",
-93 | lineHeight: "1.5",
-94 | margin: 0,
-95 | };
-96 |
-97 | const blockProps = useBlockProps({
-98 | className: "services-list-block-wrapper",
-99 | });
-100 |
-101 | return (
-102 | <>
-103 | <InspectorControls>
-104 | <PanelBody title={**("表示するサービスを選択", "my-custom-blocks")} initialOpen={true}>
-105 | <div style={{ marginBottom: "10px", padding: "10px", backgroundColor: "#f0f0f0", borderRadius: "4px" }}>
-106 | <p style={{ margin: 0, fontSize: "12px", color: "#666" }}>{**("表示したいサービスにチェックを入れてください", "my-custom-blocks")}</p>
-107 | </div>
-108 |
-109 | {AVAILABLE_SERVICES.map((service) => (
-110 | <CheckboxControl key={service.id} label={service.label} checked={selectedServices.includes(service.id)} onChange={() => toggleService(service.id)} />
-111 | ))}
-112 | </PanelBody>
-113 |
-114 | <PanelBody title={**("レイアウト設定", "my-custom-blocks")}>
-115 | <UnitControl
-116 | label={**("上マージン", "my-custom-blocks")}
-117 | value={marginTop}
-118 | onChange={(value) => setAttributes({ marginTop: value })}
-119 | units={[
-120 | { value: "px", label: "px" },
-121 | { value: "rem", label: "rem" },
-122 | ]}
-123 | />
-124 | </PanelBody>
-125 | </InspectorControls>
-126 |
-127 | <div {...blockProps}>
-128 | <div style={containerStyle}>
-129 | <p style={titleStyle}>取扱サービス</p>
-130 |
-131 | {displayedServices.length > 0 ? (
-132 | <ul style={listStyle}>
-133 | {displayedServices.map((service) => (
-134 | <li key={service.id} style={itemStyle}>
-135 | <img src={service.image} alt="アイコン" style={imageStyle} />
-136 | <p style={textStyle}>{service.label}</p>
-137 | </li>
-138 | ))}
-139 | </ul>
-140 | ) : (
-141 | <div
-142 | style={{
-143 |                 padding: "40px 20px",
-144 |                 textAlign: "center",
-145 |                 backgroundColor: "#f9fafb",
-146 |                 border: "2px dashed #ddd",
-147 |                 borderRadius: "8px",
-148 |                 marginTop: "20px",
-149 |               }}
-150 | >
-151 | <p style={{ margin: 0, color: "#666" }}>{\_\_("右サイドバーから表示するサービスを選択してください", "my-custom-blocks")}</p>
-152 | </div>
-153 | )}
+4 | const PLUGIN_URL = window.myCustomBlocksData.pluginUrl || "/wp-content/plugins/my-custom-blocks/";
+5 |
+6 | // 利用可能なサービスのマスターリスト
+7 | const AVAILABLE_SERVICES = [
+8 | {
+9 | id: "drive_one",
+10 | label: "出光公式アプリ",
+11 | image: `${PLUGIN_URL}assets/images/has_drive_one.webp`,
+12 | },
+13 | {
+14 | id: "oil_change",
+15 | label: "オイル交換",
+16 | image: `${PLUGIN_URL}assets/images/has_oil_change.webp`,
+17 | },
+18 | {
+19 | id: "apollostation_keeper",
+20 | label: "カーコーディング",
+21 | image: `${PLUGIN_URL}assets/images/has_apollostation_keeper.webp`,
+22 | },
+23 | {
+24 | id: "auto_flat_new_car",
+25 | label: "新車カーリース",
+26 | image: `${PLUGIN_URL}assets/images/has_auto_flat_new_car.webp`,
+27 | },
+28 | {
+29 | id: "auto_flat_used_car",
+30 | label: "中古車カーリース",
+31 | image: `${PLUGIN_URL}assets/images/has_auto_flat_used_car.webp`,
+32 | },
+33 | {
+34 | id: "denki_tokuwari",
+35 | label: "idemitsu でんき特割",
+36 | image: `${PLUGIN_URL}assets/images/has_denki_tokuwari.webp`,
+37 | },
+38 | ];
+39 |
+40 | export default function Edit({ attributes, setAttributes }) {
+41 | const { selectedServices, marginTop } = attributes;
+42 |
+43 | // サービスの選択状態を切り替え
+44 | const toggleService = (serviceId) => {
+45 | const newSelectedServices = selectedServices.includes(serviceId) ? selectedServices.filter((id) => id !== serviceId) : [...selectedServices, serviceId];
+46 | setAttributes({ selectedServices: newSelectedServices });
+47 | };
+48 |
+49 | // 選択されているサービスのみをフィルタリング
+50 | const displayedServices = AVAILABLE_SERVICES.filter((service) => selectedServices.includes(service.id));
+51 |
+52 | const containerStyle = {
+53 | maxWidth: "702px",
+54 | width: "100%",
+55 | marginLeft: "auto",
+56 | marginRight: "auto",
+57 | marginTop: marginTop || "48px",
+58 | };
+59 |
+60 | const titleStyle = {
+61 | fontSize: "20px",
+62 | fontWeight: "700",
+63 | lineHeight: "1.5",
+64 | marginBottom: "20px",
+65 | };
+66 |
+67 | const listStyle = {
+68 | maxWidth: "660px", // 165 \* 4 = 660px
+69 | width: "100%",
+70 | display: "grid",
+71 | gridTemplateColumns: "repeat(1, 1fr)",
+72 | gap: "16px",
+73 | marginTop: "20px",
+74 | listStyle: "none",
+75 | padding: 0,
+76 | };
+77 |
+78 | const itemStyle = {
+79 | display: "flex",
+80 | alignItems: "center",
+81 | gap: "12px",
+82 | };
+83 |
+84 | const imageStyle = {
+85 | maxWidth: "40px",
+86 | width: "100%",
+87 | height: "auto",
+88 | aspectRatio: "1",
+89 | };
+90 |
+91 | const textStyle = {
+92 | fontWeight: "500",
+93 | fontSize: "16px",
+94 | lineHeight: "1.5",
+95 | margin: 0,
+96 | };
+97 |
+98 | const blockProps = useBlockProps({
+99 | className: "services-list-block-wrapper",
+100 | });
+101 |
+102 | return (
+103 | <>
+104 | <InspectorControls>
+105 | <PanelBody title={**("表示するサービスを選択", "my-custom-blocks")} initialOpen={true}>
+106 | <div style={{ marginBottom: "10px", padding: "10px", backgroundColor: "#f0f0f0", borderRadius: "4px" }}>
+107 | <p style={{ margin: 0, fontSize: "12px", color: "#666" }}>{**("表示したいサービスにチェックを入れてください", "my-custom-blocks")}</p>
+108 | </div>
+109 |
+110 | {AVAILABLE_SERVICES.map((service) => (
+111 | <CheckboxControl key={service.id} label={service.label} checked={selectedServices.includes(service.id)} onChange={() => toggleService(service.id)} **nextHasNoMarginBottom />
+112 | ))}
+113 | </PanelBody>
+114 |
+115 | <PanelBody title={**("レイアウト設定", "my-custom-blocks")}>
+116 | <UnitControl
+117 | label={**("上マージン", "my-custom-blocks")}
+118 | value={marginTop}
+119 | onChange={(value) => setAttributes({ marginTop: value })}
+120 | units={[
+121 | { value: "px", label: "px" },
+122 | { value: "rem", label: "rem" },
+123 | ]}
+124 | **next40pxDefaultSize
+125 | />
+126 | </PanelBody>
+127 | </InspectorControls>
+128 |
+129 | <div {...blockProps}>
+130 | <div style={containerStyle}>
+131 | <p style={titleStyle}>取扱サービス</p>
+132 |
+133 | {displayedServices.length > 0 ? (
+134 | <ul style={listStyle}>
+135 | {displayedServices.map((service) => (
+136 | <li key={service.id} style={itemStyle}>
+137 | <img src={service.image} alt="アイコン" style={imageStyle} />
+138 | <p style={textStyle}>{service.label}</p>
+139 | </li>
+140 | ))}
+141 | </ul>
+142 | ) : (
+143 | <div
+144 | style={{
+145 |                 padding: "40px 20px",
+146 |                 textAlign: "center",
+147 |                 backgroundColor: "#f9fafb",
+148 |                 border: "2px dashed #ddd",
+149 |                 borderRadius: "8px",
+150 |                 marginTop: "20px",
+151 |               }}
+152 | >
+153 | <p style={{ margin: 0, color: "#666" }}>{\_\_("右サイドバーから表示するサービスを選択してください", "my-custom-blocks")}</p>
 154 | </div>
-155 | </div>
-156 | </>
-157 | );
-158 | }
-159 |
+155 | )}
+156 | </div>
+157 | </div>
+158 | </>
+159 | );
+160 | }
+161 |
 
 ---
 
@@ -3742,39 +3783,39 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 ## /wp-content/plugins/my-custom-blocks/src/blocks/services-list-block/save.js:
 
 1 | import { useBlockProps } from "@wordpress/block-editor";
-2 | const PLUGIN_URL = window.myCustomBlocksPluginUrl || "/wp-content/plugins/my-custom-blocks";
+2 | const PLUGIN_URL = window.myCustomBlocksData.pluginUrl || "/wp-content/plugins/my-custom-blocks/";
 3 |
 4 | // 利用可能なサービスのマスターリスト（edit.js と同じ）
 5 | const AVAILABLE_SERVICES = [
 6 | {
 7 | id: "drive_one",
 8 | label: "出光公式アプリ",
-9 | image: `${PLUGIN_URL}/assets/images/has_drive_one.webp`,
+9 | image: `${PLUGIN_URL}assets/images/has_drive_one.webp`,
 10 | },
 11 | {
 12 | id: "oil_change",
 13 | label: "オイル交換",
-14 | image: `${PLUGIN_URL}/assets/images/has_oil_change.webp`,
+14 | image: `${PLUGIN_URL}assets/images/has_oil_change.webp`,
 15 | },
 16 | {
 17 | id: "apollostation_keeper",
 18 | label: "カーコーディング",
-19 | image: `${PLUGIN_URL}/assets/images/has_apollostation_keeper.webp`,
+19 | image: `${PLUGIN_URL}assets/images/has_apollostation_keeper.webp`,
 20 | },
 21 | {
 22 | id: "auto_flat_new_car",
 23 | label: "新車カーリース",
-24 | image: `${PLUGIN_URL}/assets/images/has_auto_flat_new_car.webp`,
+24 | image: `${PLUGIN_URL}assets/images/has_auto_flat_new_car.webp`,
 25 | },
 26 | {
 27 | id: "auto_flat_used_car",
 28 | label: "中古車カーリース",
-29 | image: `${PLUGIN_URL}/assets/images/has_auto_flat_used_car.webp`,
+29 | image: `${PLUGIN_URL}assets/images/has_auto_flat_used_car.webp`,
 30 | },
 31 | {
 32 | id: "denki_tokuwari",
 33 | label: "idemitsu でんき特割",
-34 | image: `${PLUGIN_URL}/assets/images/has_denki_tokuwari.webp`,
+34 | image: `${PLUGIN_URL}assets/images/has_denki_tokuwari.webp`,
 35 | },
 36 | ];
 37 |
@@ -4011,13 +4052,13 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 68 | <>
 69 | <InspectorControls>
 70 | <PanelBody title={**("固定項目設定", "my-custom-blocks")}>
-71 | <TextControl label={**("店名", "my-custom-blocks")} value={storeName} onChange={(value) => setAttributes({ storeName: value })} placeholder="例: 大館西 SS" />
+71 | <TextControl label={**("店名", "my-custom-blocks")} value={storeName} onChange={(value) => setAttributes({ storeName: value })} placeholder="例: 大館西 SS" **next40pxDefaultSize **nextHasNoMarginBottom />
 72 |
-73 | <TextareaControl label={**("住所", "my-custom-blocks")} value={address} onChange={(value) => setAttributes({ address: value })} placeholder="例: 秋田県大館市根下戸新町１-６０" rows={2} />
+73 | <TextareaControl label={**("住所", "my-custom-blocks")} value={address} onChange={(value) => setAttributes({ address: value })} placeholder="例: 秋田県大館市根下戸新町１-６０" rows={2} **next40pxDefaultSize **nextHasNoMarginBottom />
 74 |
-75 | <TextControl label={**("電話", "my-custom-blocks")} value={phone} onChange={(value) => setAttributes({ phone: value })} placeholder="例: 0186-42-3149" />
+75 | <TextControl label={**("電話", "my-custom-blocks")} value={phone} onChange={(value) => setAttributes({ phone: value })} placeholder="例: 0186-42-3149" **next40pxDefaultSize **nextHasNoMarginBottom />
 76 |
-77 | <TextareaControl label={**("営業時間", "my-custom-blocks")} value={businessHours} onChange={(value) => setAttributes({ businessHours: value })} placeholder="例: 平日・土　 7 時 30 分~17 時 00 分" rows={3} help={**("改行する場合は Enter キーを押してください", "my-custom-blocks")} />
+77 | <TextareaControl label={**("営業時間", "my-custom-blocks")} value={businessHours} onChange={(value) => setAttributes({ businessHours: value })} placeholder="例: 平日・土　 7 時 30 分~17 時 00 分" rows={3} help={**("改行する場合は Enter キーを押してください", "my-custom-blocks")} **nextHasNoMarginBottom />
 78 | </PanelBody>
 79 |
 80 | <PanelBody title={**("オプション項目", "my-custom-blocks")} initialOpen={false}>
@@ -4047,44 +4088,45 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 104 | { value: "px", label: "px" },
 105 | { value: "rem", label: "rem" },
 106 | ]}
-107 | />
-108 | </PanelBody>
-109 | </InspectorControls>
-110 |
-111 | <div {...blockProps}>
-112 | <ul style={containerStyle}>
-113 | <li style={itemStyle}>
-114 | <p style={labelStyle}>店　　名</p>
-115 | <p style={valueStyle}>{storeName || "（未入力）"}</p>
-116 | </li>
-117 |
-118 | <li style={itemStyle}>
-119 | <p style={labelStyle}>住　　所</p>
-120 | <p style={valueStyle}>{address || "（未入力）"}</p>
-121 | </li>
-122 |
-123 | <li style={itemStyle}>
-124 | <p style={labelStyle}>電　　話</p>
-125 | <p style={valueStyle}>{phone || "（未入力）"}</p>
-126 | </li>
-127 |
-128 | <li style={itemStyle}>
-129 | <p style={labelStyle}>営業時間</p>
-130 | <p style={valueStyle} dangerouslySetInnerHTML={{ **html: (businessHours || "（未入力）").replace(/\n/g, "<br />") }} />
-131 | </li>
-132 |
-133 | {optionalItems.map((item, index) => (
-134 | <li key={index} style={itemStyle}>
-135 | <p style={labelStyle}>{item.label || "（未入力）"}</p>
-136 | <p style={valueStyle} dangerouslySetInnerHTML={{ __html: (item.value || "（未入力）").replace(/\n/g, "<br />") }} />
-137 | </li>
-138 | ))}
-139 | </ul>
-140 | </div>
-141 | </>
-142 | );
-143 | }
-144 |
+107 | **next40pxDefaultSize
+108 | />
+109 | </PanelBody>
+110 | </InspectorControls>
+111 |
+112 | <div {...blockProps}>
+113 | <ul style={containerStyle}>
+114 | <li style={itemStyle}>
+115 | <p style={labelStyle}>店　　名</p>
+116 | <p style={valueStyle}>{storeName || "（未入力）"}</p>
+117 | </li>
+118 |
+119 | <li style={itemStyle}>
+120 | <p style={labelStyle}>住　　所</p>
+121 | <p style={valueStyle}>{address || "（未入力）"}</p>
+122 | </li>
+123 |
+124 | <li style={itemStyle}>
+125 | <p style={labelStyle}>電　　話</p>
+126 | <p style={valueStyle}>{phone || "（未入力）"}</p>
+127 | </li>
+128 |
+129 | <li style={itemStyle}>
+130 | <p style={labelStyle}>営業時間</p>
+131 | <p style={valueStyle} dangerouslySetInnerHTML={{ **html: (businessHours || "（未入力）").replace(/\n/g, "<br />") }} />
+132 | </li>
+133 |
+134 | {optionalItems.map((item, index) => (
+135 | <li key={index} style={itemStyle}>
+136 | <p style={labelStyle}>{item.label || "（未入力）"}</p>
+137 | <p style={valueStyle} dangerouslySetInnerHTML={{ __html: (item.value || "（未入力）").replace(/\n/g, "<br />") }} />
+138 | </li>
+139 | ))}
+140 | </ul>
+141 | </div>
+142 | </>
+143 | );
+144 | }
+145 |
 
 ---
 
@@ -4359,103 +4401,110 @@ https://raw.githubusercontent.com/aruto1204/kudohyoneji_back/main/wp-content/plu
 68 | { value: "em", label: "em" },
 69 | { value: "vw", label: "vw" },
 70 | ]}
-71 | />
-72 |
-73 | <ToggleControl label={**("中央寄せ", "my-custom-blocks")} checked={centerContent} onChange={(value) => setAttributes({ centerContent: value })} help={**("コンテナを中央に配置します", "my-custom-blocks")} />
-74 | </PanelBody>
-75 |
-76 | <PanelBody title={**("スタイル設定", "my-custom-blocks")}>
-77 | <div style={{ marginBottom: "20px" }}>
-78 | <label>{**("背景色", "my-custom-blocks")}</label>
-79 | <ColorPalette
-80 | value={backgroundColor}
-81 | onChange={(color) =>
-82 | setAttributes({
-83 | backgroundColor: color || "#EDF9F3",
-84 | })
-85 | }
-86 | colors={[
-87 | { name: "白", color: "#ffffff" },
-88 | { name: "グレー", color: "#F7F7F7" },
-89 | { name: "黒", color: "#2C2C2C" },
-90 | { name: "グリーン", color: "#0B8B4B" },
-91 | { name: "ライトグリーン", color: "#EDF9F3" },
-92 | { name: "透明", color: "transparent" },
-93 | ]}
-94 | />
-95 | </div>
-96 |
-97 | <UnitControl
-98 | label={**("角丸", "my-custom-blocks")}
-99 | value={borderRadius}
-100 | onChange={(value) => setAttributes({ borderRadius: value })}
-101 | units={[
-102 | { value: "px", label: "px" },
-103 | { value: "%", label: "%" },
-104 | ]}
-105 | />
-106 | </PanelBody>
-107 |
-108 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
-109 | <UnitControl
-110 | label={**("上マージン", "my-custom-blocks")}
-111 | value={marginTop}
-112 | onChange={(value) => setAttributes({ marginTop: value })}
-113 | units={[
-114 | { value: "px", label: "px" },
-115 | { value: "rem", label: "rem" },
-116 | ]}
-117 | />
-118 |
-119 | <UnitControl
-120 | label={**("下マージン", "my-custom-blocks")}
-121 | value={marginBottom}
-122 | onChange={(value) => setAttributes({ marginBottom: value })}
-123 | units={[
-124 | { value: "px", label: "px" },
-125 | { value: "rem", label: "rem" },
-126 | ]}
-127 | />
-128 |
-129 | <UnitControl
-130 | label={**("上パディング", "my-custom-blocks")}
-131 | value={paddingTop}
-132 | onChange={(value) => setAttributes({ paddingTop: value })}
-133 | units={[
-134 | { value: "px", label: "px" },
-135 | { value: "rem", label: "rem" },
-136 | ]}
-137 | />
-138 |
-139 | <UnitControl
-140 | label={**("下パディング", "my-custom-blocks")}
-141 | value={paddingBottom}
-142 | onChange={(value) => setAttributes({ paddingBottom: value })}
-143 | units={[
-144 | { value: "px", label: "px" },
-145 | { value: "rem", label: "rem" },
-146 | ]}
-147 | />
-148 |
-149 | <UnitControl
-150 | label={\_\_("左右パディング", "my-custom-blocks")}
-151 | value={paddingInline}
-152 | onChange={(value) => setAttributes({ paddingInline: value })}
-153 | units={[
-154 | { value: "px", label: "px" },
-155 | { value: "rem", label: "rem" },
-156 | ]}
-157 | />
-158 | </PanelBody>
-159 | </InspectorControls>
-160 |
-161 | <div {...blockProps}>
-162 | <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
-163 | </div>
-164 | </>
-165 | );
-166 | }
+71 | **next40pxDefaultSize
+72 | />
+73 |
+74 | <ToggleControl label={**("中央寄せ", "my-custom-blocks")} checked={centerContent} onChange={(value) => setAttributes({ centerContent: value })} help={**("コンテナを中央に配置します", "my-custom-blocks")} **nextHasNoMarginBottom />
+75 | </PanelBody>
+76 |
+77 | <PanelBody title={**("スタイル設定", "my-custom-blocks")}>
+78 | <div style={{ marginBottom: "20px" }}>
+79 | <label>{**("背景色", "my-custom-blocks")}</label>
+80 | <ColorPalette
+81 | value={backgroundColor}
+82 | onChange={(color) =>
+83 | setAttributes({
+84 | backgroundColor: color || "#EDF9F3",
+85 | })
+86 | }
+87 | colors={[
+88 | { name: "白", color: "#ffffff" },
+89 | { name: "グレー", color: "#F7F7F7" },
+90 | { name: "黒", color: "#2C2C2C" },
+91 | { name: "グリーン", color: "#0B8B4B" },
+92 | { name: "ライトグリーン", color: "#EDF9F3" },
+93 | { name: "透明", color: "transparent" },
+94 | ]}
+95 | />
+96 | </div>
+97 |
+98 | <UnitControl
+99 | label={**("角丸", "my-custom-blocks")}
+100 | value={borderRadius}
+101 | onChange={(value) => setAttributes({ borderRadius: value })}
+102 | units={[
+103 | { value: "px", label: "px" },
+104 | { value: "%", label: "%" },
+105 | ]}
+106 | **next40pxDefaultSize
+107 | />
+108 | </PanelBody>
+109 |
+110 | <PanelBody title={**("スペーシング設定", "my-custom-blocks")}>
+111 | <UnitControl
+112 | label={**("上マージン", "my-custom-blocks")}
+113 | value={marginTop}
+114 | onChange={(value) => setAttributes({ marginTop: value })}
+115 | units={[
+116 | { value: "px", label: "px" },
+117 | { value: "rem", label: "rem" },
+118 | ]}
+119 | **next40pxDefaultSize
+120 | />
+121 |
+122 | <UnitControl
+123 | label={**("下マージン", "my-custom-blocks")}
+124 | value={marginBottom}
+125 | onChange={(value) => setAttributes({ marginBottom: value })}
+126 | units={[
+127 | { value: "px", label: "px" },
+128 | { value: "rem", label: "rem" },
+129 | ]}
+130 | **next40pxDefaultSize
+131 | />
+132 |
+133 | <UnitControl
+134 | label={**("上パディング", "my-custom-blocks")}
+135 | value={paddingTop}
+136 | onChange={(value) => setAttributes({ paddingTop: value })}
+137 | units={[
+138 | { value: "px", label: "px" },
+139 | { value: "rem", label: "rem" },
+140 | ]}
+141 | **next40pxDefaultSize
+142 | />
+143 |
+144 | <UnitControl
+145 | label={**("下パディング", "my-custom-blocks")}
+146 | value={paddingBottom}
+147 | onChange={(value) => setAttributes({ paddingBottom: value })}
+148 | units={[
+149 | { value: "px", label: "px" },
+150 | { value: "rem", label: "rem" },
+151 | ]}
+152 | **next40pxDefaultSize
+153 | />
+154 |
+155 | <UnitControl
+156 | label={**("左右パディング", "my-custom-blocks")}
+157 | value={paddingInline}
+158 | onChange={(value) => setAttributes({ paddingInline: value })}
+159 | units={[
+160 | { value: "px", label: "px" },
+161 | { value: "rem", label: "rem" },
+162 | ]}
+163 | \_\_next40pxDefaultSize
+164 | />
+165 | </PanelBody>
+166 | </InspectorControls>
 167 |
+168 | <div {...blockProps}>
+169 | <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} templateLock={false} />
+170 | </div>
+171 | </>
+172 | );
+173 | }
+174 |
 
 ---
 

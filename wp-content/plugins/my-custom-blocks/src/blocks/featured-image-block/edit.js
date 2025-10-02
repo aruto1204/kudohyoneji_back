@@ -77,12 +77,6 @@ export default function Edit({ attributes, setAttributes }) {
 
   // アイキャッチを手動で再読み込み
   const handleReload = () => {
-    // console.log("handleReload");
-    // console.log(featuredImage);
-    // console.log(featuredImageId);
-    // console.log(imageSize);
-    // console.log(imageUrl);
-    // console.log(setAttributes);
     if (featuredImage) {
       let selectedImageUrl = "";
 
