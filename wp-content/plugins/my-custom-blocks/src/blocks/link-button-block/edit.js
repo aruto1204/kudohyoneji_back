@@ -40,15 +40,15 @@ export default function Edit({ attributes, setAttributes }) {
   };
 
   const textStyle = {
-    fontSize: "16px", // text-base
+    fontSize: "18px", // text-base
     fontWeight: "600", // font-semibold
     lineHeight: "1",
-    letterSpacing: "0.2em", // tracking-[0.2em]
+    letterSpacing: "0.05em", // tracking-[0.2em]
     margin: 0,
   };
 
   const blockProps = useBlockProps({
-    style: blockStyle,
+    // style: blockStyle,
     className: "link-button-block-wrapper",
   });
 
@@ -181,7 +181,7 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
 
-      <div {...blockProps}>
+      <div {...blockProps} style={blockStyle}>
         <div style={buttonStyle}>
           <p style={textStyle}>{buttonText || "リンクテキスト"}</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style={{ width: "16px", height: "18px" }}>

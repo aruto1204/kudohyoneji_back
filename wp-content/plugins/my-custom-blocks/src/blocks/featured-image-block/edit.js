@@ -66,6 +66,7 @@ export default function Edit({ attributes, setAttributes }) {
     border: "2px dashed #ccc",
     borderRadius: "20px",
     padding: "40px 20px",
+    boxSizing: "border-box",
   };
 
   const blockProps = useBlockProps({
