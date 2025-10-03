@@ -52,12 +52,27 @@ export default function save({ attributes }) {
     fill: "currentColor",
   };
 
+  // レスポンシブ対応のためのメディアクエリスタイル
+  const responsiveStyle = `
+    @media (min-width: 640px) {
+      .text-responsive {
+        font-size: 18px !important; /* sm:text-lg */
+        line-height: 28px !important;
+      }
+    }
+    .link-button-hover:hover {
+      color: ${hoverTextColor || "#0B8B4B"} !important;
+      background-color: ${hoverBackgroundColor || "#ffffff"} !important;
+    }
+  `;
+
   const blockProps = useBlockProps.save({
     className: "link-button-block-wrapper",
   });
 
   return (
     <div {...blockProps} style={containerStyle}>
+      <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
       <a
         className="link-button-responsive link-button-hover"
         href={buttonUrl || "/"}

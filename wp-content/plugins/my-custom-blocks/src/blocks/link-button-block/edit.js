@@ -48,7 +48,6 @@ export default function Edit({ attributes, setAttributes }) {
   };
 
   const blockProps = useBlockProps({
-    // style: blockStyle,
     className: "link-button-block-wrapper",
   });
 
