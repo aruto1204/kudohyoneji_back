@@ -59,6 +59,10 @@ registerBlockType("my-custom-blocks/link-button-block", {
       type: "boolean",
       default: false,
     },
+    uniqueId: {
+      type: "string",
+      default: "",
+    },
   },
   edit: Edit,
   save,

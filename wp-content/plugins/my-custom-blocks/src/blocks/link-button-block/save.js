@@ -55,7 +55,7 @@ export default function save({ attributes }) {
   // レスポンシブ対応のためのメディアクエリスタイル
   const responsiveStyle = `
     @media (min-width: 640px) {
-      .text-responsive {
+    .text-responsive {
         font-size: 18px !important; /* sm:text-lg */
         line-height: 28px !important;
       }
@@ -67,7 +67,7 @@ export default function save({ attributes }) {
   `;
 
   const blockProps = useBlockProps.save({
-    className: "link-button-block-wrapper",
+    className: `link-button-block-wrapper`,
   });
 
   return (

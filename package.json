@@ -10,6 +10,7 @@
     "blocks:lint:js": "cd wp-content/plugins/my-custom-blocks && npm run lint:js"
   },
   "dependencies": {
-    "@wordpress/env": "^10.31.0"
+    "@wordpress/env": "^10.31.0",
+    "playwright": "^1.55.1"
   }
 }
