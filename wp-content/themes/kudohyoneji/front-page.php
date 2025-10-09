@@ -18,8 +18,23 @@
           $post_index = $i % $posts_count;
           $post = $posts[$post_index];
           setup_postdata( $post );
+
+          // 画像URLを取得
+          $image_url = '';
+
+          // アイキャッチ画像が設定されている場合
+          if ( has_post_thumbnail() ) {
+            $image_url = get_the_post_thumbnail_url( $post->ID, 'medium' );
+          } else {
+            // アイキャッチがない場合、投稿内容から最初の画像を取得
+            $content = get_the_content();
+            preg_match('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $content, $matches);
+            if ( !empty($matches[1]) ) {
+              $image_url = $matches[1];
+            }
+          }
     ?>
-    <div class="swiper-slide"> <a href="<?php the_permalink(); ?>" class="block border-5 border-white md:hover:opacity-80 overflow-hidden aspect-[327/215]" style="background-image: url('<?php the_post_thumbnail_url('medium'); ?>'); background-size: cover; background-position: center"></a></div>
+    <div class="swiper-slide"> <a href="<?php the_permalink(); ?>" class="block border-5 border-white md:hover:opacity-80 overflow-hidden aspect-[327/215]" style="background-image: url('<?php echo esc_url($image_url); ?>'); background-size: cover; background-position: center"></a></div>
     <?php
         }
         wp_reset_postdata(); // 直前のクエリを復元する
