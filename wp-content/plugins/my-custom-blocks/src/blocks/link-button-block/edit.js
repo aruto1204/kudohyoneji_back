@@ -1,9 +1,17 @@
 import { __ } from "@wordpress/i18n";
 import { InspectorControls, useBlockProps, ColorPalette } from "@wordpress/block-editor";
 import { PanelBody, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { useEffect } from "@wordpress/element";
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes, clientId }) {
   const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding } = attributes;
+
+  // clientIdを属性に保存
+  useEffect(() => {
+    if (clientId && attributes.clientId !== clientId) {
+      setAttributes({ clientId });
+    }
+  }, [clientId]);
 
   // エディタ用のスタイル
   const blockStyle = {

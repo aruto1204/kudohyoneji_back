@@ -59,9 +59,8 @@ registerBlockType("my-custom-blocks/link-button-block", {
       type: "boolean",
       default: false,
     },
-    uniqueId: {
+    clientId: {
       type: "string",
-      default: "",
     },
   },
   edit: Edit,

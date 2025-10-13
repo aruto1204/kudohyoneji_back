@@ -1,7 +1,7 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding } = attributes;
+  const { buttonText, buttonUrl, backgroundColor, textColor, borderColor, hoverTextColor, hoverBackgroundColor, marginTop, marginBottom, openInNewTab, padding, clientId } = attributes;
 
   // コンテナのスタイル
   const containerStyle = {
@@ -52,6 +52,9 @@ export default function save({ attributes }) {
     fill: "currentColor",
   };
 
+  // ユニークなクラス名を生成
+  const uniqueClass = `link-button-${clientId}`;
+
   // レスポンシブ対応のためのメディアクエリスタイル
   const responsiveStyle = `
     @media (min-width: 640px) {
@@ -60,7 +63,7 @@ export default function save({ attributes }) {
         line-height: 28px !important;
       }
     }
-    .link-button-hover:hover {
+    .${uniqueClass}:hover {
       color: ${hoverTextColor || "#0B8B4B"} !important;
       background-color: ${hoverBackgroundColor || "#ffffff"} !important;
     }
@@ -74,7 +77,7 @@ export default function save({ attributes }) {
     <div {...blockProps} style={containerStyle}>
       <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
       <a
-        className="link-button-responsive link-button-hover"
+        className={`link-button-responsive ${uniqueClass}`}
         href={buttonUrl || "/"}
         style={buttonStyle}
         {...(openInNewTab && {
