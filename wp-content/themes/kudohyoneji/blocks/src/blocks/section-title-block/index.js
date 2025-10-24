@@ -8,7 +8,7 @@ registerBlockType("my-custom-blocks/section-title-block", {
   apiVersion: 3,
   title: "セクションタイトルブロック",
   description: "セクションのタイトルを表示するブロックです。",
-  category: "common",
+  category: "customBlocks",
   icon: "heading",
   supports: {
     align: ["wide", "full"],

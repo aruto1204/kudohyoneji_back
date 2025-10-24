@@ -9,7 +9,7 @@ registerBlockType("my-custom-blocks/container-block", {
   apiVersion: 3,
   title: "コンテナブロック",
   description: "角丸のコンテナ。内部に他のブロックを配置できます。",
-  category: "layout",
+  category: "customBlocks",
   icon: "admin-page",
   supports: {
     align: ["wide", "full"],

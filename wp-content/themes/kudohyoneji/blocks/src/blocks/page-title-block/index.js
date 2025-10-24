@@ -12,7 +12,7 @@ registerBlockType("my-custom-blocks/page-title", {
   apiVersion: 3,
   title: __("ページタイトルブロック", "my-custom-blocks"),
   description: __("ページタイトルとサブタイトルを表示するブロック", "my-custom-blocks"),
-  category: "common",
+  category: "customBlocks",
   icon: "heading",
   keywords: [__("title", "my-custom-blocks"), __("heading", "my-custom-blocks"), __("page", "my-custom-blocks")],
   attributes: {

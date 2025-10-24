@@ -7,7 +7,7 @@ registerBlockType("my-custom-blocks/google-map-block", {
   apiVersion: 3,
   title: "Google Mapブロック",
   description: "Google Mapを埋め込むブロックです。",
-  category: "embed",
+  category: "station",
   icon: "location-alt",
   supports: {
     align: ["wide", "full"],

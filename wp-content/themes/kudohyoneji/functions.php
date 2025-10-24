@@ -190,3 +190,23 @@ function kudohyoneji_theme_blocks_frontend_assets() {
     }
 }
 add_action('wp_enqueue_scripts', 'kudohyoneji_theme_blocks_frontend_assets');
+
+
+function my_custom_block_category( $categories ) {
+  // 新しいカテゴリーを配列の先頭に追加
+  return array_merge(
+    $categories,
+      array(
+          array(
+              'slug'  => 'customBlocks',
+              'title' => 'カスタムブロック',
+          ),
+          array(
+              'slug'  => 'station',
+              'title' => 'サービスステーション',
+          ),
+      ),
+
+  );
+}
+add_filter( 'block_categories_all', 'my_custom_block_category', 10, 2 );

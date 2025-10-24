@@ -8,7 +8,7 @@ registerBlockType("my-custom-blocks/link-button-block", {
   apiVersion: 3,
   title: "リンクボタンブロック",
   description: "メーカーサイトへのリンクボタンを表示するブロックです。",
-  category: "common",
+  category: "customBlocks",
   icon: "button",
   supports: {
     align: ["wide", "full"],

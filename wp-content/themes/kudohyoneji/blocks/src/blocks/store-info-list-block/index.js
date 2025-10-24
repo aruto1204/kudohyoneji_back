@@ -8,7 +8,7 @@ registerBlockType("my-custom-blocks/store-info-list-block", {
   apiVersion: 3,
   title: "店舗情報リストブロック",
   description: "店舗の基本情報（店名、住所、電話、営業時間など）を表示するリストブロックです。",
-  category: "common",
+  category: "station",
   icon: "list-view",
   supports: {
     align: ["wide", "full"],

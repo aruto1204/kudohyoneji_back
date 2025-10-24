@@ -9,7 +9,7 @@ registerBlockType("my-custom-blocks/inner-container-block", {
   apiVersion: 3,
   title: "内側コンテナブロック",
   description: "内側にコンテナを配置できるブロック。",
-  category: "layout",
+  category: "customBlocks",
   icon: "align-center",
   supports: {
     align: ["wide", "full"],

@@ -8,7 +8,7 @@ registerBlockType("my-custom-blocks/services-list-block", {
   apiVersion: 3,
   title: "取扱サービスリストブロック",
   description: "店舗で提供しているサービスを選択して表示するブロックです。",
-  category: "common",
+  category: "station",
   icon: "editor-ul",
   supports: {
     align: ["wide", "full"],
