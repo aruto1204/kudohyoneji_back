@@ -1,0 +1,41 @@
+/**
+ * Section Title Block Styles
+ * フォントサイズのみを管理（その他のスタイルはインラインで適用）
+ */
+
+// フォントサイズ変数のみ定義
+$font-size-desktop: 40px; // md:text-[40px]
+$font-size-tablet: 30px; // sm:text-3xl
+$font-size-mobile: 24px; // text-2xl
+
+// ブレークポイント
+$breakpoint-tablet: 640px;
+$breakpoint-desktop: 768px;
+
+// フォントサイズのみのレスポンシブスタイル
+@mixin section-title-font-sizes {
+  .section-title-responsive {
+    font-size: $font-size-mobile;
+    letter-spacing: 0;
+
+    @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
+      font-size: $font-size-tablet;
+      letter-spacing: 0.1em; // sm:tracking-wider
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      font-size: $font-size-desktop;
+      letter-spacing: 0.1em; // sm:tracking-wider
+    }
+  }
+}
+
+// フロントエンド用スタイル（フォントサイズのみ）
+.section-title-block-wrapper {
+  @include section-title-font-sizes;
+}
+
+// エディター内でのスタイル調整（フォントサイズのみ）
+.wp-block-my-custom-blocks-section-title-block {
+  @include section-title-font-sizes;
+}

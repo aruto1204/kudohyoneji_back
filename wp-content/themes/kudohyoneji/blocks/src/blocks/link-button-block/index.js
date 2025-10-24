@@ -6,7 +6,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/link-button-block", {
   apiVersion: 3,
-  title: "リンクボタンブロック(Plugin)",
+  title: "リンクボタンブロック",
   description: "メーカーサイトへのリンクボタンを表示するブロックです。",
   category: "common",
   icon: "button",

@@ -5,7 +5,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/featured-image-block", {
   apiVersion: 3,
-  title: "アイキャッチ画像ブロック(Plugin)",
+  title: "アイキャッチ画像ブロック",
   description: "投稿/固定ページのアイキャッチ画像を表示するブロックです。",
   category: "media",
   icon: "format-image",

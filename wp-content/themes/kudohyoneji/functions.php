@@ -112,3 +112,81 @@ add_action( 'init', 'disable_emoji' );
 //   );
 // }
 // add_action( 'admin_enqueue_scripts', 'enqueue_single_category_script' );
+
+// ===== テーマカスタムブロック機能 =====
+
+/**
+ * テーマカスタムブロックの初期化
+ */
+function kudohyoneji_theme_blocks_init() {
+    // 個別にブロックを登録（手動ビルド版）
+    $blocks_build_path = get_template_directory() . '/blocks/build';
+    if (file_exists($blocks_build_path . '/index.js')) {
+        // 現在は手動でJSファイルを読み込むため、ここでは何もしない
+        // ブロック登録はJavaScriptファイル内で行う
+    }
+}
+add_action('init', 'kudohyoneji_theme_blocks_init');
+
+/**
+ * テーマブロック用エディタアセット読み込み
+ */
+function kudohyoneji_theme_blocks_editor_assets() {
+    $asset_file_path = get_template_directory() . '/blocks/build/index.asset.php';
+
+    if (!file_exists($asset_file_path)) {
+        return;
+    }
+
+    $asset_file = include($asset_file_path);
+
+    wp_enqueue_script(
+        'kudohyoneji-theme-blocks-editor',
+        get_template_directory_uri() . '/blocks/build/index.js',
+        $asset_file['dependencies'],
+        $asset_file['version']
+    );
+
+    // エディター用スタイル（存在する場合のみ読み込み）
+    $editor_css_path = get_template_directory() . '/blocks/build/index.css';
+    if (file_exists($editor_css_path)) {
+        wp_enqueue_style(
+            'kudohyoneji-theme-blocks-editor',
+            get_template_directory_uri() . '/blocks/build/index.css',
+            array('wp-edit-blocks'),
+            $asset_file['version']
+        );
+    }
+
+    // 翻訳ファイル設定
+    wp_set_script_translations(
+        'kudohyoneji-theme-blocks-editor',
+        'kudohyoneji'
+    );
+}
+add_action('enqueue_block_editor_assets', 'kudohyoneji_theme_blocks_editor_assets');
+
+/**
+ * テーマブロック用フロントエンドアセット読み込み
+ */
+function kudohyoneji_theme_blocks_frontend_assets() {
+    $asset_file_path = get_template_directory() . '/blocks/build/index.asset.php';
+
+    if (!file_exists($asset_file_path)) {
+        return;
+    }
+
+    $asset_file = include($asset_file_path);
+
+    // フロントエンド用スタイル
+    $frontend_css_path = get_template_directory() . '/blocks/build/style-index.css';
+    if (file_exists($frontend_css_path)) {
+        wp_enqueue_style(
+            'kudohyoneji-theme-blocks-style',
+            get_template_directory_uri() . '/blocks/build/style-index.css',
+            array(),
+            $asset_file['version']
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'kudohyoneji_theme_blocks_frontend_assets');

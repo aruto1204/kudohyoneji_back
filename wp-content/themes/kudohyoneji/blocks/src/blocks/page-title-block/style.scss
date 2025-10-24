@@ -1,0 +1,51 @@
+/**
+ * Page Title Block Styles
+ * フォントサイズのみを管理（その他のスタイルはインラインで適用）
+ */
+
+// Poppinsフォントのインポート
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+// フォントサイズ変数のみ定義
+$font-size-main-desktop: 40px;
+$font-size-main-tablet: 30px;
+$font-size-main-mobile: 24px;
+$font-size-sub: 16px;
+
+// ブレークポイント
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+// フォントサイズのみのレスポンシブスタイル
+@mixin page-title-font-sizes {
+  .page-title-main-responsive {
+    font-size: $font-size-main-desktop;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: $font-size-main-tablet;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: $font-size-main-mobile;
+      letter-spacing: 0 !important;
+    }
+  }
+
+  .page-title-sub-responsive {
+    font-size: $font-size-sub;
+
+    @media (max-width: $breakpoint-mobile) {
+      letter-spacing: 0 !important;
+    }
+  }
+}
+
+// フロントエンド用スタイル（フォントサイズのみ）
+.page-title-block {
+  @include page-title-font-sizes;
+}
+
+// エディター内でのスタイル調整（フォントサイズのみ）
+.wp-block-my-custom-blocks-page-title {
+  @include page-title-font-sizes;
+}

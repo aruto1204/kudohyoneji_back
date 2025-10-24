@@ -1,0 +1,73 @@
+// /**
+//  * リンクボタンブロックのスタイル
+//  * フロントエンドとエディタの両方で適用される
+//  */
+
+// .link-button-block-wrapper {
+//   /* CSS変数の定義 */
+//   --bg-color: #22c55e;
+//   --text-color: #ffffff;
+//   --border-color: #22c55e;
+//   --hover-text-color: #22c55e;
+//   --hover-bg-color: #ffffff;
+//   --margin-top: 48px;
+//   --margin-top-md: 93px;
+
+//   /* リンクボタンのフォーカススタイル */
+//   .link-button-hover:focus {
+//     outline: 2px solid var(--border-color, #22c55e);
+//     outline-offset: 2px;
+//   }
+
+//   /* エディタ内での表示調整 */
+//   .wp-block-editor & {
+//     border: 1px dashed #ccc;
+//     padding: 10px;
+//     border-radius: 4px;
+
+//     &:hover {
+//       border-color: #007cba;
+//     }
+
+//     .link-button {
+//       cursor: default;
+//       pointer-events: none;
+//     }
+//   }
+// }
+
+// /* エディタ専用のスタイル */
+// .wp-block-my-custom-blocks-link-button-block {
+//   .link-button-block-wrapper {
+//     position: relative;
+
+//     &::before {
+//       content: "リンクボタンブロック";
+//       position: absolute;
+//       top: -20px;
+//       left: 0;
+//       font-size: 12px;
+//       color: #666;
+//       background: #fff;
+//       padding: 2px 8px;
+//       border-radius: 3px;
+//       border: 1px solid #ddd;
+//       z-index: 1;
+//     }
+//   }
+// }
+
+// /* フロントエンド専用のスタイル */
+// .wp-site-blocks .link-button-block-wrapper {
+//   /* フロントエンドでのみ適用される追加スタイル */
+//   .link-button {
+//     &:hover {
+//       transform: translateY(-1px);
+//       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+//     }
+
+//     &:active {
+//       transform: translateY(0);
+//     }
+//   }
+// }

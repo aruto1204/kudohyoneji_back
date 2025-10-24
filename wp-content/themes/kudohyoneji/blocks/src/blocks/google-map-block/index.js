@@ -5,7 +5,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/google-map-block", {
   apiVersion: 3,
-  title: "Google Mapブロック(Plugin)",
+  title: "Google Mapブロック",
   description: "Google Mapを埋め込むブロックです。",
   category: "embed",
   icon: "location-alt",

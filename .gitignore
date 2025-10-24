@@ -67,3 +67,5 @@ jspm_packages/
 wp-content/plugins/my-custom-blocks/node_modules/
 
 playwright
+
+wp-content/themes/kudohyoneji/blocks/node_modules/

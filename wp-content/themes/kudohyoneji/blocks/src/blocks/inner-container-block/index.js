@@ -7,7 +7,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/inner-container-block", {
   apiVersion: 3,
-  title: "内側コンテナブロック(Plugin)",
+  title: "内側コンテナブロック",
   description: "内側にコンテナを配置できるブロック。",
   category: "layout",
   icon: "align-center",

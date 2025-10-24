@@ -10,7 +10,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/page-title", {
   apiVersion: 3,
-  title: __("ページタイトルブロック(Plugin)", "my-custom-blocks"),
+  title: __("ページタイトルブロック", "my-custom-blocks"),
   description: __("ページタイトルとサブタイトルを表示するブロック", "my-custom-blocks"),
   category: "common",
   icon: "heading",

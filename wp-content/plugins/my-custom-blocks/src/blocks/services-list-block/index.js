@@ -5,7 +5,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/services-list-block", {
   apiVersion: 3,
-  title: "取扱サービスリストブロック",
+  title: "取扱サービスリストブロック(Plugin)",
   description: "店舗で提供しているサービスを選択して表示するブロックです。",
   category: "common",
   icon: "editor-ul",

@@ -6,7 +6,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/section-title-block", {
   apiVersion: 3,
-  title: "セクションタイトルブロック(Plugin)",
+  title: "セクションタイトルブロック",
   description: "セクションのタイトルを表示するブロックです。",
   category: "common",
   icon: "heading",
