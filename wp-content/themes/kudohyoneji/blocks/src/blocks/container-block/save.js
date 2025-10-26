@@ -1,10 +1,10 @@
 import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
+  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, padding } = attributes;
 
   const blockProps = useBlockProps.save({
-    className: "container-block-wrapper",
+    className: `container-block-wrapper ${padding ? "padding-inline" : ""}`,
     style: {
       width: "100%",
       height: "auto",

@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { InspectorControls, InnerBlocks, useBlockProps, ColorPalette } from "@wordpress/block-editor";
-import { PanelBody, RangeControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { PanelBody, RangeControl, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 const ALLOWED_BLOCKS = [
   "core/paragraph",
@@ -20,12 +20,13 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/inner-container-block",
   "my-custom-blocks/title-banner-block",
   "my-custom-blocks/message-block",
+  "my-custom-blocks/padding-container-block",
 ];
 
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
 
 export default function Edit({ attributes, setAttributes }) {
-  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
+  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, padding } = attributes;
 
   // 直接インラインスタイルを設定
   const blockStyle = {
@@ -50,7 +51,7 @@ export default function Edit({ attributes, setAttributes }) {
 
   const blockProps = useBlockProps({
     style: blockStyle,
-    className: "container-block-wrapper",
+    className: `container-block-wrapper ${padding ? "padding-inline" : ""}`,
   });
 
   return (
@@ -131,6 +132,8 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
             __next40pxDefaultSize
           />
+
+          <ToggleControl label={__("左右パディングを有効にする", "my-custom-blocks")} checked={padding} onChange={(value) => setAttributes({ padding: value })} help={__("左右にパディングを追加します", "my-custom-blocks")} __nextHasNoMarginBottom />
         </PanelBody>
       </InspectorControls>
 

@@ -40,6 +40,10 @@ registerBlockType("my-custom-blocks/container-block", {
       type: "string",
       default: "100px",
     },
+    padding: {
+      type: "boolean",
+      default: true,
+    },
   },
   deprecated: [
     {
@@ -63,6 +67,10 @@ registerBlockType("my-custom-blocks/container-block", {
         paddingBottom: {
           type: "string",
           default: "20px",
+        },
+        padding: {
+          type: "boolean",
+          default: true,
         },
       },
       save({ attributes }) {

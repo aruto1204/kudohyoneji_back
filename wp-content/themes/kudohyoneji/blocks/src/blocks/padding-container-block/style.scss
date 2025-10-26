@@ -1,0 +1,15 @@
+// パディングコンテナブロックのスタイル
+.padding-container-block-wrapper {
+  width: 100%;
+  height: auto;
+
+  // モバイル: 左右パディング 40px (px-10相当)
+  padding-left: 40px;
+  padding-right: 40px;
+
+  // タブレット以上: 左右パディング 98px (md:px-24.5相当 - 24.5 * 0.25rem = 6.125rem ≈ 98px)
+  @media (min-width: 768px) {
+    padding-left: 98px;
+    padding-right: 98px;
+  }
+}

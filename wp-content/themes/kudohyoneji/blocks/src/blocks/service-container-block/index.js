@@ -7,7 +7,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/service-container-block", {
   apiVersion: 3,
-  title: "コンテナブロック",
+  title: "ステーションコンテナブロック",
   description: "サービスステーション内のコンテナ。内部に他のブロックを配置できます。",
   category: "station",
   icon: "admin-page",
