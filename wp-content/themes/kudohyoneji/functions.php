@@ -205,6 +205,26 @@ function my_custom_block_category( $categories ) {
               'slug'  => 'station',
               'title' => 'サービスステーション',
           ),
+          array(
+              'slug'  => 'wholesale',
+              'title' => '石油課　外販',
+          ),
+          array(
+              'slug'  => 'ikeuchi_shakanai_center',
+              'title' => '池内・釈迦内配送センター',
+          ),
+          array(
+              'slug'  => 'sales_maintenance',
+              'title' => 'ガス販売／保守',
+          ),
+          array(
+              'slug'  => 'housing_equipment',
+              'title' => '住設課　住宅設備',
+          ),
+          array(
+              'slug'  => 'processed_products',
+              'title' => '営業部　化工品',
+          ),
       ),
 
   );
