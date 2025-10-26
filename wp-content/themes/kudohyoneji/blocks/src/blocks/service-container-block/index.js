@@ -5,11 +5,11 @@ import Edit from "./edit";
 import save from "./save";
 import "./style.scss";
 
-registerBlockType("my-custom-blocks/container-block", {
+registerBlockType("my-custom-blocks/service-container-block", {
   apiVersion: 3,
   title: "コンテナブロック",
-  description: "角丸のコンテナ。内部に他のブロックを配置できます。",
-  category: "customBlocks",
+  description: "サービスステーション内のコンテナ。内部に他のブロックを配置できます。",
+  category: "station",
   icon: "admin-page",
   supports: {
     align: ["wide", "full"],
@@ -30,15 +30,15 @@ registerBlockType("my-custom-blocks/container-block", {
     },
     marginBottom: {
       type: "string",
-      default: "0px",
+      default: "50px",
     },
     paddingTop: {
       type: "string",
-      default: "48px",
+      default: "42px",
     },
     paddingBottom: {
       type: "string",
-      default: "100px",
+      default: "76px",
     },
   },
   deprecated: [
@@ -66,7 +66,7 @@ registerBlockType("my-custom-blocks/container-block", {
         },
       },
       save({ attributes }) {
-        const { backgroundColor, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline } = attributes;
+        const { backgroundColor, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
 
         const blockProps = useBlockProps.save({
           className: "container-block-wrapper",

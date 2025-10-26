@@ -18,15 +18,11 @@ registerBlockType("my-custom-blocks/inner-container-block", {
   attributes: {
     maxWidth: {
       type: "string",
-      default: "1200px",
+      default: "964px",
     },
     backgroundColor: {
       type: "string",
       default: "#EDF9F3",
-    },
-    borderRadius: {
-      type: "string",
-      default: "0px",
     },
     marginTop: {
       type: "string",
@@ -43,18 +39,6 @@ registerBlockType("my-custom-blocks/inner-container-block", {
     paddingBottom: {
       type: "string",
       default: "20px",
-    },
-    paddingInline: {
-      type: "string",
-      default: "0px",
-    },
-    centerContent: {
-      type: "boolean",
-      default: true,
-    },
-    padding: {
-      type: "boolean",
-      default: false,
     },
   },
   edit: Edit,

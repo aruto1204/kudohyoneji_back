@@ -13,3 +13,4 @@ import "./page-title-block";
 import "./section-title-block";
 import "./services-list-block";
 import "./store-info-list-block";
+import "./service-container-block";

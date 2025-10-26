@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { InspectorControls, InnerBlocks, useBlockProps, ColorPalette } from "@wordpress/block-editor";
-import { PanelBody, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { PanelBody, RangeControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 const ALLOWED_BLOCKS = [
   "core/paragraph",
@@ -15,59 +15,48 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/hero-block",
   "my-custom-blocks/testimonial-block",
   "my-custom-blocks/pricing-table",
-  "my-custom-blocks/container-block",
-  "my-custom-blocks/link-button-block",
   "my-custom-blocks/width-container-block",
+  "my-custom-blocks/link-button-block",
+  "my-custom-blocks/featured-image-block",
+  "my-custom-blocks/store-info-list-block",
+  "my-custom-blocks/services-list-block",
+  "my-custom-blocks/google-map-block",
   "my-custom-blocks/inner-container-block",
 ];
 
-// const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
-
 export default function Edit({ attributes, setAttributes }) {
-  const { maxWidth, backgroundColor, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
+  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
 
   // 直接インラインスタイルを設定
-  const containerStyle = {
+  const blockStyle = {
     width: "100%",
-    backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#EDF9F3",
-    maxWidth: maxWidth || "964px",
-    marginTop: marginTop || "0px",
+    height: "auto",
+    backgroundColor: backgroundColor === "transparent" ? "transparent" : backgroundColor || "#ffffff",
+    borderRadius: borderRadius || "20px",
+    marginTop: marginTop || "50px",
     marginBottom: marginBottom || "0px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    paddingTop: paddingTop || "48px",
+    paddingBottom: paddingBottom || "100px",
+    paddingInline: "20px",
     boxSizing: "border-box",
     border: "1px dashed #ccc",
-    paddingInline: "20px",
-    paddingTop: paddingTop || "20px",
-    paddingBottom: paddingBottom || "20px",
-    minHeight: "80px",
+    minHeight: "100px",
+    position: "relative",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
   };
 
   const blockProps = useBlockProps({
-    style: containerStyle,
-    className: "inner-container-block-wrapper",
+    style: blockStyle,
+    className: "container-block-wrapper",
   });
 
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("幅設定", "my-custom-blocks")}>
-          <UnitControl
-            label={__("最大幅", "my-custom-blocks")}
-            value={maxWidth}
-            onChange={(value) => setAttributes({ maxWidth: value })}
-            units={[
-              { value: "px", label: "px" },
-              { value: "%", label: "%" },
-              { value: "rem", label: "rem" },
-              { value: "em", label: "em" },
-              { value: "vw", label: "vw" },
-            ]}
-            __next40pxDefaultSize
-          />
-        </PanelBody>
-
         <PanelBody title={__("スタイル設定", "my-custom-blocks")}>
           <div style={{ marginBottom: "20px" }}>
             <label>{__("背景色", "my-custom-blocks")}</label>
@@ -75,7 +64,7 @@ export default function Edit({ attributes, setAttributes }) {
               value={backgroundColor}
               onChange={(color) =>
                 setAttributes({
-                  backgroundColor: color || "#EDF9F3",
+                  backgroundColor: color || "#ffffff",
                 })
               }
               colors={[
@@ -83,11 +72,20 @@ export default function Edit({ attributes, setAttributes }) {
                 { name: "グレー", color: "#F7F7F7" },
                 { name: "黒", color: "#2C2C2C" },
                 { name: "グリーン", color: "#0B8B4B" },
-                { name: "ライトグリーン", color: "#EDF9F3" },
-                { name: "透明", color: "transparent" },
               ]}
             />
           </div>
+
+          <UnitControl
+            label={__("角丸", "my-custom-blocks")}
+            value={borderRadius}
+            onChange={(value) => setAttributes({ borderRadius: value })}
+            units={[
+              { value: "px", label: "px" },
+              { value: "%", label: "%" },
+            ]}
+            __next40pxDefaultSize
+          />
         </PanelBody>
 
         <PanelBody title={__("スペーシング設定", "my-custom-blocks")}>

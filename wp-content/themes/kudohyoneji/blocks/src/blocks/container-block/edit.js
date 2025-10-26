@@ -27,7 +27,7 @@ const ALLOWED_BLOCKS = [
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
 
 export default function Edit({ attributes, setAttributes }) {
-  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline, maxWidth } = attributes;
+  const { backgroundColor, borderRadius, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
 
   // 直接インラインスタイルを設定
   const blockStyle = {
@@ -41,8 +41,6 @@ export default function Edit({ attributes, setAttributes }) {
     marginRight: "auto",
     paddingTop: paddingTop || "48px",
     paddingBottom: paddingBottom || "100px",
-    paddingLeft: paddingInline || "0px",
-    paddingRight: paddingInline || "0px",
     boxSizing: "border-box",
     border: "1px dashed #ccc",
     minHeight: "100px",
@@ -129,17 +127,6 @@ export default function Edit({ attributes, setAttributes }) {
             label={__("下パディング", "my-custom-blocks")}
             value={paddingBottom}
             onChange={(value) => setAttributes({ paddingBottom: value })}
-            units={[
-              { value: "px", label: "px" },
-              { value: "rem", label: "rem" },
-            ]}
-            __next40pxDefaultSize
-          />
-
-          <UnitControl
-            label={__("左右パディング", "my-custom-blocks")}
-            value={paddingInline}
-            onChange={(value) => setAttributes({ paddingInline: value })}
             units={[
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },

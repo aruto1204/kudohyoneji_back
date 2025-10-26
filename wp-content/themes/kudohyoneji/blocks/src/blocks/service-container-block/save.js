@@ -16,6 +16,7 @@ export default function save({ attributes }) {
       marginRight: "auto",
       paddingTop: paddingTop || "48px",
       paddingBottom: paddingBottom || "100px",
+      paddingInline: "20px",
       boxSizing: "border-box",
       display: "flex",
       justifyContent: "center",
