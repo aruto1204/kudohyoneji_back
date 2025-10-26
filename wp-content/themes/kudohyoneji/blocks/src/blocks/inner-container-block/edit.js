@@ -17,8 +17,8 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/pricing-table",
   "my-custom-blocks/container-block",
   "my-custom-blocks/link-button-block",
-  "my-custom-blocks/width-container-block",
   "my-custom-blocks/inner-container-block",
+  "my-custom-blocks/title-banner-block",
 ];
 
 // const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];

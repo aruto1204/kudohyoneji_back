@@ -66,7 +66,7 @@ registerBlockType("my-custom-blocks/container-block", {
         },
       },
       save({ attributes }) {
-        const { backgroundColor, marginTop, marginBottom, paddingTop, paddingBottom, paddingInline } = attributes;
+        const { backgroundColor, marginTop, marginBottom, paddingTop, paddingBottom } = attributes;
 
         const blockProps = useBlockProps.save({
           className: "container-block-wrapper",

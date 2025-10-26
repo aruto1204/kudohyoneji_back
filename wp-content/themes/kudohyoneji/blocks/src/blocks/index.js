@@ -14,3 +14,4 @@ import "./section-title-block";
 import "./services-list-block";
 import "./store-info-list-block";
 import "./service-container-block";
+import "./title-banner-block";

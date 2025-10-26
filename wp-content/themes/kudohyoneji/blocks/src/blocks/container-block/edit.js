@@ -12,16 +12,13 @@ const ALLOWED_BLOCKS = [
   "core/spacer",
   "core/columns",
   "core/group",
-  "my-custom-blocks/hero-block",
-  "my-custom-blocks/testimonial-block",
-  "my-custom-blocks/pricing-table",
-  "my-custom-blocks/width-container-block",
   "my-custom-blocks/link-button-block",
   "my-custom-blocks/featured-image-block",
   "my-custom-blocks/store-info-list-block",
   "my-custom-blocks/services-list-block",
   "my-custom-blocks/google-map-block",
   "my-custom-blocks/inner-container-block",
+  "my-custom-blocks/title-banner-block",
 ];
 
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
