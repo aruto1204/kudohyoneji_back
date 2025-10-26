@@ -1,0 +1,149 @@
+/**
+ * Content Title Block Styles
+ * 2カラムレイアウトのコンテンツタイトルブロック
+ */
+
+.content-title-block {
+  width: 100%;
+  height: auto;
+
+  .content-title-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem; // 40px
+    position: relative;
+
+    // before疑似要素（装飾線）
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.875rem; // 14px (3.5 * 0.25rem)
+      left: -2.5rem; // -40px (-10 * 0.25rem)
+      width: 2rem; // 32px (8 * 0.25rem)
+      height: 0.125rem; // 2px (0.5 * 0.25rem)
+      background-color: #0b8b4b; // green-500
+    }
+
+    // 2カラムレイアウト
+    &.two-column {
+      @media (min-width: 1024px) {
+        // lg breakpoint
+        flex-direction: row;
+      }
+    }
+
+    // 1カラムレイアウト
+    &.one-column {
+      flex-direction: column;
+    }
+
+    .left-column {
+      width: 100%;
+      height: auto;
+
+      // 2カラム時のスタイル
+      .two-column & {
+        @media (min-width: 1024px) {
+          // lg breakpoint
+          width: 41.5%;
+        }
+
+        // min-width-fitクラスが付いている場合
+        &.min-width-fit {
+          @media (min-width: 1024px) {
+            // lg breakpoint
+            min-width: fit-content;
+          }
+        }
+      }
+
+      .main-title {
+        font-size: 1.5rem; // 24px (text-2xl)
+        color: #0b8b4b; // green-500
+        font-weight: 700;
+        line-height: 1.375; // snug
+        letter-spacing: 0.03em;
+        margin: 0 0 0.125rem 0; // mt-0.5
+
+        @media (min-width: 640px) {
+          // sm breakpoint
+          font-size: 1.875rem; // 30px (text-3xl)
+        }
+
+        @media (min-width: 768px) {
+          // md breakpoint
+          font-size: 2.5rem; // 40px (text-[40px])
+        }
+      }
+
+      .sub-title {
+        font-size: 1rem; // 16px (text-base)
+        font-weight: 700;
+        line-height: 1.66;
+        color: #92400e; // brown-500
+        margin: 0;
+
+        @media (min-width: 768px) {
+          // md breakpoint
+          font-size: 1.125rem; // 18px (text-lg)
+        }
+      }
+    }
+
+    .right-column {
+      width: 100%;
+      height: auto;
+
+      // 2カラム時のスタイル
+      .two-column & {
+        @media (min-width: 1024px) {
+          // lg breakpoint
+          width: 54.3%;
+        }
+      }
+
+      .body-text {
+        font-size: 1rem; // 16px (text-base)
+        font-weight: 500;
+        line-height: 1.75; // loose
+        color: #383838; // brown-500
+        margin: 0;
+
+        @media (min-width: 768px) {
+          // md breakpoint
+          font-size: 1.125rem; // 18px (text-lg)
+        }
+      }
+    }
+
+    // レスポンシブ対応のbefore疑似要素
+    @media (min-width: 640px) {
+      // sm breakpoint
+      &::before {
+        top: 1.25rem; // 20px (5 * 0.25rem)
+      }
+    }
+
+    @media (min-width: 768px) {
+      // md breakpoint
+      &::before {
+        top: 1.625rem; // 26px (6.5 * 0.25rem)
+        left: -6.125rem; // -98px (-24.5 * 0.25rem)
+        width: 4.125rem; // 66px (16.5 * 0.25rem)
+      }
+    }
+  }
+}
+
+// エディター用スタイル
+.content-title-block-editor {
+  .content-title-container {
+    // エディター内では装飾線を表示しない（見やすさのため）
+    &::before {
+      display: none;
+    }
+  }
+}

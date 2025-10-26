@@ -17,3 +17,4 @@ import "./service-container-block";
 import "./title-banner-block";
 import "./message-block";
 import "./padding-container-block";
+import "./content-title-block";

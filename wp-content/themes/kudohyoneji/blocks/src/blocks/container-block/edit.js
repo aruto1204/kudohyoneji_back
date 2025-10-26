@@ -21,6 +21,7 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/title-banner-block",
   "my-custom-blocks/message-block",
   "my-custom-blocks/padding-container-block",
+  "my-custom-blocks/content-title-block",
 ];
 
 const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];
