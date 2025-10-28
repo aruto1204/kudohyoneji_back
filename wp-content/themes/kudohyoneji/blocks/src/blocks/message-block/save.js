@@ -4,7 +4,7 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function Save({ attributes }) {
-  const { messageText, textColor, marginTop } = attributes;
+  const { messageText, textColor, marginTop, fontSizeMd, fontSizeSm, fontSizeXs, clientId } = attributes;
 
   // インラインスタイルでカスタマイズ可能な属性を設定
   const containerStyle = {
@@ -24,13 +24,30 @@ export default function Save({ attributes }) {
     textAlign: "center",
   };
 
+  // レスポンシブ対応のためのメディアクエリスタイル
+  const responsiveStyle = `
+    .message-text-${clientId} {
+      font-size: ${fontSizeXs};
+    }
+    @media (min-width: 640px) {
+    .message-text-${`${clientId}`} {
+      font-size: ${fontSizeSm};
+    }
+    @media (min-width: 768px) {
+    .message-text-${clientId} {
+        font-size: ${fontSizeMd};
+      }
+    }
+  `;
+
   const blockProps = useBlockProps.save({
     className: "message-block",
   });
 
   return (
     <div {...blockProps} style={containerStyle}>
-      <p className="message-text" style={textStyle} dangerouslySetInnerHTML={{ __html: messageText.replace(/\n/g, "<br />") }} />
+      <style dangerouslySetInnerHTML={{ __html: responsiveStyle }} />
+      <p className={`message-text-${clientId}`} style={textStyle} dangerouslySetInnerHTML={{ __html: messageText.replace(/\n/g, "<br />") }} />
     </div>
   );
 }

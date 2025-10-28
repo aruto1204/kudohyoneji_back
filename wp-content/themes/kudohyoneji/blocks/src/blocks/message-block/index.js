@@ -24,9 +24,24 @@ registerBlockType("my-custom-blocks/message-block", {
       type: "string",
       default: "#0B8B4B",
     },
+    fontSizeMd: {
+      type: "string",
+      default: "30px",
+    },
+    fontSizeSm: {
+      type: "string",
+      default: "24px",
+    },
+    fontSizeXs: {
+      type: "string",
+      default: "20px",
+    },
     marginTop: {
       type: "string",
       default: "0px",
+    },
+    clientId: {
+      type: "string",
     },
   },
   edit,

@@ -4,9 +4,17 @@
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { PanelBody, TextareaControl, ColorPicker, TextControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { useEffect } from "@wordpress/element";
 
-export default function Edit({ attributes, setAttributes }) {
-  const { messageText, textColor, marginTop } = attributes;
+export default function Edit({ attributes, setAttributes, clientId }) {
+  const { messageText, textColor, marginTop, fontSizeMd, fontSizeSm, fontSizeXs } = attributes;
+
+  // clientIdを属性に保存（既に保持している場合は更新しない）
+  useEffect(() => {
+    if (clientId && !attributes.clientId) {
+      setAttributes({ clientId });
+    }
+  }, [clientId]);
 
   // エディター用のスタイル
   const editorStyle = {
@@ -46,6 +54,45 @@ export default function Edit({ attributes, setAttributes }) {
           </div>
 
           <UnitControl
+            label={__("フォントサイズ（PC）", "my-custom-blocks")}
+            value={fontSizeMd}
+            onChange={(value) => setAttributes({ fontSizeMd: value })}
+            help={__("例: 30px, 2rem, 0", "my-custom-blocks")}
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+            ]}
+          />
+
+          <UnitControl
+            label={__("フォントサイズ（スマホ）", "my-custom-blocks")}
+            value={fontSizeSm}
+            onChange={(value) => setAttributes({ fontSizeSm: value })}
+            help={__("例: 30px, 2rem, 0", "my-custom-blocks")}
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+            ]}
+          />
+
+          <UnitControl
+            label={__("フォントサイズ（スマホXS）", "my-custom-blocks")}
+            value={fontSizeXs}
+            onChange={(value) => setAttributes({ fontSizeXs: value })}
+            help={__("例: 30px, 2rem, 0", "my-custom-blocks")}
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+            ]}
+          />
+
+          <UnitControl
             label={__("マージントップ", "my-custom-blocks")}
             value={marginTop}
             onChange={(value) => setAttributes({ marginTop: value })}
@@ -60,7 +107,7 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
 
-      <div className="message-block-editor" {...blockProps}>
+      <div {...blockProps} style={editorStyle}>
         <p style={textStyle} dangerouslySetInnerHTML={{ __html: (messageText || __("テキストを入力してください", "my-custom-blocks")).replace(/\n/g, "<br />") }} />
       </div>
     </>

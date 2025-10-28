@@ -3,39 +3,39 @@
  * レスポンシブ対応のスタイル
  */
 
-.message-block {
-  .message-text {
-    // モバイル（sm未満）: text-xl
-    @media (max-width: 639px) {
-      font-size: 1.25rem; // 20px
-    }
+// .message-block {
+//   .message-text {
+//     // モバイル（sm未満）: text-xl
+//     @media (max-width: 639px) {
+//       font-size: 1.25rem; // 20px
+//     }
 
-    // タブレット（sm以上、md未満）: text-2xl
-    @media (min-width: 640px) and (max-width: 767px) {
-      font-size: 1.5rem; // 24px
-    }
+//     // タブレット（sm以上、md未満）: text-2xl
+//     @media (min-width: 640px) and (max-width: 767px) {
+//       font-size: 1.5rem; // 24px
+//     }
 
-    // デスクトップ（md以上）: カスタマイズ可能なフォントサイズ
-    @media (min-width: 768px) {
-      font-size: 2.5rem; // デフォルト35px
-    }
-  }
-}
+//     // デスクトップ（md以上）: カスタマイズ可能なフォントサイズ
+//     @media (min-width: 768px) {
+//       font-size: 2.5rem; // デフォルト35px
+//     }
+//   }
+// }
 
-// エディター用のスタイル
-.message-block-editor {
-  .message-text {
-    // エディター内でも同様のレスポンシブ対応
-    @media (max-width: 639px) {
-      font-size: 1.25rem !important;
-    }
+// // エディター用のスタイル
+// .message-block-editor {
+//   .message-text {
+//     // エディター内でも同様のレスポンシブ対応
+//     @media (max-width: 639px) {
+//       font-size: 1.25rem !important;
+//     }
 
-    @media (min-width: 640px) and (max-width: 767px) {
-      font-size: 1.5rem !important;
-    }
+//     @media (min-width: 640px) and (max-width: 767px) {
+//       font-size: 1.5rem !important;
+//     }
 
-    @media (min-width: 768px) {
-      font-size: 2.5rem !important;
-    }
-  }
-}
+//     @media (min-width: 768px) {
+//       font-size: 2.5rem !important;
+//     }
+//   }
+// }
