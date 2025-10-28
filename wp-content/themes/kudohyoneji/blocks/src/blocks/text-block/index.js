@@ -1,5 +1,5 @@
 /**
- * Message Block
+ * Text Block
  * レスポンシブ対応のメッセージテキストブロック
  */
 import { registerBlockType } from "@wordpress/blocks";

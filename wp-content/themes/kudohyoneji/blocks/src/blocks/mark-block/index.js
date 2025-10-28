@@ -1,5 +1,5 @@
 /**
- * Sales Maintenance Mark Block
+ * Mark Block
  * 囲みテキストブロック
  */
 import { registerBlockType } from "@wordpress/blocks";
