@@ -20,6 +20,10 @@ registerBlockType("my-custom-blocks/title-banner-block", {
       type: "string",
       default: "テキストを入力してください",
     },
+    maxWidth: {
+      type: "string",
+      default: "964px",
+    },
     backgroundColor: {
       type: "string",
       default: "#0B8B4B",

@@ -18,3 +18,6 @@ import "./title-banner-block";
 import "./message-block";
 import "./padding-container-block";
 import "./content-title-block";
+import "./wholesale-title-block";
+import "./wholesale-point-block";
+import "./mark-block";

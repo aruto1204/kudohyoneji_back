@@ -1,0 +1,124 @@
+/**
+ * Wholesale Point Block Styles
+ * 外販ポイントブロック
+ */
+
+.wholesale-point-block {
+  width: 100%;
+  height: auto;
+
+  &__inner {
+    max-width: 964px; // 241 * 4 = 964px
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px 40px;
+
+    @media (min-width: 768px) {
+      gap: 40px;
+    }
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    height: auto;
+    max-width: 500px; // 125 * 4 = 500px
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+      padding-top: 4px;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.66;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  &__before-after {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 30px; // 12.5 * 4 = 50px
+    list-style: none;
+    padding: 0;
+    @media (min-width: 768px) {
+      margin-top: 50px;
+    }
+  }
+
+  &__image-item {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 7px; // 1.75 * 4 = 7px
+    text-align: center;
+  }
+
+  &__bottom-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    @media (min-width: 768px) {
+      margin-top: 66px; // 16.5 * 4 = 66px
+    }
+  }
+
+  &__right {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 394px; // 98.5 * 4 = 394px
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Editor styles
+  &__placeholder {
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,9 +1,6 @@
 {
   "themes": ["./wp-content/themes/kudohyoneji"],
-  "plugins": ["./wp-content/plugins/my-custom-blocks", "https://downloads.wordpress.org/plugin/create-block-theme.zip", "https://downloads.wordpress.org/plugin/wordpress-importer.zip", "https://downloads.wordpress.org/plugin/safe-svg.zip"],
-  "mappings": {
-    "wp-content/plugins/my-custom-blocks": "./wp-content/plugins/my-custom-blocks"
-  },
+  "plugins": ["https://downloads.wordpress.org/plugin/create-block-theme.zip", "https://downloads.wordpress.org/plugin/wordpress-importer.zip", "https://downloads.wordpress.org/plugin/safe-svg.zip"],
   "port": 12342,
   "testsPort": 23452
 }

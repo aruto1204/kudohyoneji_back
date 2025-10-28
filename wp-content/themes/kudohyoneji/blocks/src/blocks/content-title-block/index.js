@@ -38,7 +38,7 @@ registerBlockType("my-custom-blocks/content-title-block", {
     },
     isTwoColumn: {
       type: "boolean",
-      default: true,
+      default: false,
     },
   },
   edit,

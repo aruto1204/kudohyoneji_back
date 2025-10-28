@@ -4,7 +4,7 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function Save({ attributes }) {
-  const { titleText, backgroundColor, textColor, marginTop } = attributes;
+  const { titleText, backgroundColor, textColor, marginTop, maxWidth } = attributes;
 
   // インラインスタイルでカスタマイズ可能な属性を設定
   const containerStyle = {
@@ -18,7 +18,7 @@ export default function Save({ attributes }) {
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: marginTop,
-    maxWidth: "964px", // max-w-241 equivalent (241 * 4 = 964px)
+    maxWidth: maxWidth,
   };
 
   const textStyle = {

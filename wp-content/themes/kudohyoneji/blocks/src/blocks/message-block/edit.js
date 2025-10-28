@@ -3,7 +3,7 @@
  */
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, TextareaControl, ColorPicker, TextControl } from "@wordpress/components";
+import { PanelBody, TextareaControl, ColorPicker, TextControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 export default function Edit({ attributes, setAttributes }) {
   const { messageText, textColor, marginTop } = attributes;
@@ -15,7 +15,7 @@ export default function Edit({ attributes, setAttributes }) {
     marginTop: marginTop,
     marginLeft: "auto",
     marginRight: "auto",
-    border: "2px dashed rgba(0, 0, 0, 0.1)",
+    border: "1px dashed #ccc",
     padding: "16px",
     boxSizing: "border-box",
   };
@@ -45,7 +45,18 @@ export default function Edit({ attributes, setAttributes }) {
             <ColorPicker color={textColor} onChange={(value) => setAttributes({ textColor: value })} enableAlpha />
           </div>
 
-          <TextControl label={__("マージントップ", "my-custom-blocks")} value={marginTop} onChange={(value) => setAttributes({ marginTop: value })} help={__("例: 20px, 2rem, 0", "my-custom-blocks")} __next40pxDefaultSize __nextHasNoMarginBottom />
+          <UnitControl
+            label={__("マージントップ", "my-custom-blocks")}
+            value={marginTop}
+            onChange={(value) => setAttributes({ marginTop: value })}
+            help={__("例: 20px, 2rem, 0", "my-custom-blocks")}
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+            ]}
+          />
         </PanelBody>
       </InspectorControls>
 

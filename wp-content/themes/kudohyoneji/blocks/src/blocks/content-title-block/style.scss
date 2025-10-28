@@ -13,8 +13,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2.5rem; // 40px
+    gap: 1.25rem; // 20px
     position: relative;
+
+    @media (min-width: 768px) {
+      gap: 2.5rem; // 40px
+    }
 
     // before疑似要素（装飾線）
     &::before {
@@ -45,18 +49,15 @@
       height: auto;
 
       // 2カラム時のスタイル
-      .two-column & {
+      @media (min-width: 1024px) {
+        // lg breakpoint
+        width: 41.5%;
+      }
+      // min-width-fitクラスが付いている場合
+      &.min-width-fit {
         @media (min-width: 1024px) {
           // lg breakpoint
-          width: 41.5%;
-        }
-
-        // min-width-fitクラスが付いている場合
-        &.min-width-fit {
-          @media (min-width: 1024px) {
-            // lg breakpoint
-            min-width: fit-content;
-          }
+          min-width: fit-content;
         }
       }
 
@@ -83,7 +84,7 @@
         font-size: 1rem; // 16px (text-base)
         font-weight: 700;
         line-height: 1.66;
-        color: #92400e; // brown-500
+        color: #383838; // brown-500
         margin: 0;
 
         @media (min-width: 768px) {
@@ -97,12 +98,9 @@
       width: 100%;
       height: auto;
 
-      // 2カラム時のスタイル
-      .two-column & {
-        @media (min-width: 1024px) {
-          // lg breakpoint
-          width: 54.3%;
-        }
+      @media (min-width: 1024px) {
+        // lg breakpoint
+        width: 54.3%;
       }
 
       .body-text {

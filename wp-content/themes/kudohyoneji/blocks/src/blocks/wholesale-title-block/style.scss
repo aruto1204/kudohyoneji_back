@@ -1,0 +1,111 @@
+/**
+ * Wholesale Title Block Styles
+ * 卸売事業用コンテンツタイトル画像ブロックのスタイル
+ */
+
+.wholesale-title-block {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  // 緑の装飾線
+  &::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: -40px;
+    width: 32px;
+    height: 2px;
+    background-color: #0b8b4b; // green-500
+
+    @media (min-width: 640px) {
+      // sm
+      top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      // md
+      top: 26px;
+      left: -98px;
+      width: 66px;
+    }
+  }
+}
+
+.wholesale-title-container {
+  max-width: 964px; // max-w-241 (241 * 4px = 964px)
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem; // 32px
+
+  @media (min-width: 1024px) {
+    // lg
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1.25rem; // 20px
+  }
+}
+
+.wholesale-title-content {
+  max-width: 664px; // max-w-166 (166 * 4px = 664px)
+  width: 100%;
+  height: auto;
+}
+
+.wholesale-title {
+  font-size: 1.5rem; // text-2xl (24px)
+  color: #0b8b4b; // text-green-500
+  font-weight: 700; // font-bold
+  line-height: 1.4; // leading-snug
+  letter-spacing: 0.03em; // tracking-[0.03em]
+  margin: 0 0 2px 0; // mt-0.5 (2px)
+
+  @media (min-width: 640px) {
+    // sm
+    font-size: 1.875rem; // text-3xl (30px)
+  }
+
+  @media (min-width: 768px) {
+    // md
+    font-size: 2.5rem; // text-[40px]
+  }
+}
+
+.wholesale-subtitle {
+  font-size: 1rem; // text-base (16px)
+  font-weight: 700; // font-bold
+  line-height: 1.66; // leading-[1.66]
+
+  @media (min-width: 768px) {
+    // md
+    font-size: 1.125rem; // text-lg (18px)
+  }
+}
+
+.wholesale-body {
+  font-size: 1rem; // text-base (16px)
+  font-weight: 500; // font-medium
+  line-height: 1.66; // leading-[1.66]
+  margin-top: 1.25rem; // 28px
+
+  @media (min-width: 768px) {
+    // md
+    margin-top: 1.75rem;
+    font-size: 1.125rem; // text-lg (18px)
+  }
+}
+
+.wholesale-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    // lg
+    margin: 0;
+  }
+}

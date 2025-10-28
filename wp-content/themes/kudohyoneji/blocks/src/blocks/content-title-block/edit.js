@@ -3,7 +3,7 @@
  */
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, TextareaControl, TextControl, ToggleControl } from "@wordpress/components";
+import { PanelBody, TextareaControl, TextControl, ToggleControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
 export default function Edit({ attributes, setAttributes }) {
   const { mainTitle, subTitle, bodyText, marginTop, enableMinWidth, isTwoColumn } = attributes;
@@ -13,7 +13,7 @@ export default function Edit({ attributes, setAttributes }) {
     width: "100%",
     height: "auto",
     marginTop: marginTop,
-    border: "2px dashed rgba(0, 0, 0, 0.1)",
+    border: "1px dashed #ccc",
     padding: "16px",
     boxSizing: "border-box",
   };
@@ -87,7 +87,16 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
 
         <PanelBody title={__("レイアウト設定", "my-custom-blocks")}>
-          <TextControl label={__("マージントップ", "my-custom-blocks")} value={marginTop} onChange={(value) => setAttributes({ marginTop: value })} help={__("例: 20px, 2rem, 0", "my-custom-blocks")} __next40pxDefaultSize __nextHasNoMarginBottom />
+          <UnitControl
+            label={__("マージントップ", "my-custom-blocks")}
+            value={marginTop}
+            onChange={(value) => setAttributes({ marginTop: value })}
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+            ]}
+            __next40pxDefaultSize
+          />
         </PanelBody>
       </InspectorControls>
 
@@ -97,13 +106,13 @@ export default function Edit({ attributes, setAttributes }) {
             <p
               style={mainTitleStyle}
               dangerouslySetInnerHTML={{
-                __html: (mainTitle || __("メインタイトル", "my-custom-blocks")).replace(/\n/g, "<br />"),
+                __html: mainTitle.replace(/\n/g, "<br />"),
               }}
             />
             <p
               style={subTitleStyle}
               dangerouslySetInnerHTML={{
-                __html: (subTitle || __("サブタイトル", "my-custom-blocks")).replace(/\n/g, "<br />"),
+                __html: subTitle.replace(/\n/g, "<br />"),
               }}
             />
           </div>
