@@ -21,3 +21,4 @@ import "./content-title-block";
 import "./wholesale-title-block";
 import "./wholesale-point-block";
 import "./mark-block";
+import "./text-block";

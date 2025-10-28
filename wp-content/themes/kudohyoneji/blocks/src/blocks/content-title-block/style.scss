@@ -53,6 +53,7 @@
         // lg breakpoint
         width: 41.5%;
       }
+
       // min-width-fitクラスが付いている場合
       &.min-width-fit {
         @media (min-width: 1024px) {
@@ -90,6 +91,14 @@
         @media (min-width: 768px) {
           // md breakpoint
           font-size: 1.125rem; // 18px (text-lg)
+        }
+      }
+    }
+
+    &.one-column {
+      .left-column {
+        @media (min-width: 1024px) {
+          width: 100%;
         }
       }
     }

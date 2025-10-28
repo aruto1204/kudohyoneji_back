@@ -24,16 +24,14 @@ export default function Edit({ attributes, setAttributes }) {
     width: "100%",
     height: "auto",
     display: "flex",
-    flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-end",
     gap: "16px",
-    flexWrap: "wrap",
   };
 
   const leftColumnStyle = {
     maxWidth: "664px",
-    width: "100%",
+    width: "50%",
     height: "auto",
   };
 
