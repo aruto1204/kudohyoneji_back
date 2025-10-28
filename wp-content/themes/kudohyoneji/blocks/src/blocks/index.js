@@ -23,3 +23,7 @@ import "./wholesale-point-block";
 import "./mark-block";
 import "./text-block";
 import "./image-block";
+import "./products-results";
+import "./symptom-check-block";
+import "./numbered-list-block";
+import "./business-certificate-table";

@@ -1,0 +1,52 @@
+/**
+ * Numbered List Block Styles
+ * レスポンシブ対応の番号付きリストブロック
+ */
+
+.numbered-list-block {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  .numbered-list-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .numbered-list-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px; // text-base
+    font-weight: bold;
+    line-height: 2; // leading-loose
+    color: #383838; // text-brown-500
+
+    // sm以上でtext-lg (18px)
+    @media (min-width: 640px) {
+      font-size: 18px;
+    }
+
+    // md以上でtext-xl (20px)
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .number-symbol {
+    margin: 0;
+  }
+
+  .item-text {
+    margin: 0;
+  }
+}
+
+// エディター用スタイル
+.numbered-list-block-editor {
+  .numbered-list-container {
+    border: 1px dashed #ccc;
+    padding: 16px;
+  }
+}

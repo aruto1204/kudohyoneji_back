@@ -1,0 +1,50 @@
+/**
+ * Symptom Check Block Styles
+ * レスポンシブ対応の症状チェックブロック
+ */
+
+.symptom-check-block {
+  .symptom-check-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; // gap-2.5 (2.5 * 0.25rem = 0.625rem = 10px)
+  }
+
+  .symptom-question {
+    font-size: 16px; // text-base
+    font-weight: bold;
+    line-height: 1.75; // leading-loose
+    text-align: center;
+    color: #383838;
+    margin: 0;
+
+    // md以上でtext-xl (20px)
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .symptom-list {
+    font-size: 16px; // text-base
+    font-weight: bold;
+    line-height: 1.75; // leading-loose
+    text-align: center;
+    color: #0b8b4b; // text-green-500
+    margin: 0;
+
+    // md以上でtext-xl (20px)
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+}
+
+// エディター用スタイル
+.symptom-check-block-editor {
+  .symptom-check-container {
+    border: 1px dashed #ccc;
+    padding: 16px;
+  }
+}

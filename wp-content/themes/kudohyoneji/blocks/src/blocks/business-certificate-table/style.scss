@@ -1,0 +1,67 @@
+/**
+ * Table Block Styles
+ * レスポンシブ対応のテーブルブロック
+ */
+
+.table-block {
+  max-width: 804px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  .table-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow-x: scroll;
+
+    .table-element {
+      min-width: 804px; // max-w-201 (201 * 0.25rem * 16 = 804px)
+      width: 100%;
+      table-layout: auto;
+      border: 1px solid #b2b2b2; // border-gray-900
+      background-color: white;
+      border-collapse: collapse;
+
+      .table-header {
+        font-size: 20px; // text-xl
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: 0.03em; // sm:tracking-[0.03em]
+        text-align: center;
+        color: #383838;
+        padding: 8px 24px; // px-6 py-2
+        border: 1px solid #b2b2b2; // border-gray-900
+
+        // md以上で text-[26px]
+        @media (min-width: 768px) {
+          font-size: 26px;
+        }
+      }
+
+      .table-cell {
+        font-size: 18px; // text-lg
+        font-weight: 600; // font-semibold
+        line-height: normal;
+        letter-spacing: 0.03em; // sm:tracking-[0.03em]
+        text-align: left;
+        color: #383838;
+        padding: 10px 44px; // px-11 py-2.5
+        border: 1px solid #b2b2b2; // border-gray-900
+
+        // md以上で text-[21px]
+        @media (min-width: 768px) {
+          font-size: 21px;
+        }
+      }
+    }
+  }
+}
+
+// エディター用スタイル
+.table-block-editor {
+  .table-container {
+    border: 1px dashed #ccc;
+    padding: 16px;
+  }
+}

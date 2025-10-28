@@ -1,0 +1,14 @@
+.products-results-block p {
+  // エディター内でも同様のレスポンシブ対応
+  @media (min-width: 768px) {
+    font-size: 24px !important;
+  }
+
+  @media (min-width: 640px) and (max-width: 767px) {
+    font-size: 20px !important;
+  }
+
+  @media (max-width: 639px) {
+    font-size: 18px !important;
+  }
+}
