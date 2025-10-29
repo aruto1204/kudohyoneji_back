@@ -4,10 +4,11 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
 export default function Save({ attributes }) {
-  const { messageText, textColor, marginTop, fontSizeMd, fontSizeSm, fontSizeXs, clientId } = attributes;
+  const { messageText, textColor, marginTop, fontSizeMd, fontSizeSm, fontSizeXs, clientId, maxwidth, textAlign } = attributes;
 
   // インラインスタイルでカスタマイズ可能な属性を設定
   const containerStyle = {
+    maxWidth: maxwidth,
     width: "100%",
     height: "auto",
     marginTop: marginTop,
@@ -21,7 +22,7 @@ export default function Save({ attributes }) {
     letterSpacing: "0.03em",
     lineHeight: "normal",
     margin: "0",
-    textAlign: "center",
+    textAlign: textAlign,
   };
 
   // レスポンシブ対応のためのメディアクエリスタイル

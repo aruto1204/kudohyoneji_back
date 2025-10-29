@@ -7,7 +7,7 @@ export default function Save({ attributes }) {
   const { tableTitle, row1Label, row1Value, row2Label, row2Value, row3Label, row3Value, row4Label, row4Value, row5Label, row5Value, marginTop } = attributes;
 
   const blockProps = useBlockProps.save({
-    className: "table-block",
+    className: "business-certificate-table",
     style: {
       marginTop: marginTop,
     },

@@ -50,7 +50,7 @@ export default function Edit({ attributes, setAttributes }) {
   };
 
   const blockProps = useBlockProps({
-    className: "table-block-editor",
+    className: "business-certificate-table-editor",
   });
 
   const rows = [

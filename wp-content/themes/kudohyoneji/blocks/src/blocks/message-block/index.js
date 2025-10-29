@@ -36,6 +36,14 @@ registerBlockType("my-custom-blocks/message-block", {
       type: "string",
       default: "20px",
     },
+    textAlign: {
+      type: "string",
+      default: "center",
+    },
+    maxwidth: {
+      type: "string",
+      default: "100%",
+    },
     marginTop: {
       type: "string",
       default: "0px",

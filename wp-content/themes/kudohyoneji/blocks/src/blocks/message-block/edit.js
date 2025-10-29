@@ -3,11 +3,11 @@
  */
 import { __ } from "@wordpress/i18n";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, TextareaControl, ColorPicker, TextControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { PanelBody, TextareaControl, ColorPicker, TextControl, __experimentalUnitControl as UnitControl, SelectControl } from "@wordpress/components";
 import { useEffect } from "@wordpress/element";
 
 export default function Edit({ attributes, setAttributes, clientId }) {
-  const { messageText, textColor, marginTop, fontSizeMd, fontSizeSm, fontSizeXs } = attributes;
+  const { messageText, textColor, marginTop, fontSizeMd, fontSizeSm, fontSizeXs, textAlign, maxwidth } = attributes;
 
   // clientIdを属性に保存（既に保持している場合は更新しない）
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
   // エディター用のスタイル
   const editorStyle = {
-    width: "100%",
+    width: maxwidth,
     height: "auto",
     marginTop: marginTop,
     marginLeft: "auto",
@@ -35,7 +35,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     letterSpacing: "0.03em",
     lineHeight: "normal",
     margin: "0",
-    textAlign: "center",
+    textAlign: textAlign,
   };
 
   const blockProps = useBlockProps({
@@ -45,9 +45,11 @@ export default function Edit({ attributes, setAttributes, clientId }) {
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("設定", "my-custom-blocks")}>
+        <PanelBody title={__("テキスト設定", "my-custom-blocks")}>
           <TextareaControl label={__("メッセージテキスト", "my-custom-blocks")} value={messageText} onChange={(value) => setAttributes({ messageText: value })} help={__("改行したい場所でEnterキーを押してください", "my-custom-blocks")} rows={4} __next40pxDefaultSize __nextHasNoMarginBottom />
+        </PanelBody>
 
+        <PanelBody title={__("スタイル設定", "my-custom-blocks")}>
           <div style={{ marginBottom: "16px" }}>
             <label style={{ display: "block", marginBottom: "8px" }}>{__("テキストカラー", "my-custom-blocks")}</label>
             <ColorPicker color={textColor} onChange={(value) => setAttributes({ textColor: value })} enableAlpha />
@@ -89,6 +91,34 @@ export default function Edit({ attributes, setAttributes, clientId }) {
             units={[
               { value: "px", label: "px" },
               { value: "rem", label: "rem" },
+            ]}
+          />
+
+          <SelectControl
+            label={__("テキスト揃え", "my-custom-blocks")}
+            value={textAlign}
+            onChange={(value) => setAttributes({ textAlign: value })}
+            help={__("例: center, left, right", "my-custom-blocks")}
+            options={[
+              { label: __("中央揃え", "my-custom-blocks"), value: "center" },
+              { label: __("左揃え", "my-custom-blocks"), value: "left" },
+              { label: __("右揃え", "my-custom-blocks"), value: "right" },
+            ]}
+          />
+        </PanelBody>
+
+        <PanelBody title={__("スペーシング設定", "my-custom-blocks")}>
+          <UnitControl
+            label={__("最大幅", "my-custom-blocks")}
+            value={maxwidth}
+            onChange={(value) => setAttributes({ maxwidth: value })}
+            help={__("例: 100%, 1000px, 0", "my-custom-blocks")}
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
+            units={[
+              { value: "px", label: "px" },
+              { value: "rem", label: "rem" },
+              { value: "%", label: "%" },
             ]}
           />
 
