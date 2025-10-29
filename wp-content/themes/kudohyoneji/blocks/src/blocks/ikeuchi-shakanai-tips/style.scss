@@ -1,0 +1,130 @@
+/**
+ * Ikeuchi Shakanai Tips Block Styles
+ */
+
+.ikeuchi-shakanai-tips-block {
+  width: 100%;
+  height: auto;
+
+  .tips-logo-wrapper {
+    width: fit-content;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -14px; // -mb-3.5 (-3.5 * 4 = -14px)
+  }
+
+  .tips-logo {
+    color: #0b8b4b;
+  }
+
+  .tips-content-box {
+    max-width: 964px; // max-w-241 (241 * 4 = 964px)
+    width: 100%;
+    height: auto;
+    padding: 32px 20px; // py-8 px-5
+    border: 2px solid #0b8b4b;
+    border-radius: 21px;
+    box-sizing: border-box;
+  }
+
+  .tips-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; // gap-y-10
+    max-width: 876px; // max-w-219 (219 * 4 = 876px)
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      gap: 40px; // gap-x-5
+    }
+  }
+
+  .tips-text-area {
+    max-width: 480px; // max-w-120 (120 * 4 = 480px)
+    width: 100%;
+    height: auto;
+  }
+
+  .tips-tagline-wrapper {
+    width: fit-content;
+    background-color: #0b8b4b;
+    padding: 4px 6px; // py-1 pl-1.5 pr-1.5
+
+    @media (min-width: 768px) {
+      padding-right: 24px; // md:pr-6
+    }
+  }
+
+  .tips-tagline-text {
+    display: block;
+    font-size: 16px; // text-base
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.05em; // tracking-wider
+    color: #ffffff;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 19px; // md:text-[19px]
+    }
+  }
+
+  .tips-title-text {
+    font-size: 20px; // text-xl
+    font-weight: 700;
+    line-height: 1.25; // leading-tight
+    letter-spacing: 0.05em; // tracking-wider
+    color: #0b8b4b;
+    margin: 14px 0 0 0; // mt-3.5 (3.5 * 4 = 14px)
+
+    @media (min-width: 640px) {
+      font-size: 24px; // sm:text-2xl
+    }
+
+    @media (min-width: 768px) {
+      font-size: 28px; // md:text-[28px]
+    }
+  }
+
+  .tips-body-text {
+    font-size: 16px; // text-base
+    font-weight: 500;
+    line-height: 1.66; // leading-[1.66]
+    color: #383838; // text-brown-500 (approximate)
+    margin: 22px 0 0 0; // mt-5.5 (5.5 * 4 = 22px)
+
+    @media (min-width: 768px) {
+      font-size: 18px; // md:text-lg
+    }
+  }
+
+  .tips-image-wrapper {
+    display: block;
+    max-width: 360px; // max-w-90 (90 * 4 = 360px)
+    width: 100%;
+    height: auto;
+  }
+
+  .tips-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* エディタ内での表示調整 */
+  .wp-block-editor & {
+    padding: 20px;
+    border: 1px dashed #ccc;
+
+    &:hover {
+      border-color: #007cba;
+    }
+  }
+}

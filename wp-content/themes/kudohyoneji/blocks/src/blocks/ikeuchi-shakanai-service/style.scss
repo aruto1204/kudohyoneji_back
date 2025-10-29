@@ -1,0 +1,118 @@
+/**
+ * Ikeuchi Shakanai Service Block Styles
+ */
+
+.ikeuchi-shakanai-service-block {
+  max-width: 480px; // max-w-120 (120 * 4 = 480px)
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px; // gap-8
+
+  @media (min-width: 1024px) {
+    max-width: 100%; // lg:max-w-full
+  }
+
+  .service-content-area {
+    max-width: 480px; // max-w-120
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; // gap-6
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      left: 20px; // left-5
+    }
+  }
+
+  .service-main-text {
+    font-size: 18px; // text-lg
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.05em; // tracking-wider
+    color: #171717; // text-neutral-900
+    margin: 0;
+
+    @media (min-width: 640px) {
+      font-size: 20px; // sm:text-xl
+    }
+
+    @media (min-width: 768px) {
+      font-size: 24px; // md:text-2xl
+    }
+  }
+
+  .service-small-image {
+    max-width: 160px;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+
+    @media (min-width: 768px) {
+      max-width: 208px;
+    }
+    @media (min-width: 1024px) {
+      margin-inline: 0;
+    }
+  }
+
+  .service-large-image-wrapper {
+    max-width: 708px; // max-w-177 (177 * 4 = 708px)
+    width: 100%;
+    height: fit-content;
+    margin-inline: auto; // ml-auto
+
+    @media (min-width: 1024px) {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  .service-large-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* エディタ内での表示調整 */
+  .wp-block-editor & {
+    border: 1px dashed #ccc;
+    padding: 20px;
+
+    &:hover {
+      border-color: #007cba;
+    }
+
+    .service-content-area {
+      position: relative;
+      left: 0;
+    }
+  }
+}
+
+.business-gradient {
+  position: relative;
+  z-index: 0;
+}
+
+@media (min-width: 1024px) {
+  .business-gradient::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(to right, white 0%, white 13%, transparent 62%, transparent 100%);
+  }
+}

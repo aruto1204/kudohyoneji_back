@@ -26,6 +26,9 @@ const ALLOWED_BLOCKS = [
   "my-custom-blocks/symptom-check-block",
   "my-custom-blocks/numbered-list-block",
   "my-custom-blocks/business-certificate-table",
+  "my-custom-blocks/ikeuchi-shakanai-payment",
+  "my-custom-blocks/ikeuchi-shakanai-app",
+  "my-custom-blocks/ikeuchi-shakanai-container",
 ];
 
 // const TEMPLATE = [["core/paragraph", { placeholder: "コンテンツを入力してください..." }]];

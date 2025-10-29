@@ -1,0 +1,83 @@
+/**
+ * Ikeuchi Shakanai Image Content Block Styles
+ */
+
+.ikeuchi-shakanai-image-content-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+  }
+
+  .image-content-inner-blocks {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .image-content-section {
+    max-width: 338px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .image-content-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-content-caption-bar {
+    width: 100%;
+    height: auto;
+    background-color: #0b8b4b;
+    padding: 4px 0;
+  }
+
+  .image-content-caption-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f7f7f7;
+    letter-spacing: 0.03em;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+
+    @media (min-width: 640px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+  }
+
+  /* エディタ内での表示調整 */
+  .wp-block-editor & {
+    border: 1px dashed #ccc;
+
+    &:hover {
+      border-color: #007cba;
+    }
+  }
+}
+
+/* InnerBlocksのスタイル調整 */
+.ikeuchi-shakanai-image-content-block {
+  .block-editor-inner-blocks {
+    width: 100%;
+  }
+
+  .block-editor-block-list__layout {
+    margin: 0;
+    padding: 0;
+  }
+}

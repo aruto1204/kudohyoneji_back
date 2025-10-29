@@ -1,0 +1,45 @@
+/**
+ * Payment Method Block Styles
+ * レスポンシブ対応のフォントサイズ設定
+ */
+
+.ikeuchi-shakanai-payment {
+  // ヘッダーテキスト
+  .payment-header-text {
+    font-size: 18px; // XS: text-lg
+
+    @media (min-width: 640px) {
+      font-size: 20px; // SM: text-xl
+    }
+
+    @media (min-width: 768px) {
+      font-size: 25px; // MD: text-[25px]
+    }
+  }
+
+  // メインテキスト
+  .payment-main-text {
+    font-size: 18px; // XS: text-lg
+
+    @media (min-width: 640px) {
+      font-size: 20px; // SM: text-xl
+    }
+
+    @media (min-width: 768px) {
+      font-size: 25px; // MD: text-[25px]
+    }
+  }
+
+  // 注意書きテキスト
+  .payment-note-text {
+    font-size: 16px; // XS: text-base
+
+    @media (min-width: 640px) {
+      font-size: 18px; // SM: text-lg
+    }
+
+    @media (min-width: 768px) {
+      font-size: 18px; // MD: text-lg
+    }
+  }
+}

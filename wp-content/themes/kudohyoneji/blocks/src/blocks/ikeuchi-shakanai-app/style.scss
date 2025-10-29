@@ -1,0 +1,121 @@
+// Drive On App Block Styles
+
+.ikeuchi-shakanai-app-block {
+}
+
+.drive-on-grid {
+  max-width: 448px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+  margin-inline: auto;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    max-width: 906px;
+  }
+}
+
+.drive-on-left-image {
+  order: 2;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 1024px) {
+    order: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.drive-on-content {
+  grid-column: span 2;
+  order: 1;
+  padding-top: 4px;
+
+  @media (min-width: 1024px) {
+    max-width: 448px;
+    order: 0;
+  }
+}
+
+.drive-on-banner {
+  width: 100%;
+  padding-block: 2px;
+  padding-inline: 20px;
+  background-color: #df0515;
+  box-sizing: border-box;
+}
+
+.drive-on-banner-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7f7f7;
+  line-height: normal;
+  letter-spacing: 0.03em;
+  margin: 0;
+
+  @media (min-width: 640px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 27px;
+  }
+}
+
+.drive-on-main-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #df0515;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+
+  @media (min-width: 640px) {
+    font-size: 36px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 50px;
+  }
+}
+
+.drive-on-sub-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #383838;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
+  margin-top: 20px;
+
+  @media (min-width: 640px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.drive-on-right-image {
+  order: 3;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 1024px) {
+    order: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

@@ -29,7 +29,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
   };
 
   const textStyle = {
-    fontSize: "30px", // base size for editor (text-xl)
+    fontSize: fontSizeMd, // base size for editor (text-xl)
     fontWeight: "700",
     color: textColor,
     letterSpacing: "0.03em",
