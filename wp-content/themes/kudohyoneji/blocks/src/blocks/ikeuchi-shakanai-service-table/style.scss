@@ -1,0 +1,174 @@
+/**
+ * Ikeuchi Shakanai Service Table Block Styles
+ * レスポンシブ対応のサービス価格テーブルブロック
+ */
+
+// カラー定義
+$brown-500: #383838; // 通常テキスト色
+$gray-900: #b2b2b2; // テーブル枠線
+$rose-600: #df0515; // 特別価格テキスト色（赤）
+$neutral-900: #111827; // サービス情報テキスト色
+$white: #ffffff; // テーブル背景
+
+.ikeuchi-shakanai-service-table {
+  .service-table-container {
+    max-width: 546px; // max-w-136.5 * 4 = 546px
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; // gap-y-10 (10 * 0.25rem * 16 = 40px)
+
+    // lg以上（1024px以上）で横並び
+    @media (min-width: 1024px) {
+      max-width: 848px; // lg:max-w-212 * 4 = 848px
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px; // gap-x-5 (5 * 0.25rem * 16 = 20px)
+    }
+
+    // 左側：サービス情報
+    .service-info {
+      max-width: 280px; // max-w-70 * 4 = 280px
+      width: 100%;
+
+      .service-title {
+        font-weight: bold;
+        line-height: 1.4;
+        color: $neutral-900;
+        margin: 0 0 8px 0; // mt-2
+
+        .service-name {
+          display: block;
+          font-size: 24px; // text-2xl
+
+          // sm以上（640px以上）
+          @media (min-width: 640px) {
+            font-size: 30px; // sm:text-3xl
+            letter-spacing: 0.05em; // sm:tracking-wider
+          }
+
+          // md以上（768px以上）
+          @media (min-width: 768px) {
+            font-size: 50px; // md:text-[50px]
+          }
+        }
+
+        .service-price-wrapper {
+          display: inline;
+
+          .service-price-number {
+            font-size: 24px; // text-2xl
+
+            // sm以上（640px以上）
+            @media (min-width: 640px) {
+              font-size: 30px; // sm:text-3xl
+            }
+
+            // md以上（768px以上）
+            @media (min-width: 768px) {
+              font-size: 50px; // md:text-[50px]
+            }
+          }
+
+          .service-price-unit {
+            font-size: 16px; // text-base
+
+            // sm以上（640px以上）
+            @media (min-width: 640px) {
+              font-size: 18px; // sm:text-lg
+            }
+
+            // md以上（768px以上）
+            @media (min-width: 768px) {
+              font-size: 30px; // md:text-[30px]
+              margin-left: -12px; // md:-ml-3 (3 * 0.25rem * 16 = 12px)
+            }
+          }
+        }
+      }
+
+      .service-description {
+        font-size: 16px; // text-base
+        font-weight: 500; // font-medium
+        line-height: 1.38;
+        letter-spacing: 0.05em; // tracking-wider
+        color: $neutral-900;
+        margin: 8px 0 0 0; // mt-2
+        white-space: pre-line;
+
+        // md以上（768px以上）
+        @media (min-width: 768px) {
+          font-size: 18px; // md:text-lg
+        }
+      }
+    }
+
+    // 右側：テーブル
+    .table-wrapper {
+      max-width: 546px; // max-w-136.5 * 4 = 546px
+      width: 100%;
+      height: auto;
+      overflow-x: scroll;
+
+      .price-table {
+        min-width: 546px; // min-w-136.5 * 4 = 546px
+        width: 100%;
+        table-layout: auto;
+        border: 1px solid $gray-900;
+        background-color: $white;
+        border-collapse: collapse;
+
+        .table-header {
+          font-size: 16px; // text-base
+          font-weight: 600; // font-semibold
+          line-height: normal;
+          text-align: left;
+          padding: 8px 24px; // py-2 px-6
+          border: 1px solid $gray-900;
+
+          // sm以上（640px以上）
+          @media (min-width: 640px) {
+            letter-spacing: 0.03em; // sm:tracking-[0.03em]
+          }
+
+          &.header-brown {
+            color: $brown-500;
+          }
+
+          &.header-rose {
+            color: $rose-600;
+          }
+        }
+
+        .table-cell {
+          font-size: 16px; // text-base
+          font-weight: 600; // font-semibold
+          line-height: normal;
+          text-align: left;
+          padding: 8px 24px; // py-2 px-6
+          border: 1px solid $gray-900;
+
+          // sm以上（640px以上）
+          @media (min-width: 640px) {
+            letter-spacing: 0.03em; // sm:tracking-[0.03em]
+          }
+
+          &.cell-brown {
+            color: $brown-500;
+          }
+
+          &.cell-rose {
+            color: $rose-600;
+          }
+        }
+      }
+    }
+  }
+}
+
+// エディター用スタイル
+.ikeuchi-shakanai-service-table-editor {
+  border: 1px dashed #ccc;
+  padding: 16px;
+}

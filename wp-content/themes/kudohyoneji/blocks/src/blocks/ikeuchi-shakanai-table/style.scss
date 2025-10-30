@@ -1,0 +1,65 @@
+/**
+ * Delivery Location Table Block Styles
+ * 配送拠点テーブルブロック
+ */
+
+.ikeuchi-shakanai-table {
+  max-width: 874px; // max-w-218.5 (218.5 * 4 = 874px)
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  .table-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow-x: scroll;
+
+    .table-element {
+      min-width: 874px;
+      width: 100%;
+      table-layout: auto;
+      border: 1px solid #b2b2b2; // border-gray-900
+      background-color: white;
+      border-collapse: collapse;
+
+      .table-header {
+        font-size: 16px; // text-base
+        font-weight: 600; // font-semibold
+        line-height: normal;
+        letter-spacing: 0.03em; // sm:tracking-[0.03em]
+        text-align: left;
+        color: #383838;
+        padding: 8px 24px; // py-2 px-6
+        border: 1px solid #b2b2b2; // border-gray-900
+
+        .red-text {
+          color: #df0515;
+        }
+      }
+
+      .table-cell {
+        font-size: 16px; // text-base
+        font-weight: 600; // font-semibold
+        line-height: normal;
+        letter-spacing: 0.03em; // sm:tracking-[0.03em]
+        text-align: left;
+        color: #383838;
+        padding: 8px 24px; // py-2 px-6
+        border: 1px solid #b2b2b2; // border-gray-900
+
+        &.red-text {
+          color: #df0515;
+        }
+      }
+    }
+  }
+}
+
+// エディター用スタイル
+.delivery-location-table-editor {
+  .table-container {
+    border: 1px dashed #ccc;
+    padding: 16px;
+  }
+}

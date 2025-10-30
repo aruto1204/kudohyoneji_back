@@ -10,7 +10,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/ikeuchi-shakanai-service", {
   apiVersion: 3,
-  title: __("池内車内配送サービスブロック", "my-custom-blocks"),
+  title: __("配送サービスブロック", "my-custom-blocks"),
   description: __("配送サービス情報を表示するブロック", "my-custom-blocks"),
   category: "ikeuchi_shakanai_center",
   icon: "admin-site",

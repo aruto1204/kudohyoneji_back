@@ -33,3 +33,6 @@ import "./ikeuchi-shakanai-container";
 import "./ikeuchi-shakanai-image-content-block";
 import "./ikeuchi-shakanai-service";
 import "./ikeuchi-shakanai-tips";
+import "./ikeuchi-shakanai-banner";
+import "./ikeuchi-shakanai-table";
+import "./ikeuchi-shakanai-service-table";

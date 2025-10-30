@@ -1,0 +1,47 @@
+/**
+ * Ikeuchi Shakanai Banner Block Styles
+ * キャンペーンバナーブロック
+ */
+
+.ikeuchi-shakanai-banner {
+  .banner-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+    .banner-inner {
+      width: 100%;
+      height: auto;
+      background-color: #df0515;
+      padding: 2px 20px;
+
+      .banner-text {
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: 0.03em;
+        color: #f7f7f7;
+        margin: 0;
+
+        // レスポンシブフォントサイズ
+        // PC: md以上 (768px以上)
+        @media (min-width: 768px) {
+          font-size: 30px;
+        }
+
+        // タブレット: sm以上〜md未満 (640px〜767px)
+        @media (min-width: 640px) and (max-width: 767px) {
+          font-size: 24px;
+        }
+
+        // モバイル: sm未満 (640px未満)
+        @media (max-width: 639px) {
+          font-size: 20px;
+        }
+
+        .highlight-text {
+          color: #ffe100;
+        }
+      }
+    }
+  }
+}

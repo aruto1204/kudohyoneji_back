@@ -10,7 +10,7 @@ import "./style.scss";
 
 registerBlockType("my-custom-blocks/ikeuchi-shakanai-tips", {
   apiVersion: 3,
-  title: __("池内車内Tipsブロック", "my-custom-blocks"),
+  title: __("Tipsブロック", "my-custom-blocks"),
   description: __("Tips情報を表示するブロック", "my-custom-blocks"),
   category: "ikeuchi_shakanai_center",
   icon: "lightbulb",
