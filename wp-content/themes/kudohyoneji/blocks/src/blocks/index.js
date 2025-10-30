@@ -5,7 +5,6 @@
 
 // テーマ用ブロック
 import "./container-block";
-import "./featured-image-block";
 import "./google-map-block";
 import "./inner-container-block";
 import "./link-button-block";

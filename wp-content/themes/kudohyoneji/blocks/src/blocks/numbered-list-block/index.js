@@ -18,15 +18,15 @@ registerBlockType("my-custom-blocks/numbered-list-block", {
   attributes: {
     item1: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "日常における質の高い業務を通じ、お客さまから厚い信頼を獲得すること。",
     },
     item2: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "お客さまのご要望に対し、適切なエネルギー･利用機器・サービスを提供できること。",
     },
     item3: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "お客さまの一番頼れる存在になり、ファーストコールをいただける存在となること。",
     },
     maxWidth: {
       type: "string",

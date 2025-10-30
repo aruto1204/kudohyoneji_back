@@ -101,17 +101,6 @@ function disable_emoji() {
 }
 add_action( 'init', 'disable_emoji' );
 
-// カテゴリーを1つのみ選択可能にする
-// function enqueue_single_category_script() {
-//   wp_enqueue_script(
-//     'single-category',
-//     get_template_directory_uri() . '/js/single-category.js',
-//     array(),
-//     '1.0.0',
-//     true
-//   );
-// }
-// add_action( 'admin_enqueue_scripts', 'enqueue_single_category_script' );
 
 // ===== テーマカスタムブロック機能 =====
 

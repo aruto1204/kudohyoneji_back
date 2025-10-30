@@ -18,7 +18,7 @@ registerBlockType("my-custom-blocks/wholesale-point-block", {
   attributes: {
     bodyText: {
       type: "string",
-      default: "本文テキスト",
+      default: "残油抜取り用車輌、ポンプ容器は持参します。\nサービスタンクがある場合、ボイラーは止めずに清掃できます。(現場確認が必要)\nスラッジ（廃油）の運搬には、産業廃棄物収集運搬業許可証、 特別管理産業廃棄物収集運搬業許可証が必要な場合があります。",
     },
     beforeImageUrl: {
       type: "string",

@@ -26,7 +26,7 @@ registerBlockType("my-custom-blocks/business-certificate-table", {
     },
     row1Value: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "秋田県知事　05A2008号",
     },
     row2Label: {
       type: "string",
@@ -34,7 +34,7 @@ registerBlockType("my-custom-blocks/business-certificate-table", {
     },
     row2Value: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "平成9年4月1日",
     },
     row3Label: {
       type: "string",
@@ -42,7 +42,7 @@ registerBlockType("my-custom-blocks/business-certificate-table", {
     },
     row3Value: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "株式会社工藤米治商店",
     },
     row4Label: {
       type: "string",
@@ -50,7 +50,7 @@ registerBlockType("my-custom-blocks/business-certificate-table", {
     },
     row4Value: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "代表取締役　田山洋平",
     },
     row5Label: {
       type: "string",
@@ -58,7 +58,7 @@ registerBlockType("my-custom-blocks/business-certificate-table", {
     },
     row5Value: {
       type: "string",
-      default: "サンプルテキスト",
+      default: "㈱工藤米治商店　大館市常盤木町8-9",
     },
     marginTop: {
       type: "string",
