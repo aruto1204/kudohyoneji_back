@@ -60,7 +60,7 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
           />
 
-          <UnitControl label={__("フォントウェイト", "my-custom-blocks")} value={fontWeight} onChange={(value) => setAttributes({ fontWeight: value })} help={__("例: 400, 500, 600", "my-custom-blocks")} __next40pxDefaultSize __nextHasNoMarginBottom />
+          <TextControl label={__("フォントウェイト", "my-custom-blocks")} value={fontWeight} onChange={(value) => setAttributes({ fontWeight: value })} help={__("例: 400, 500, 600", "my-custom-blocks")} __next40pxDefaultSize __nextHasNoMarginBottom />
 
           <TextControl label={__("行間", "my-custom-blocks")} value={lineHeight} onChange={(value) => setAttributes({ lineHeight: value })} help={__("例: 1.66, 1.5, 2", "my-custom-blocks")} __next40pxDefaultSize __nextHasNoMarginBottom />
 
