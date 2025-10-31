@@ -41,10 +41,35 @@ export default function save({ attributes }) {
         font-size: ${fontSizeMd};
       }
     }
+  .business-brackets {
+    position: relative;
+  }
+
+  .business-brackets::before,
+  .business-brackets::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 19px;
+    height: calc(100% - 9px);
+    border: 2px solid #b2b2b2;
+  }
+
+  .business-brackets::before {
+    left: 0;
+    border-right: none;
+  }
+
+  .business-brackets::after {
+    right: 0;
+    border-left: none;
+  }
   `;
 
   const blockProps = useBlockProps.save({
-    className: "sales-maintenance-mark",
+    className: "mark-block",
   });
 
   return (
