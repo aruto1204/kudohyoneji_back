@@ -16,6 +16,7 @@ export default function Edit({ attributes, setAttributes }) {
     padding: "24px",
     boxSizing: "border-box",
     position: "relative",
+    zIndex: 10,
   };
 
   const imageWrapperStyle = {

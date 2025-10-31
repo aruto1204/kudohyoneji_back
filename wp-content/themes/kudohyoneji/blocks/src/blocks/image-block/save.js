@@ -14,6 +14,7 @@ export default function Save({ attributes }) {
       display: "block",
       width: "100%",
       height: "auto",
+      zIndex: 10,
       ...(align === "center" && { marginInline: "auto" }),
       ...(align === "left" && { marginRight: "auto" }),
       ...(align === "right" && { marginLeft: "auto" }),
