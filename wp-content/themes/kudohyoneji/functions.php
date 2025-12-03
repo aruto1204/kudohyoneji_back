@@ -3,7 +3,7 @@
 function add_link_files() {
   wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/assets/css/index.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/index.css' ) );
 
-  wp_enqueue_script_module( 'script', get_theme_file_uri('/assets/js/script.js'), array(), '1.0.0', true );
+  wp_enqueue_script_module( 'script', get_theme_file_uri('/assets/js/script.js'), array(), '1.0.0' );
 
 }
 add_action( 'wp_enqueue_scripts', 'add_link_files' );
